@@ -12,7 +12,8 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.systemfit.app"
     },
     "android": {
       "adaptiveIcon": {
@@ -21,10 +22,17 @@
         "backgroundImage": "./assets/android-icon-background.png",
         "monochromeImage": "./assets/android-icon-monochrome.png"
       },
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "package": "com.systemfit.app"
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "79e424f1-e4e9-4e4c-a2cd-35981d0d53d9"
+      }
+    },
+    "owner": "sugantha_krishnan"
   }
 }

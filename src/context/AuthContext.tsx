@@ -7,10 +7,13 @@ interface AuthContextType {
   session: Session | null;
   isLoading: boolean;
   isOnboardingComplete: boolean;
+  isDemoMode: boolean;
   signIn: (email: string, password: string) => Promise<any>;
   signUp: (email: string, password: string) => Promise<any>;
   signOut: () => Promise<any>;
   completeOnboarding: () => Promise<{ error: any }>;
+  enterDemoMode: () => void;
+  resetSessionTimer: () => void;
 }
 
 const AuthContext = createContext<AuthContextType | null>(null);

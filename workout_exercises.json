@@ -1,0 +1,4393 @@
+[
+  {
+    "id": "ex_1",
+    "name": "Barbell Bench Press",
+    "type": "strength",
+    "bodyParts": [
+      "chest"
+    ],
+    "equipmentType": "barbell",
+    "primaryMuscles": [
+      "pectoralis_major"
+    ],
+    "secondaryMuscles": [
+      "triceps",
+      "front_deltoid"
+    ],
+    "forceType": "push",
+    "mechanicType": "compound",
+    "difficultyLevel": "intermediate",
+    "sets": 3,
+    "reps": 12,
+    "duration": null,
+    "calories": 12,
+    "instructions": "Retract scapula, slight arch, bar touches lower chest. Elbows 45-75\u00b0 from torso.",
+    "tips": [
+      "Retract scapula, slight arch, bar touches lower chest. Elbows 45-75\u00b0 from torso."
+    ],
+    "variations": [],
+    "muscleGroup": "chest"
+  },
+  {
+    "id": "ex_2",
+    "name": "Dumbbell Bench Press",
+    "type": "strength",
+    "bodyParts": [
+      "chest"
+    ],
+    "equipmentType": "dumbbell",
+    "primaryMuscles": [
+      "pectoralis_major"
+    ],
+    "secondaryMuscles": [
+      "triceps",
+      "front_deltoid"
+    ],
+    "forceType": "push",
+    "mechanicType": "compound",
+    "difficultyLevel": "beginner",
+    "sets": 3,
+    "reps": 12,
+    "duration": null,
+    "calories": 8,
+    "instructions": "Greater ROM than barbell. Control the descent, press in a slight arc.",
+    "tips": [
+      "Greater ROM than barbell. Control the descent, press in a slight arc."
+    ],
+    "variations": [],
+    "muscleGroup": "chest"
+  },
+  {
+    "id": "ex_3",
+    "name": "Incline Barbell Press",
+    "type": "strength",
+    "bodyParts": [
+      "chest"
+    ],
+    "equipmentType": "barbell",
+    "primaryMuscles": [
+      "upper_chest"
+    ],
+    "secondaryMuscles": [
+      "triceps",
+      "front_deltoid"
+    ],
+    "forceType": "push",
+    "mechanicType": "compound",
+    "difficultyLevel": "intermediate",
+    "sets": 3,
+    "reps": 12,
+    "duration": null,
+    "calories": 12,
+    "instructions": "30-45\u00b0 incline. Bar touches upper chest. Don't flare elbows excessively.",
+    "tips": [
+      "30-45\u00b0 incline. Bar touches upper chest. Don't flare elbows excessively."
+    ],
+    "variations": [],
+    "muscleGroup": "chest"
+  },
+  {
+    "id": "ex_4",
+    "name": "Incline Dumbbell Press",
+    "type": "strength",
+    "bodyParts": [
+      "chest"
+    ],
+    "equipmentType": "dumbbell",
+    "primaryMuscles": [
+      "upper_chest"
+    ],
+    "secondaryMuscles": [
+      "triceps",
+      "front_deltoid"
+    ],
+    "forceType": "push",
+    "mechanicType": "compound",
+    "difficultyLevel": "beginner",
+    "sets": 3,
+    "reps": 12,
+    "duration": null,
+    "calories": 8,
+    "instructions": "30-45\u00b0 bench. Full stretch at the bottom, explosive press.",
+    "tips": [
+      "30-45\u00b0 bench. Full stretch at the bottom, explosive press."
+    ],
+    "variations": [],
+    "muscleGroup": "chest"
+  },
+  {
+    "id": "ex_5",
+    "name": "Decline Bench Press",
+    "type": "strength",
+    "bodyParts": [
+      "chest"
+    ],
+    "equipmentType": "barbell",
+    "primaryMuscles": [
+      "lower_chest"
+    ],
+    "secondaryMuscles": [
+      "triceps"
+    ],
+    "forceType": "push",
+    "mechanicType": "compound",
+    "difficultyLevel": "intermediate",
+    "sets": 3,
+    "reps": 12,
+    "duration": null,
+    "calories": 12,
+    "instructions": "Decline targets lower pecs. Don't overdo the decline angle.",
+    "tips": [
+      "Decline targets lower pecs. Don't overdo the decline angle."
+    ],
+    "variations": [],
+    "muscleGroup": "chest"
+  },
+  {
+    "id": "ex_6",
+    "name": "Dumbbell Fly",
+    "type": "strength",
+    "bodyParts": [
+      "chest"
+    ],
+    "equipmentType": "dumbbell",
+    "primaryMuscles": [
+      "pectoralis_major"
+    ],
+    "secondaryMuscles": [
+      "front_deltoid"
+    ],
+    "forceType": "push",
+    "mechanicType": "isolation",
+    "difficultyLevel": "beginner",
+    "sets": null,
+    "reps": 12,
+    "duration": null,
+    "calories": 8,
+    "instructions": "Slight bend in elbows, wide arc, feel the chest stretch at the bottom.",
+    "tips": [
+      "Slight bend in elbows, wide arc, feel the chest stretch at the bottom."
+    ],
+    "variations": [],
+    "muscleGroup": "chest"
+  },
+  {
+    "id": "ex_7",
+    "name": "Cable Fly",
+    "type": "strength",
+    "bodyParts": [
+      "chest"
+    ],
+    "equipmentType": "cable",
+    "primaryMuscles": [
+      "pectoralis_major"
+    ],
+    "secondaryMuscles": [
+      "front_deltoid"
+    ],
+    "forceType": "push",
+    "mechanicType": "isolation",
+    "difficultyLevel": "beginner",
+    "sets": null,
+    "reps": 12,
+    "duration": null,
+    "calories": 8,
+    "instructions": "Set cables at shoulder height. Slight elbow bend. Squeeze at peak contraction.",
+    "tips": [
+      "Set cables at shoulder height. Slight elbow bend. Squeeze at peak contraction."
+    ],
+    "variations": [],
+    "muscleGroup": "chest"
+  },
+  {
+    "id": "ex_8",
+    "name": "Low-to-High Cable Fly",
+    "type": "strength",
+    "bodyParts": [
+      "chest"
+    ],
+    "equipmentType": "cable",
+    "primaryMuscles": [
+      "upper_chest"
+    ],
+    "secondaryMuscles": [
+      "front_deltoid"
+    ],
+    "forceType": "push",
+    "mechanicType": "isolation",
+    "difficultyLevel": "beginner",
+    "sets": null,
+    "reps": 12,
+    "duration": null,
+    "calories": 8,
+    "instructions": "Cables set low. Pull upward and inward to target upper pecs.",
+    "tips": [
+      "Cables set low. Pull upward and inward to target upper pecs."
+    ],
+    "variations": [],
+    "muscleGroup": "chest"
+  },
+  {
+    "id": "ex_9",
+    "name": "High-to-Low Cable Fly",
+    "type": "strength",
+    "bodyParts": [
+      "chest"
+    ],
+    "equipmentType": "cable",
+    "primaryMuscles": [
+      "lower_chest"
+    ],
+    "secondaryMuscles": [
+      "front_deltoid"
+    ],
+    "forceType": "push",
+    "mechanicType": "isolation",
+    "difficultyLevel": "beginner",
+    "sets": null,
+    "reps": 12,
+    "duration": null,
+    "calories": 8,
+    "instructions": "Cables set high. Pull downward and inward to target lower pecs.",
+    "tips": [
+      "Cables set high. Pull downward and inward to target lower pecs."
+    ],
+    "variations": [],
+    "muscleGroup": "chest"
+  },
+  {
+    "id": "ex_10",
+    "name": "Push-Up",
+    "type": "strength",
+    "bodyParts": [
+      "chest"
+    ],
+    "equipmentType": "bodyweight",
+    "primaryMuscles": [
+      "pectoralis_major"
+    ],
+    "secondaryMuscles": [
+      "triceps",
+      "core"
+    ],
+    "forceType": "push",
+    "mechanicType": "compound",
+    "difficultyLevel": "beginner",
+    "sets": 3,
+    "reps": 12,
+    "duration": null,
+    "calories": 8,
+    "instructions": "Straight line head to heels. Elbows 45\u00b0 from body. Full ROM.",
+    "tips": [
+      "Straight line head to heels. Elbows 45\u00b0 from body. Full ROM."
+    ],
+    "variations": [],
+    "muscleGroup": "chest"
+  },
+  {
+    "id": "ex_11",
+    "name": "Wide-Grip Push-Up",
+    "type": "strength",
+    "bodyParts": [
+      "chest"
+    ],
+    "equipmentType": "bodyweight",
+    "primaryMuscles": [
+      "pectoralis_major"
+    ],
+    "secondaryMuscles": [
+      "front_deltoid"
+    ],
+    "forceType": "push",
+    "mechanicType": "compound",
+    "difficultyLevel": "beginner",
+    "sets": 3,
+    "reps": 12,
+    "duration": null,
+    "calories": 8,
+    "instructions": "Hands wider than shoulder width to emphasize chest.",
+    "tips": [
+      "Hands wider than shoulder width to emphasize chest."
+    ],
+    "variations": [],
+    "muscleGroup": "chest"
+  },
+  {
+    "id": "ex_12",
+    "name": "Diamond Push-Up",
+    "type": "strength",
+    "bodyParts": [
+      "chest"
+    ],
+    "equipmentType": "bodyweight",
+    "primaryMuscles": [
+      "triceps"
+    ],
+    "secondaryMuscles": [
+      "chest"
+    ],
+    "forceType": "push",
+    "mechanicType": "compound",
+    "difficultyLevel": "beginner",
+    "sets": 3,
+    "reps": 12,
+    "duration": null,
+    "calories": 8,
+    "instructions": "Hands form a diamond shape. Primarily hits triceps, secondary chest.",
+    "tips": [
+      "Hands form a diamond shape. Primarily hits triceps, secondary chest."
+    ],
+    "variations": [],
+    "muscleGroup": "chest"
+  },
+  {
+    "id": "ex_13",
+    "name": "Chest Dip",
+    "type": "strength",
+    "bodyParts": [
+      "chest"
+    ],
+    "equipmentType": "bodyweight",
+    "primaryMuscles": [
+      "lower_chest"
+    ],
+    "secondaryMuscles": [
+      "triceps",
+      "shoulders"
+    ],
+    "forceType": "push",
+    "mechanicType": "compound",
+    "difficultyLevel": "intermediate",
+    "sets": 3,
+    "reps": 12,
+    "duration": null,
+    "calories": 12,
+    "instructions": "Lean forward to shift emphasis to chest over triceps.",
+    "tips": [
+      "Lean forward to shift emphasis to chest over triceps."
+    ],
+    "variations": [],
+    "muscleGroup": "chest"
+  },
+  {
+    "id": "ex_14",
+    "name": "Pec Deck Machine",
+    "type": "strength",
+    "bodyParts": [
+      "chest"
+    ],
+    "equipmentType": "machine",
+    "primaryMuscles": [
+      "pectoralis_major"
+    ],
+    "secondaryMuscles": [
+      "front_deltoid"
+    ],
+    "forceType": "push",
+    "mechanicType": "isolation",
+    "difficultyLevel": "beginner",
+    "sets": null,
+    "reps": 12,
+    "duration": null,
+    "calories": 8,
+    "instructions": "Keep elbows at shoulder height. Full stretch and full squeeze.",
+    "tips": [
+      "Keep elbows at shoulder height. Full stretch and full squeeze."
+    ],
+    "variations": [],
+    "muscleGroup": "chest"
+  },
+  {
+    "id": "ex_15",
+    "name": "Smith Machine Bench Press",
+    "type": "strength",
+    "bodyParts": [
+      "chest"
+    ],
+    "equipmentType": "machine",
+    "primaryMuscles": [
+      "pectoralis_major"
+    ],
+    "secondaryMuscles": [
+      "triceps"
+    ],
+    "forceType": "push",
+    "mechanicType": "compound",
+    "difficultyLevel": "beginner",
+    "sets": 3,
+    "reps": 12,
+    "duration": null,
+    "calories": 8,
+    "instructions": "Fixed bar path. Good for beginners. Lower to chest, full press.",
+    "tips": [
+      "Fixed bar path. Good for beginners. Lower to chest, full press."
+    ],
+    "variations": [],
+    "muscleGroup": "chest"
+  },
+  {
+    "id": "ex_16",
+    "name": "Svend Press",
+    "type": "strength",
+    "bodyParts": [
+      "chest"
+    ],
+    "equipmentType": "plate",
+    "primaryMuscles": [
+      "pectoralis_major"
+    ],
+    "secondaryMuscles": [
+      "front_deltoid"
+    ],
+    "forceType": "push",
+    "mechanicType": "isolation",
+    "difficultyLevel": "beginner",
+    "sets": null,
+    "reps": 12,
+    "duration": null,
+    "calories": 8,
+    "instructions": "Press two plates together while extending arms. Constant tension on chest.",
+    "tips": [
+      "Press two plates together while extending arms. Constant tension on chest."
+    ],
+    "variations": [],
+    "muscleGroup": "chest"
+  },
+  {
+    "id": "ex_17",
+    "name": "Landmine Press",
+    "type": "strength",
+    "bodyParts": [
+      "chest"
+    ],
+    "equipmentType": "barbell",
+    "primaryMuscles": [
+      "upper_chest"
+    ],
+    "secondaryMuscles": [
+      "front_deltoid",
+      "triceps"
+    ],
+    "forceType": "push",
+    "mechanicType": "compound",
+    "difficultyLevel": "intermediate",
+    "sets": 3,
+    "reps": 12,
+    "duration": null,
+    "calories": 12,
+    "instructions": "Single arm or both. Arc motion from chest to full extension.",
+    "tips": [
+      "Single arm or both. Arc motion from chest to full extension."
+    ],
+    "variations": [],
+    "muscleGroup": "chest"
+  },
+  {
+    "id": "ex_18",
+    "name": "Guillotine Press",
+    "type": "strength",
+    "bodyParts": [
+      "chest"
+    ],
+    "equipmentType": "barbell",
+    "primaryMuscles": [
+      "upper_chest"
+    ],
+    "secondaryMuscles": [
+      "front_deltoid"
+    ],
+    "forceType": "push",
+    "mechanicType": "compound",
+    "difficultyLevel": "advanced",
+    "sets": 3,
+    "reps": 12,
+    "duration": null,
+    "calories": 16,
+    "instructions": "Bar lowered to neck/upper chest. Maximum pec stretch. Use a spotter.",
+    "tips": [
+      "Bar lowered to neck/upper chest. Maximum pec stretch. Use a spotter."
+    ],
+    "variations": [],
+    "muscleGroup": "chest"
+  },
+  {
+    "id": "ex_19",
+    "name": "Conventional Deadlift",
+    "type": "strength",
+    "bodyParts": [
+      "back",
+      "lats",
+      "traps"
+    ],
+    "equipmentType": "barbell",
+    "primaryMuscles": [
+      "erector_spinae"
+    ],
+    "secondaryMuscles": [
+      "glutes",
+      "hamstrings",
+      "traps"
+    ],
+    "forceType": "pull",
+    "mechanicType": "compound",
+    "difficultyLevel": "intermediate",
+    "sets": 3,
+    "reps": 12,
+    "duration": null,
+    "calories": 12,
+    "instructions": "Neutral spine throughout. Bar over mid-foot. Drive floor away.",
+    "tips": [
+      "Neutral spine throughout. Bar over mid-foot. Drive floor away."
+    ],
+    "variations": [],
+    "muscleGroup": "back"
+  },
+  {
+    "id": "ex_20",
+    "name": "Romanian Deadlift",
+    "type": "strength",
+    "bodyParts": [
+      "back",
+      "lats",
+      "traps"
+    ],
+    "equipmentType": "barbell",
+    "primaryMuscles": [
+      "erector_spinae"
+    ],
+    "secondaryMuscles": [
+      "hamstrings",
+      "glutes"
+    ],
+    "forceType": "pull",
+    "mechanicType": "compound",
+    "difficultyLevel": "intermediate",
+    "sets": 3,
+    "reps": 12,
+    "duration": null,
+    "calories": 12,
+    "instructions": "Hinge at hips, soft knees. Bar drags down shins. Feel hamstring stretch.",
+    "tips": [
+      "Hinge at hips, soft knees. Bar drags down shins. Feel hamstring stretch."
+    ],
+    "variations": [],
+    "muscleGroup": "back"
+  },
+  {
+    "id": "ex_21",
+    "name": "Sumo Deadlift",
+    "type": "strength",
+    "bodyParts": [
+      "back",
+      "lats",
+      "traps"
+    ],
+    "equipmentType": "barbell",
+    "primaryMuscles": [
+      "glutes"
+    ],
+    "secondaryMuscles": [
+      "hamstrings",
+      "back",
+      "adductors"
+    ],
+    "forceType": "pull",
+    "mechanicType": "compound",
+    "difficultyLevel": "intermediate",
+    "sets": 3,
+    "reps": 12,
+    "duration": null,
+    "calories": 12,
+    "instructions": "Wide stance, toes out. Hips hinge, torso more upright than conventional.",
+    "tips": [
+      "Wide stance, toes out. Hips hinge, torso more upright than conventional."
+    ],
+    "variations": [],
+    "muscleGroup": "back"
+  },
+  {
+    "id": "ex_22",
+    "name": "Pull-Up",
+    "type": "strength",
+    "bodyParts": [
+      "back",
+      "lats",
+      "traps"
+    ],
+    "equipmentType": "bodyweight",
+    "primaryMuscles": [
+      "latissimus_dorsi"
+    ],
+    "secondaryMuscles": [
+      "biceps",
+      "rear_deltoid"
+    ],
+    "forceType": "pull",
+    "mechanicType": "compound",
+    "difficultyLevel": "intermediate",
+    "sets": 3,
+    "reps": 12,
+    "duration": null,
+    "calories": 12,
+    "instructions": "Dead hang start. Lead with chest. Full ROM from dead hang to chin over bar.",
+    "tips": [
+      "Dead hang start. Lead with chest. Full ROM from dead hang to chin over bar."
+    ],
+    "variations": [],
+    "muscleGroup": "back"
+  },
+  {
+    "id": "ex_23",
+    "name": "Chin-Up",
+    "type": "strength",
+    "bodyParts": [
+      "back",
+      "lats",
+      "traps"
+    ],
+    "equipmentType": "bodyweight",
+    "primaryMuscles": [
+      "latissimus_dorsi"
+    ],
+    "secondaryMuscles": [
+      "biceps"
+    ],
+    "forceType": "pull",
+    "mechanicType": "compound",
+    "difficultyLevel": "intermediate",
+    "sets": 3,
+    "reps": 12,
+    "duration": null,
+    "calories": 12,
+    "instructions": "Supinated grip. More biceps involvement than pull-ups. Chin clears bar.",
+    "tips": [
+      "Supinated grip. More biceps involvement than pull-ups. Chin clears bar."
+    ],
+    "variations": [],
+    "muscleGroup": "back"
+  },
+  {
+    "id": "ex_24",
+    "name": "Wide-Grip Pull-Up",
+    "type": "strength",
+    "bodyParts": [
+      "back",
+      "lats",
+      "traps"
+    ],
+    "equipmentType": "bodyweight",
+    "primaryMuscles": [
+      "latissimus_dorsi"
+    ],
+    "secondaryMuscles": [
+      "rear_deltoid"
+    ],
+    "forceType": "pull",
+    "mechanicType": "compound",
+    "difficultyLevel": "advanced",
+    "sets": 3,
+    "reps": 12,
+    "duration": null,
+    "calories": 16,
+    "instructions": "Wider grip emphasizes outer lats. Pull elbows to sides.",
+    "tips": [
+      "Wider grip emphasizes outer lats. Pull elbows to sides."
+    ],
+    "variations": [],
+    "muscleGroup": "back"
+  },
+  {
+    "id": "ex_25",
+    "name": "Lat Pulldown",
+    "type": "strength",
+    "bodyParts": [
+      "back",
+      "lats",
+      "traps"
+    ],
+    "equipmentType": "cable",
+    "primaryMuscles": [
+      "latissimus_dorsi"
+    ],
+    "secondaryMuscles": [
+      "biceps",
+      "rear_deltoid"
+    ],
+    "forceType": "pull",
+    "mechanicType": "compound",
+    "difficultyLevel": "beginner",
+    "sets": 3,
+    "reps": 12,
+    "duration": null,
+    "calories": 8,
+    "instructions": "Pull bar to upper chest. Lean back slightly. Elbows down and back.",
+    "tips": [
+      "Pull bar to upper chest. Lean back slightly. Elbows down and back."
+    ],
+    "variations": [],
+    "muscleGroup": "back"
+  },
+  {
+    "id": "ex_26",
+    "name": "Close-Grip Lat Pulldown",
+    "type": "strength",
+    "bodyParts": [
+      "back",
+      "lats",
+      "traps"
+    ],
+    "equipmentType": "cable",
+    "primaryMuscles": [
+      "latissimus_dorsi"
+    ],
+    "secondaryMuscles": [
+      "biceps"
+    ],
+    "forceType": "pull",
+    "mechanicType": "compound",
+    "difficultyLevel": "beginner",
+    "sets": 3,
+    "reps": 12,
+    "duration": null,
+    "calories": 8,
+    "instructions": "V-bar attachment. Elbows travel closer to torso. Greater contraction.",
+    "tips": [
+      "V-bar attachment. Elbows travel closer to torso. Greater contraction."
+    ],
+    "variations": [],
+    "muscleGroup": "back"
+  },
+  {
+    "id": "ex_27",
+    "name": "Seated Cable Row",
+    "type": "strength",
+    "bodyParts": [
+      "back",
+      "lats",
+      "traps"
+    ],
+    "equipmentType": "cable",
+    "primaryMuscles": [
+      "middle_back"
+    ],
+    "secondaryMuscles": [
+      "biceps",
+      "rear_deltoid"
+    ],
+    "forceType": "pull",
+    "mechanicType": "compound",
+    "difficultyLevel": "beginner",
+    "sets": 3,
+    "reps": 12,
+    "duration": null,
+    "calories": 8,
+    "instructions": "Pull elbows past torso. Squeeze shoulder blades at peak.",
+    "tips": [
+      "Pull elbows past torso. Squeeze shoulder blades at peak."
+    ],
+    "variations": [],
+    "muscleGroup": "back"
+  },
+  {
+    "id": "ex_28",
+    "name": "Barbell Bent-Over Row",
+    "type": "strength",
+    "bodyParts": [
+      "back",
+      "lats",
+      "traps"
+    ],
+    "equipmentType": "barbell",
+    "primaryMuscles": [
+      "middle_back"
+    ],
+    "secondaryMuscles": [
+      "biceps",
+      "rear_deltoid"
+    ],
+    "forceType": "pull",
+    "mechanicType": "compound",
+    "difficultyLevel": "intermediate",
+    "sets": 3,
+    "reps": 12,
+    "duration": null,
+    "calories": 12,
+    "instructions": "Hinge 45\u00b0. Pull bar to lower chest. Squeeze rhomboids.",
+    "tips": [
+      "Hinge 45\u00b0. Pull bar to lower chest. Squeeze rhomboids."
+    ],
+    "variations": [],
+    "muscleGroup": "back"
+  },
+  {
+    "id": "ex_29",
+    "name": "Pendlay Row",
+    "type": "strength",
+    "bodyParts": [
+      "back",
+      "lats",
+      "traps"
+    ],
+    "equipmentType": "barbell",
+    "primaryMuscles": [
+      "middle_back"
+    ],
+    "secondaryMuscles": [
+      "biceps",
+      "rear_deltoid"
+    ],
+    "forceType": "pull",
+    "mechanicType": "compound",
+    "difficultyLevel": "intermediate",
+    "sets": 3,
+    "reps": 12,
+    "duration": null,
+    "calories": 12,
+    "instructions": "Bar resets on floor each rep. Explosive pull to lower chest.",
+    "tips": [
+      "Bar resets on floor each rep. Explosive pull to lower chest."
+    ],
+    "variations": [],
+    "muscleGroup": "back"
+  },
+  {
+    "id": "ex_30",
+    "name": "Dumbbell Row",
+    "type": "strength",
+    "bodyParts": [
+      "back",
+      "lats",
+      "traps"
+    ],
+    "equipmentType": "dumbbell",
+    "primaryMuscles": [
+      "latissimus_dorsi"
+    ],
+    "secondaryMuscles": [
+      "biceps"
+    ],
+    "forceType": "pull",
+    "mechanicType": "compound",
+    "difficultyLevel": "beginner",
+    "sets": 3,
+    "reps": 12,
+    "duration": null,
+    "calories": 8,
+    "instructions": "Brace on bench. Row elbow past hip. Full stretch at bottom.",
+    "tips": [
+      "Brace on bench. Row elbow past hip. Full stretch at bottom."
+    ],
+    "variations": [],
+    "muscleGroup": "back"
+  },
+  {
+    "id": "ex_31",
+    "name": "T-Bar Row",
+    "type": "strength",
+    "bodyParts": [
+      "back",
+      "lats",
+      "traps"
+    ],
+    "equipmentType": "barbell",
+    "primaryMuscles": [
+      "middle_back"
+    ],
+    "secondaryMuscles": [
+      "biceps",
+      "rear_deltoid"
+    ],
+    "forceType": "pull",
+    "mechanicType": "compound",
+    "difficultyLevel": "intermediate",
+    "sets": 3,
+    "reps": 12,
+    "duration": null,
+    "calories": 12,
+    "instructions": "Straddle bar. Pull to chest. Keep back flat throughout.",
+    "tips": [
+      "Straddle bar. Pull to chest. Keep back flat throughout."
+    ],
+    "variations": [],
+    "muscleGroup": "back"
+  },
+  {
+    "id": "ex_32",
+    "name": "Chest-Supported Row",
+    "type": "strength",
+    "bodyParts": [
+      "back",
+      "lats",
+      "traps"
+    ],
+    "equipmentType": "dumbbell",
+    "primaryMuscles": [
+      "middle_back"
+    ],
+    "secondaryMuscles": [
+      "biceps",
+      "rear_deltoid"
+    ],
+    "forceType": "pull",
+    "mechanicType": "compound",
+    "difficultyLevel": "beginner",
+    "sets": 3,
+    "reps": 12,
+    "duration": null,
+    "calories": 8,
+    "instructions": "Chest on incline bench eliminates cheating. Pure back work.",
+    "tips": [
+      "Chest on incline bench eliminates cheating. Pure back work."
+    ],
+    "variations": [],
+    "muscleGroup": "back"
+  },
+  {
+    "id": "ex_33",
+    "name": "Face Pull",
+    "type": "strength",
+    "bodyParts": [
+      "back",
+      "lats",
+      "traps"
+    ],
+    "equipmentType": "cable",
+    "primaryMuscles": [
+      "rear_deltoid"
+    ],
+    "secondaryMuscles": [
+      "rhomboids",
+      "rotator_cuff"
+    ],
+    "forceType": "pull",
+    "mechanicType": "isolation",
+    "difficultyLevel": "beginner",
+    "sets": null,
+    "reps": 12,
+    "duration": null,
+    "calories": 8,
+    "instructions": "Rope attachment at face level. Pull to face, flare elbows high.",
+    "tips": [
+      "Rope attachment at face level. Pull to face, flare elbows high."
+    ],
+    "variations": [],
+    "muscleGroup": "back"
+  },
+  {
+    "id": "ex_34",
+    "name": "Hyperextension",
+    "type": "strength",
+    "bodyParts": [
+      "back",
+      "lats",
+      "traps"
+    ],
+    "equipmentType": "bodyweight",
+    "primaryMuscles": [
+      "erector_spinae"
+    ],
+    "secondaryMuscles": [
+      "glutes",
+      "hamstrings"
+    ],
+    "forceType": "pull",
+    "mechanicType": "isolation",
+    "difficultyLevel": "beginner",
+    "sets": null,
+    "reps": 12,
+    "duration": null,
+    "calories": 8,
+    "instructions": "Hinge at hips. Don't hyperextend the lumbar. Controlled movement.",
+    "tips": [
+      "Hinge at hips. Don't hyperextend the lumbar. Controlled movement."
+    ],
+    "variations": [],
+    "muscleGroup": "back"
+  },
+  {
+    "id": "ex_35",
+    "name": "Good Morning",
+    "type": "strength",
+    "bodyParts": [
+      "back",
+      "lats",
+      "traps"
+    ],
+    "equipmentType": "barbell",
+    "primaryMuscles": [
+      "erector_spinae"
+    ],
+    "secondaryMuscles": [
+      "hamstrings",
+      "glutes"
+    ],
+    "forceType": "pull",
+    "mechanicType": "compound",
+    "difficultyLevel": "intermediate",
+    "sets": 3,
+    "reps": 12,
+    "duration": null,
+    "calories": 12,
+    "instructions": "Bar on upper back, hinge forward until back is parallel to floor.",
+    "tips": [
+      "Bar on upper back, hinge forward until back is parallel to floor."
+    ],
+    "variations": [],
+    "muscleGroup": "back"
+  },
+  {
+    "id": "ex_36",
+    "name": "Single-Arm Cable Row",
+    "type": "strength",
+    "bodyParts": [
+      "back",
+      "lats",
+      "traps"
+    ],
+    "equipmentType": "cable",
+    "primaryMuscles": [
+      "latissimus_dorsi"
+    ],
+    "secondaryMuscles": [
+      "biceps"
+    ],
+    "forceType": "pull",
+    "mechanicType": "compound",
+    "difficultyLevel": "beginner",
+    "sets": 3,
+    "reps": 12,
+    "duration": null,
+    "calories": 8,
+    "instructions": "Unilateral. Full stretch each rep. Rotate torso slightly for range.",
+    "tips": [
+      "Unilateral. Full stretch each rep. Rotate torso slightly for range."
+    ],
+    "variations": [],
+    "muscleGroup": "back"
+  },
+  {
+    "id": "ex_37",
+    "name": "Inverted Row",
+    "type": "strength",
+    "bodyParts": [
+      "back",
+      "lats",
+      "traps"
+    ],
+    "equipmentType": "bodyweight",
+    "primaryMuscles": [
+      "middle_back"
+    ],
+    "secondaryMuscles": [
+      "biceps"
+    ],
+    "forceType": "pull",
+    "mechanicType": "compound",
+    "difficultyLevel": "beginner",
+    "sets": 3,
+    "reps": 12,
+    "duration": null,
+    "calories": 8,
+    "instructions": "Set bar low. Pull chest to bar. Keep body rigid like a reverse push-up.",
+    "tips": [
+      "Set bar low. Pull chest to bar. Keep body rigid like a reverse push-up."
+    ],
+    "variations": [],
+    "muscleGroup": "back"
+  },
+  {
+    "id": "ex_38",
+    "name": "Meadows Row",
+    "type": "strength",
+    "bodyParts": [
+      "back",
+      "lats",
+      "traps"
+    ],
+    "equipmentType": "barbell",
+    "primaryMuscles": [
+      "latissimus_dorsi"
+    ],
+    "secondaryMuscles": [
+      "rear_deltoid"
+    ],
+    "forceType": "pull",
+    "mechanicType": "compound",
+    "difficultyLevel": "advanced",
+    "sets": 3,
+    "reps": 12,
+    "duration": null,
+    "calories": 16,
+    "instructions": "Landmine setup. Stagger stance, row to hip. Huge lat stretch.",
+    "tips": [
+      "Landmine setup. Stagger stance, row to hip. Huge lat stretch."
+    ],
+    "variations": [],
+    "muscleGroup": "back"
+  },
+  {
+    "id": "ex_39",
+    "name": "Cable Pullover",
+    "type": "strength",
+    "bodyParts": [
+      "back",
+      "lats",
+      "traps"
+    ],
+    "equipmentType": "cable",
+    "primaryMuscles": [
+      "latissimus_dorsi"
+    ],
+    "secondaryMuscles": [
+      "triceps_long_head"
+    ],
+    "forceType": "pull",
+    "mechanicType": "isolation",
+    "difficultyLevel": "beginner",
+    "sets": null,
+    "reps": 12,
+    "duration": null,
+    "calories": 8,
+    "instructions": "Straight arms, pull cable from overhead to hips. Rib cage expansion.",
+    "tips": [
+      "Straight arms, pull cable from overhead to hips. Rib cage expansion."
+    ],
+    "variations": [],
+    "muscleGroup": "back"
+  },
+  {
+    "id": "ex_40",
+    "name": "Dumbbell Pullover",
+    "type": "strength",
+    "bodyParts": [
+      "back",
+      "lats",
+      "traps"
+    ],
+    "equipmentType": "dumbbell",
+    "primaryMuscles": [
+      "latissimus_dorsi"
+    ],
+    "secondaryMuscles": [
+      "chest",
+      "triceps_long_head"
+    ],
+    "forceType": "pull",
+    "mechanicType": "isolation",
+    "difficultyLevel": "intermediate",
+    "sets": null,
+    "reps": 12,
+    "duration": null,
+    "calories": 12,
+    "instructions": "Lie across bench. Arc dumbbell overhead with slight elbow bend.",
+    "tips": [
+      "Lie across bench. Arc dumbbell overhead with slight elbow bend."
+    ],
+    "variations": [],
+    "muscleGroup": "back"
+  },
+  {
+    "id": "ex_41",
+    "name": "Barbell Back Squat",
+    "type": "strength",
+    "bodyParts": [
+      "quads",
+      "hamstrings",
+      "glutes",
+      "calves"
+    ],
+    "equipmentType": "barbell",
+    "primaryMuscles": [
+      "quadriceps"
+    ],
+    "secondaryMuscles": [
+      "glutes",
+      "hamstrings",
+      "core"
+    ],
+    "forceType": "push",
+    "mechanicType": "compound",
+    "difficultyLevel": "intermediate",
+    "sets": 3,
+    "reps": 12,
+    "duration": null,
+    "calories": 12,
+    "instructions": "Bar on traps. Chest up. Knees track toes. Depth below parallel.",
+    "tips": [
+      "Bar on traps. Chest up. Knees track toes. Depth below parallel."
+    ],
+    "variations": [],
+    "muscleGroup": "legs"
+  },
+  {
+    "id": "ex_42",
+    "name": "Front Squat",
+    "type": "strength",
+    "bodyParts": [
+      "quads",
+      "hamstrings",
+      "glutes",
+      "calves"
+    ],
+    "equipmentType": "barbell",
+    "primaryMuscles": [
+      "quadriceps"
+    ],
+    "secondaryMuscles": [
+      "glutes",
+      "core"
+    ],
+    "forceType": "push",
+    "mechanicType": "compound",
+    "difficultyLevel": "advanced",
+    "sets": 3,
+    "reps": 12,
+    "duration": null,
+    "calories": 16,
+    "instructions": "Bar in front rack. Elbows high. More upright torso than back squat.",
+    "tips": [
+      "Bar in front rack. Elbows high. More upright torso than back squat."
+    ],
+    "variations": [],
+    "muscleGroup": "legs"
+  },
+  {
+    "id": "ex_43",
+    "name": "Goblet Squat",
+    "type": "strength",
+    "bodyParts": [
+      "quads",
+      "hamstrings",
+      "glutes",
+      "calves"
+    ],
+    "equipmentType": "dumbbell",
+    "primaryMuscles": [
+      "quadriceps"
+    ],
+    "secondaryMuscles": [
+      "glutes",
+      "core"
+    ],
+    "forceType": "push",
+    "mechanicType": "compound",
+    "difficultyLevel": "beginner",
+    "sets": 3,
+    "reps": 12,
+    "duration": null,
+    "calories": 8,
+    "instructions": "Hold dumbbell at chest. Elbows inside knees at bottom. Great for beginners.",
+    "tips": [
+      "Hold dumbbell at chest. Elbows inside knees at bottom. Great for beginners."
+    ],
+    "variations": [],
+    "muscleGroup": "legs"
+  },
+  {
+    "id": "ex_44",
+    "name": "Leg Press",
+    "type": "strength",
+    "bodyParts": [
+      "quads",
+      "hamstrings",
+      "glutes",
+      "calves"
+    ],
+    "equipmentType": "machine",
+    "primaryMuscles": [
+      "quadriceps"
+    ],
+    "secondaryMuscles": [
+      "glutes",
+      "hamstrings"
+    ],
+    "forceType": "push",
+    "mechanicType": "compound",
+    "difficultyLevel": "beginner",
+    "sets": 3,
+    "reps": 12,
+    "duration": null,
+    "calories": 8,
+    "instructions": "Feet shoulder-width. Don't lock knees. Full ROM. Keep back flat on pad.",
+    "tips": [
+      "Feet shoulder-width. Don't lock knees. Full ROM. Keep back flat on pad."
+    ],
+    "variations": [],
+    "muscleGroup": "legs"
+  },
+  {
+    "id": "ex_45",
+    "name": "Hack Squat",
+    "type": "strength",
+    "bodyParts": [
+      "quads",
+      "hamstrings",
+      "glutes",
+      "calves"
+    ],
+    "equipmentType": "machine",
+    "primaryMuscles": [
+      "quadriceps"
+    ],
+    "secondaryMuscles": [
+      "glutes"
+    ],
+    "forceType": "push",
+    "mechanicType": "compound",
+    "difficultyLevel": "intermediate",
+    "sets": 3,
+    "reps": 12,
+    "duration": null,
+    "calories": 12,
+    "instructions": "Feet forward on platform. Similar to front squat. Control descent.",
+    "tips": [
+      "Feet forward on platform. Similar to front squat. Control descent."
+    ],
+    "variations": [],
+    "muscleGroup": "legs"
+  },
+  {
+    "id": "ex_46",
+    "name": "Bulgarian Split Squat",
+    "type": "strength",
+    "bodyParts": [
+      "quads",
+      "hamstrings",
+      "glutes",
+      "calves"
+    ],
+    "equipmentType": "dumbbell",
+    "primaryMuscles": [
+      "quadriceps"
+    ],
+    "secondaryMuscles": [
+      "glutes",
+      "hamstrings"
+    ],
+    "forceType": "push",
+    "mechanicType": "compound",
+    "difficultyLevel": "intermediate",
+    "sets": 3,
+    "reps": 12,
+    "duration": null,
+    "calories": 12,
+    "instructions": "Rear foot elevated. Keep front shin vertical. Lunge straight down.",
+    "tips": [
+      "Rear foot elevated. Keep front shin vertical. Lunge straight down."
+    ],
+    "variations": [],
+    "muscleGroup": "legs"
+  },
+  {
+    "id": "ex_47",
+    "name": "Leg Extension",
+    "type": "strength",
+    "bodyParts": [
+      "quads",
+      "hamstrings",
+      "glutes",
+      "calves"
+    ],
+    "equipmentType": "machine",
+    "primaryMuscles": [
+      "quadriceps"
+    ],
+    "secondaryMuscles": [],
+    "forceType": "pull",
+    "mechanicType": "isolation",
+    "difficultyLevel": "beginner",
+    "sets": null,
+    "reps": 12,
+    "duration": null,
+    "calories": 8,
+    "instructions": "Control the descent. Peak contraction at top. Don't use momentum.",
+    "tips": [
+      "Control the descent. Peak contraction at top. Don't use momentum."
+    ],
+    "variations": [],
+    "muscleGroup": "legs"
+  },
+  {
+    "id": "ex_48",
+    "name": "Leg Curl",
+    "type": "strength",
+    "bodyParts": [
+      "quads",
+      "hamstrings",
+      "glutes",
+      "calves"
+    ],
+    "equipmentType": "machine",
+    "primaryMuscles": [
+      "hamstrings"
+    ],
+    "secondaryMuscles": [
+      "glutes"
+    ],
+    "forceType": "pull",
+    "mechanicType": "isolation",
+    "difficultyLevel": "beginner",
+    "sets": null,
+    "reps": 12,
+    "duration": null,
+    "calories": 8,
+    "instructions": "Don't let hips rise off pad. Full ROM. Slow eccentric.",
+    "tips": [
+      "Don't let hips rise off pad. Full ROM. Slow eccentric."
+    ],
+    "variations": [],
+    "muscleGroup": "legs"
+  },
+  {
+    "id": "ex_49",
+    "name": "Romanian Deadlift (DB)",
+    "type": "strength",
+    "bodyParts": [
+      "quads",
+      "hamstrings",
+      "glutes",
+      "calves"
+    ],
+    "equipmentType": "dumbbell",
+    "primaryMuscles": [
+      "hamstrings"
+    ],
+    "secondaryMuscles": [
+      "glutes",
+      "erector_spinae"
+    ],
+    "forceType": "pull",
+    "mechanicType": "compound",
+    "difficultyLevel": "beginner",
+    "sets": 3,
+    "reps": 12,
+    "duration": null,
+    "calories": 8,
+    "instructions": "Dumbbells hang in front. Hinge at hips. Hamstring stretch each rep.",
+    "tips": [
+      "Dumbbells hang in front. Hinge at hips. Hamstring stretch each rep."
+    ],
+    "variations": [],
+    "muscleGroup": "legs"
+  },
+  {
+    "id": "ex_50",
+    "name": "Stiff-Leg Deadlift",
+    "type": "strength",
+    "bodyParts": [
+      "quads",
+      "hamstrings",
+      "glutes",
+      "calves"
+    ],
+    "equipmentType": "barbell",
+    "primaryMuscles": [
+      "hamstrings"
+    ],
+    "secondaryMuscles": [
+      "glutes",
+      "erector_spinae"
+    ],
+    "forceType": "pull",
+    "mechanicType": "compound",
+    "difficultyLevel": "intermediate",
+    "sets": 3,
+    "reps": 12,
+    "duration": null,
+    "calories": 12,
+    "instructions": "Minimal knee bend. Emphasizes hamstrings. Don't round lower back.",
+    "tips": [
+      "Minimal knee bend. Emphasizes hamstrings. Don't round lower back."
+    ],
+    "variations": [],
+    "muscleGroup": "legs"
+  },
+  {
+    "id": "ex_51",
+    "name": "Nordic Curl",
+    "type": "strength",
+    "bodyParts": [
+      "quads",
+      "hamstrings",
+      "glutes",
+      "calves"
+    ],
+    "equipmentType": "bodyweight",
+    "primaryMuscles": [
+      "hamstrings"
+    ],
+    "secondaryMuscles": [
+      "glutes"
+    ],
+    "forceType": "pull",
+    "mechanicType": "isolation",
+    "difficultyLevel": "advanced",
+    "sets": null,
+    "reps": 12,
+    "duration": null,
+    "calories": 16,
+    "instructions": "Secure ankles. Lower torso to floor slowly. Extremely difficult.",
+    "tips": [
+      "Secure ankles. Lower torso to floor slowly. Extremely difficult."
+    ],
+    "variations": [],
+    "muscleGroup": "legs"
+  },
+  {
+    "id": "ex_52",
+    "name": "Hip Thrust",
+    "type": "strength",
+    "bodyParts": [
+      "quads",
+      "hamstrings",
+      "glutes",
+      "calves"
+    ],
+    "equipmentType": "barbell",
+    "primaryMuscles": [
+      "glutes"
+    ],
+    "secondaryMuscles": [
+      "hamstrings",
+      "core"
+    ],
+    "forceType": "push",
+    "mechanicType": "compound",
+    "difficultyLevel": "intermediate",
+    "sets": 3,
+    "reps": 12,
+    "duration": null,
+    "calories": 12,
+    "instructions": "Bar on hips with pad. Chin tucked. Full hip extension at top.",
+    "tips": [
+      "Bar on hips with pad. Chin tucked. Full hip extension at top."
+    ],
+    "variations": [],
+    "muscleGroup": "legs"
+  },
+  {
+    "id": "ex_53",
+    "name": "Glute Bridge",
+    "type": "strength",
+    "bodyParts": [
+      "quads",
+      "hamstrings",
+      "glutes",
+      "calves"
+    ],
+    "equipmentType": "bodyweight",
+    "primaryMuscles": [
+      "glutes"
+    ],
+    "secondaryMuscles": [
+      "hamstrings",
+      "core"
+    ],
+    "forceType": "push",
+    "mechanicType": "compound",
+    "difficultyLevel": "beginner",
+    "sets": 3,
+    "reps": 12,
+    "duration": null,
+    "calories": 8,
+    "instructions": "Feet flat, push hips to ceiling. Squeeze glutes at top.",
+    "tips": [
+      "Feet flat, push hips to ceiling. Squeeze glutes at top."
+    ],
+    "variations": [],
+    "muscleGroup": "legs"
+  },
+  {
+    "id": "ex_54",
+    "name": "Cable Kickback",
+    "type": "strength",
+    "bodyParts": [
+      "quads",
+      "hamstrings",
+      "glutes",
+      "calves"
+    ],
+    "equipmentType": "cable",
+    "primaryMuscles": [
+      "glutes"
+    ],
+    "secondaryMuscles": [
+      "hamstrings"
+    ],
+    "forceType": "pull",
+    "mechanicType": "isolation",
+    "difficultyLevel": "beginner",
+    "sets": null,
+    "reps": 12,
+    "duration": null,
+    "calories": 8,
+    "instructions": "Lean forward slightly. Kick leg back to hip height. Squeeze at top.",
+    "tips": [
+      "Lean forward slightly. Kick leg back to hip height. Squeeze at top."
+    ],
+    "variations": [],
+    "muscleGroup": "legs"
+  },
+  {
+    "id": "ex_55",
+    "name": "Standing Calf Raise",
+    "type": "strength",
+    "bodyParts": [
+      "quads",
+      "hamstrings",
+      "glutes",
+      "calves"
+    ],
+    "equipmentType": "machine",
+    "primaryMuscles": [
+      "gastrocnemius"
+    ],
+    "secondaryMuscles": [
+      "soleus"
+    ],
+    "forceType": "push",
+    "mechanicType": "isolation",
+    "difficultyLevel": "beginner",
+    "sets": null,
+    "reps": 12,
+    "duration": null,
+    "calories": 8,
+    "instructions": "Full ROM. Pause at bottom for stretch. 2-second hold at top.",
+    "tips": [
+      "Full ROM. Pause at bottom for stretch. 2-second hold at top."
+    ],
+    "variations": [],
+    "muscleGroup": "legs"
+  },
+  {
+    "id": "ex_56",
+    "name": "Seated Calf Raise",
+    "type": "strength",
+    "bodyParts": [
+      "quads",
+      "hamstrings",
+      "glutes",
+      "calves"
+    ],
+    "equipmentType": "machine",
+    "primaryMuscles": [
+      "soleus"
+    ],
+    "secondaryMuscles": [
+      "gastrocnemius"
+    ],
+    "forceType": "push",
+    "mechanicType": "isolation",
+    "difficultyLevel": "beginner",
+    "sets": null,
+    "reps": 12,
+    "duration": null,
+    "calories": 8,
+    "instructions": "Targets soleus. Knee at 90\u00b0. Full ROM.",
+    "tips": [
+      "Targets soleus. Knee at 90\u00b0. Full ROM."
+    ],
+    "variations": [],
+    "muscleGroup": "legs"
+  },
+  {
+    "id": "ex_57",
+    "name": "Donkey Calf Raise",
+    "type": "strength",
+    "bodyParts": [
+      "quads",
+      "hamstrings",
+      "glutes",
+      "calves"
+    ],
+    "equipmentType": "machine",
+    "primaryMuscles": [
+      "gastrocnemius"
+    ],
+    "secondaryMuscles": [],
+    "forceType": "push",
+    "mechanicType": "isolation",
+    "difficultyLevel": "beginner",
+    "sets": null,
+    "reps": 12,
+    "duration": null,
+    "calories": 8,
+    "instructions": "Bent-over position. Maximum gastrocnemius stretch.",
+    "tips": [
+      "Bent-over position. Maximum gastrocnemius stretch."
+    ],
+    "variations": [],
+    "muscleGroup": "legs"
+  },
+  {
+    "id": "ex_58",
+    "name": "Walking Lunge",
+    "type": "strength",
+    "bodyParts": [
+      "quads",
+      "hamstrings",
+      "glutes",
+      "calves"
+    ],
+    "equipmentType": "dumbbell",
+    "primaryMuscles": [
+      "quadriceps"
+    ],
+    "secondaryMuscles": [
+      "glutes",
+      "hamstrings",
+      "core"
+    ],
+    "forceType": "push",
+    "mechanicType": "compound",
+    "difficultyLevel": "beginner",
+    "sets": 3,
+    "reps": 12,
+    "duration": null,
+    "calories": 8,
+    "instructions": "Long stride. Front knee tracks over toe. Torso upright.",
+    "tips": [
+      "Long stride. Front knee tracks over toe. Torso upright."
+    ],
+    "variations": [],
+    "muscleGroup": "legs"
+  },
+  {
+    "id": "ex_59",
+    "name": "Reverse Lunge",
+    "type": "strength",
+    "bodyParts": [
+      "quads",
+      "hamstrings",
+      "glutes",
+      "calves"
+    ],
+    "equipmentType": "dumbbell",
+    "primaryMuscles": [
+      "quadriceps"
+    ],
+    "secondaryMuscles": [
+      "glutes"
+    ],
+    "forceType": "push",
+    "mechanicType": "compound",
+    "difficultyLevel": "beginner",
+    "sets": 3,
+    "reps": 12,
+    "duration": null,
+    "calories": 8,
+    "instructions": "Step back. More stable than forward lunge. Less knee stress.",
+    "tips": [
+      "Step back. More stable than forward lunge. Less knee stress."
+    ],
+    "variations": [],
+    "muscleGroup": "legs"
+  },
+  {
+    "id": "ex_60",
+    "name": "Lateral Lunge",
+    "type": "strength",
+    "bodyParts": [
+      "quads",
+      "hamstrings",
+      "glutes",
+      "calves"
+    ],
+    "equipmentType": "bodyweight",
+    "primaryMuscles": [
+      "adductors"
+    ],
+    "secondaryMuscles": [
+      "quadriceps",
+      "glutes"
+    ],
+    "forceType": "push",
+    "mechanicType": "compound",
+    "difficultyLevel": "beginner",
+    "sets": 3,
+    "reps": 12,
+    "duration": null,
+    "calories": 8,
+    "instructions": "Step to the side. Push hips back. Stretch inner thigh.",
+    "tips": [
+      "Step to the side. Push hips back. Stretch inner thigh."
+    ],
+    "variations": [],
+    "muscleGroup": "legs"
+  },
+  {
+    "id": "ex_61",
+    "name": "Step-Up",
+    "type": "strength",
+    "bodyParts": [
+      "quads",
+      "hamstrings",
+      "glutes",
+      "calves"
+    ],
+    "equipmentType": "dumbbell",
+    "primaryMuscles": [
+      "quadriceps"
+    ],
+    "secondaryMuscles": [
+      "glutes"
+    ],
+    "forceType": "push",
+    "mechanicType": "compound",
+    "difficultyLevel": "beginner",
+    "sets": 3,
+    "reps": 12,
+    "duration": null,
+    "calories": 8,
+    "instructions": "Full foot on box. Drive through heel. Don't bounce.",
+    "tips": [
+      "Full foot on box. Drive through heel. Don't bounce."
+    ],
+    "variations": [],
+    "muscleGroup": "legs"
+  },
+  {
+    "id": "ex_62",
+    "name": "Box Jump",
+    "type": "strength",
+    "bodyParts": [
+      "quads",
+      "hamstrings",
+      "glutes",
+      "calves"
+    ],
+    "equipmentType": "bodyweight",
+    "primaryMuscles": [
+      "quadriceps"
+    ],
+    "secondaryMuscles": [
+      "glutes",
+      "calves"
+    ],
+    "forceType": "push",
+    "mechanicType": "compound",
+    "difficultyLevel": "intermediate",
+    "sets": 3,
+    "reps": 12,
+    "duration": null,
+    "calories": 12,
+    "instructions": "Athletic stance. Explosive jump. Land softly with bent knees.",
+    "tips": [
+      "Athletic stance. Explosive jump. Land softly with bent knees."
+    ],
+    "variations": [],
+    "muscleGroup": "legs"
+  },
+  {
+    "id": "ex_63",
+    "name": "Sissy Squat",
+    "type": "strength",
+    "bodyParts": [
+      "quads",
+      "hamstrings",
+      "glutes",
+      "calves"
+    ],
+    "equipmentType": "bodyweight",
+    "primaryMuscles": [
+      "quadriceps"
+    ],
+    "secondaryMuscles": [],
+    "forceType": "push",
+    "mechanicType": "isolation",
+    "difficultyLevel": "advanced",
+    "sets": null,
+    "reps": 12,
+    "duration": null,
+    "calories": 16,
+    "instructions": "Lean back, knees go forward. Extreme quad isolation. Use support.",
+    "tips": [
+      "Lean back, knees go forward. Extreme quad isolation. Use support."
+    ],
+    "variations": [],
+    "muscleGroup": "legs"
+  },
+  {
+    "id": "ex_64",
+    "name": "Sumo Squat",
+    "type": "strength",
+    "bodyParts": [
+      "quads",
+      "hamstrings",
+      "glutes",
+      "calves"
+    ],
+    "equipmentType": "dumbbell",
+    "primaryMuscles": [
+      "adductors"
+    ],
+    "secondaryMuscles": [
+      "quadriceps",
+      "glutes"
+    ],
+    "forceType": "push",
+    "mechanicType": "compound",
+    "difficultyLevel": "beginner",
+    "sets": 3,
+    "reps": 12,
+    "duration": null,
+    "calories": 8,
+    "instructions": "Wide stance, toes out. Targets inner thighs and glutes.",
+    "tips": [
+      "Wide stance, toes out. Targets inner thighs and glutes."
+    ],
+    "variations": [],
+    "muscleGroup": "legs"
+  },
+  {
+    "id": "ex_65",
+    "name": "Pistol Squat",
+    "type": "strength",
+    "bodyParts": [
+      "quads",
+      "hamstrings",
+      "glutes",
+      "calves"
+    ],
+    "equipmentType": "bodyweight",
+    "primaryMuscles": [
+      "quadriceps"
+    ],
+    "secondaryMuscles": [
+      "glutes",
+      "core"
+    ],
+    "forceType": "push",
+    "mechanicType": "compound",
+    "difficultyLevel": "advanced",
+    "sets": 3,
+    "reps": 12,
+    "duration": null,
+    "calories": 16,
+    "instructions": "Single leg squat to full depth. Use support while learning.",
+    "tips": [
+      "Single leg squat to full depth. Use support while learning."
+    ],
+    "variations": [],
+    "muscleGroup": "legs"
+  },
+  {
+    "id": "ex_66",
+    "name": "Barbell Overhead Press",
+    "type": "strength",
+    "bodyParts": [
+      "shoulders"
+    ],
+    "equipmentType": "barbell",
+    "primaryMuscles": [
+      "front_deltoid"
+    ],
+    "secondaryMuscles": [
+      "triceps",
+      "upper_traps",
+      "core"
+    ],
+    "forceType": "push",
+    "mechanicType": "compound",
+    "difficultyLevel": "intermediate",
+    "sets": 3,
+    "reps": 12,
+    "duration": null,
+    "calories": 12,
+    "instructions": "Bar from front rack. Press overhead. Bar path slightly back around head.",
+    "tips": [
+      "Bar from front rack. Press overhead. Bar path slightly back around head."
+    ],
+    "variations": [],
+    "muscleGroup": "shoulders"
+  },
+  {
+    "id": "ex_67",
+    "name": "Seated Dumbbell Press",
+    "type": "strength",
+    "bodyParts": [
+      "shoulders"
+    ],
+    "equipmentType": "dumbbell",
+    "primaryMuscles": [
+      "front_deltoid"
+    ],
+    "secondaryMuscles": [
+      "triceps",
+      "lateral_deltoid"
+    ],
+    "forceType": "push",
+    "mechanicType": "compound",
+    "difficultyLevel": "beginner",
+    "sets": 3,
+    "reps": 12,
+    "duration": null,
+    "calories": 8,
+    "instructions": "Back supported. Press to full lockout. Control descent.",
+    "tips": [
+      "Back supported. Press to full lockout. Control descent."
+    ],
+    "variations": [],
+    "muscleGroup": "shoulders"
+  },
+  {
+    "id": "ex_68",
+    "name": "Arnold Press",
+    "type": "strength",
+    "bodyParts": [
+      "shoulders"
+    ],
+    "equipmentType": "dumbbell",
+    "primaryMuscles": [
+      "all_three_deltoid_heads"
+    ],
+    "secondaryMuscles": [
+      "triceps"
+    ],
+    "forceType": "push",
+    "mechanicType": "compound",
+    "difficultyLevel": "intermediate",
+    "sets": 3,
+    "reps": 12,
+    "duration": null,
+    "calories": 12,
+    "instructions": "Rotate palms outward as you press up. Reverse on way down.",
+    "tips": [
+      "Rotate palms outward as you press up. Reverse on way down."
+    ],
+    "variations": [],
+    "muscleGroup": "shoulders"
+  },
+  {
+    "id": "ex_69",
+    "name": "Lateral Raise",
+    "type": "strength",
+    "bodyParts": [
+      "shoulders"
+    ],
+    "equipmentType": "dumbbell",
+    "primaryMuscles": [
+      "lateral_deltoid"
+    ],
+    "secondaryMuscles": [],
+    "forceType": "push",
+    "mechanicType": "isolation",
+    "difficultyLevel": "beginner",
+    "sets": null,
+    "reps": 12,
+    "duration": null,
+    "calories": 8,
+    "instructions": "Slight forward lean. Lead with elbows. Pinky slightly up at top.",
+    "tips": [
+      "Slight forward lean. Lead with elbows. Pinky slightly up at top."
+    ],
+    "variations": [],
+    "muscleGroup": "shoulders"
+  },
+  {
+    "id": "ex_70",
+    "name": "Cable Lateral Raise",
+    "type": "strength",
+    "bodyParts": [
+      "shoulders"
+    ],
+    "equipmentType": "cable",
+    "primaryMuscles": [
+      "lateral_deltoid"
+    ],
+    "secondaryMuscles": [],
+    "forceType": "push",
+    "mechanicType": "isolation",
+    "difficultyLevel": "beginner",
+    "sets": null,
+    "reps": 12,
+    "duration": null,
+    "calories": 8,
+    "instructions": "Cable from low position. Constant tension unlike dumbbells.",
+    "tips": [
+      "Cable from low position. Constant tension unlike dumbbells."
+    ],
+    "variations": [],
+    "muscleGroup": "shoulders"
+  },
+  {
+    "id": "ex_71",
+    "name": "Front Raise",
+    "type": "strength",
+    "bodyParts": [
+      "shoulders"
+    ],
+    "equipmentType": "dumbbell",
+    "primaryMuscles": [
+      "front_deltoid"
+    ],
+    "secondaryMuscles": [],
+    "forceType": "push",
+    "mechanicType": "isolation",
+    "difficultyLevel": "beginner",
+    "sets": null,
+    "reps": 12,
+    "duration": null,
+    "calories": 8,
+    "instructions": "Arms straight or slight bend. Lift to shoulder height. Don't swing.",
+    "tips": [
+      "Arms straight or slight bend. Lift to shoulder height. Don't swing."
+    ],
+    "variations": [],
+    "muscleGroup": "shoulders"
+  },
+  {
+    "id": "ex_72",
+    "name": "Rear Delt Fly",
+    "type": "strength",
+    "bodyParts": [
+      "shoulders"
+    ],
+    "equipmentType": "dumbbell",
+    "primaryMuscles": [
+      "rear_deltoid"
+    ],
+    "secondaryMuscles": [
+      "rhomboids"
+    ],
+    "forceType": "pull",
+    "mechanicType": "isolation",
+    "difficultyLevel": "beginner",
+    "sets": null,
+    "reps": 12,
+    "duration": null,
+    "calories": 8,
+    "instructions": "Hinge forward. Arms arc up like opening wings. Slight elbow bend.",
+    "tips": [
+      "Hinge forward. Arms arc up like opening wings. Slight elbow bend."
+    ],
+    "variations": [],
+    "muscleGroup": "shoulders"
+  },
+  {
+    "id": "ex_73",
+    "name": "Reverse Pec Deck",
+    "type": "strength",
+    "bodyParts": [
+      "shoulders"
+    ],
+    "equipmentType": "machine",
+    "primaryMuscles": [
+      "rear_deltoid"
+    ],
+    "secondaryMuscles": [
+      "rhomboids"
+    ],
+    "forceType": "pull",
+    "mechanicType": "isolation",
+    "difficultyLevel": "beginner",
+    "sets": null,
+    "reps": 12,
+    "duration": null,
+    "calories": 8,
+    "instructions": "Facing into pad. Arms wide. Full squeeze at peak contraction.",
+    "tips": [
+      "Facing into pad. Arms wide. Full squeeze at peak contraction."
+    ],
+    "variations": [],
+    "muscleGroup": "shoulders"
+  },
+  {
+    "id": "ex_74",
+    "name": "Face Pull",
+    "type": "strength",
+    "bodyParts": [
+      "shoulders"
+    ],
+    "equipmentType": "cable",
+    "primaryMuscles": [
+      "rear_deltoid"
+    ],
+    "secondaryMuscles": [
+      "rotator_cuff",
+      "rhomboids"
+    ],
+    "forceType": "pull",
+    "mechanicType": "isolation",
+    "difficultyLevel": "beginner",
+    "sets": null,
+    "reps": 12,
+    "duration": null,
+    "calories": 8,
+    "instructions": "Rope at face height. Pull to forehead. Elbows flare high.",
+    "tips": [
+      "Rope at face height. Pull to forehead. Elbows flare high."
+    ],
+    "variations": [],
+    "muscleGroup": "shoulders"
+  },
+  {
+    "id": "ex_75",
+    "name": "Upright Row",
+    "type": "strength",
+    "bodyParts": [
+      "shoulders"
+    ],
+    "equipmentType": "barbell",
+    "primaryMuscles": [
+      "lateral_deltoid"
+    ],
+    "secondaryMuscles": [
+      "upper_traps",
+      "biceps"
+    ],
+    "forceType": "pull",
+    "mechanicType": "compound",
+    "difficultyLevel": "intermediate",
+    "sets": 3,
+    "reps": 12,
+    "duration": null,
+    "calories": 12,
+    "instructions": "Pull bar to chin. Elbows above wrists. Avoid if shoulder issues.",
+    "tips": [
+      "Pull bar to chin. Elbows above wrists. Avoid if shoulder issues."
+    ],
+    "variations": [],
+    "muscleGroup": "shoulders"
+  },
+  {
+    "id": "ex_76",
+    "name": "Shrug",
+    "type": "strength",
+    "bodyParts": [
+      "shoulders"
+    ],
+    "equipmentType": "barbell",
+    "primaryMuscles": [
+      "upper_traps"
+    ],
+    "secondaryMuscles": [],
+    "forceType": "pull",
+    "mechanicType": "isolation",
+    "difficultyLevel": "beginner",
+    "sets": null,
+    "reps": 12,
+    "duration": null,
+    "calories": 8,
+    "instructions": "Hold bar in front. Shrug straight up. Don't roll shoulders.",
+    "tips": [
+      "Hold bar in front. Shrug straight up. Don't roll shoulders."
+    ],
+    "variations": [],
+    "muscleGroup": "shoulders"
+  },
+  {
+    "id": "ex_77",
+    "name": "Dumbbell Shrug",
+    "type": "strength",
+    "bodyParts": [
+      "shoulders"
+    ],
+    "equipmentType": "dumbbell",
+    "primaryMuscles": [
+      "upper_traps"
+    ],
+    "secondaryMuscles": [],
+    "forceType": "pull",
+    "mechanicType": "isolation",
+    "difficultyLevel": "beginner",
+    "sets": null,
+    "reps": 12,
+    "duration": null,
+    "calories": 8,
+    "instructions": "Same as barbell shrug. Dumbbells allow more natural movement.",
+    "tips": [
+      "Same as barbell shrug. Dumbbells allow more natural movement."
+    ],
+    "variations": [],
+    "muscleGroup": "shoulders"
+  },
+  {
+    "id": "ex_78",
+    "name": "Pike Push-Up",
+    "type": "strength",
+    "bodyParts": [
+      "shoulders"
+    ],
+    "equipmentType": "bodyweight",
+    "primaryMuscles": [
+      "front_deltoid"
+    ],
+    "secondaryMuscles": [
+      "triceps"
+    ],
+    "forceType": "push",
+    "mechanicType": "compound",
+    "difficultyLevel": "beginner",
+    "sets": 3,
+    "reps": 12,
+    "duration": null,
+    "calories": 8,
+    "instructions": "Hips high, hands near feet. Lower head to floor between hands.",
+    "tips": [
+      "Hips high, hands near feet. Lower head to floor between hands."
+    ],
+    "variations": [],
+    "muscleGroup": "shoulders"
+  },
+  {
+    "id": "ex_79",
+    "name": "Handstand Push-Up",
+    "type": "strength",
+    "bodyParts": [
+      "shoulders"
+    ],
+    "equipmentType": "bodyweight",
+    "primaryMuscles": [
+      "front_deltoid"
+    ],
+    "secondaryMuscles": [
+      "triceps",
+      "core"
+    ],
+    "forceType": "push",
+    "mechanicType": "compound",
+    "difficultyLevel": "advanced",
+    "sets": 3,
+    "reps": 12,
+    "duration": null,
+    "calories": 16,
+    "instructions": "Against wall. Full ROM. Elbows travel out like overhead press.",
+    "tips": [
+      "Against wall. Full ROM. Elbows travel out like overhead press."
+    ],
+    "variations": [],
+    "muscleGroup": "shoulders"
+  },
+  {
+    "id": "ex_80",
+    "name": "Behind-the-Neck Press",
+    "type": "strength",
+    "bodyParts": [
+      "shoulders"
+    ],
+    "equipmentType": "barbell",
+    "primaryMuscles": [
+      "lateral_deltoid"
+    ],
+    "secondaryMuscles": [
+      "triceps",
+      "upper_traps"
+    ],
+    "forceType": "push",
+    "mechanicType": "compound",
+    "difficultyLevel": "advanced",
+    "sets": 3,
+    "reps": 12,
+    "duration": null,
+    "calories": 16,
+    "instructions": "High flexibility required. Bar behind neck. Avoid with shoulder issues.",
+    "tips": [
+      "High flexibility required. Bar behind neck. Avoid with shoulder issues."
+    ],
+    "variations": [],
+    "muscleGroup": "shoulders"
+  },
+  {
+    "id": "ex_81",
+    "name": "Barbell Curl",
+    "type": "strength",
+    "bodyParts": [
+      "full_body"
+    ],
+    "equipmentType": "barbell",
+    "primaryMuscles": [
+      "biceps_brachii"
+    ],
+    "secondaryMuscles": [
+      "brachialis",
+      "forearms"
+    ],
+    "forceType": "pull",
+    "mechanicType": "isolation",
+    "difficultyLevel": "beginner",
+    "sets": null,
+    "reps": 12,
+    "duration": null,
+    "calories": 8,
+    "instructions": "Full extension at bottom. Supinate at top. Don't swing.",
+    "tips": [
+      "Full extension at bottom. Supinate at top. Don't swing."
+    ],
+    "variations": [],
+    "muscleGroup": "arms"
+  },
+  {
+    "id": "ex_82",
+    "name": "Dumbbell Curl",
+    "type": "strength",
+    "bodyParts": [
+      "full_body"
+    ],
+    "equipmentType": "dumbbell",
+    "primaryMuscles": [
+      "biceps_brachii"
+    ],
+    "secondaryMuscles": [
+      "brachialis"
+    ],
+    "forceType": "pull",
+    "mechanicType": "isolation",
+    "difficultyLevel": "beginner",
+    "sets": null,
+    "reps": 12,
+    "duration": null,
+    "calories": 8,
+    "instructions": "Alternate or simultaneous. Supinate as you curl. Full ROM.",
+    "tips": [
+      "Alternate or simultaneous. Supinate as you curl. Full ROM."
+    ],
+    "variations": [],
+    "muscleGroup": "arms"
+  },
+  {
+    "id": "ex_83",
+    "name": "Hammer Curl",
+    "type": "strength",
+    "bodyParts": [
+      "full_body"
+    ],
+    "equipmentType": "dumbbell",
+    "primaryMuscles": [
+      "brachialis"
+    ],
+    "secondaryMuscles": [
+      "biceps",
+      "brachioradialis"
+    ],
+    "forceType": "pull",
+    "mechanicType": "isolation",
+    "difficultyLevel": "beginner",
+    "sets": null,
+    "reps": 12,
+    "duration": null,
+    "calories": 8,
+    "instructions": "Neutral grip throughout. Targets brachialis and brachioradialis.",
+    "tips": [
+      "Neutral grip throughout. Targets brachialis and brachioradialis."
+    ],
+    "variations": [],
+    "muscleGroup": "arms"
+  },
+  {
+    "id": "ex_84",
+    "name": "Incline Dumbbell Curl",
+    "type": "strength",
+    "bodyParts": [
+      "full_body"
+    ],
+    "equipmentType": "dumbbell",
+    "primaryMuscles": [
+      "biceps_brachii_(long_head)"
+    ],
+    "secondaryMuscles": [
+      "brachialis"
+    ],
+    "forceType": "pull",
+    "mechanicType": "isolation",
+    "difficultyLevel": "beginner",
+    "sets": null,
+    "reps": 12,
+    "duration": null,
+    "calories": 8,
+    "instructions": "Reclined on incline bench. Arms hang fully. Maximum stretch.",
+    "tips": [
+      "Reclined on incline bench. Arms hang fully. Maximum stretch."
+    ],
+    "variations": [],
+    "muscleGroup": "arms"
+  },
+  {
+    "id": "ex_85",
+    "name": "Concentration Curl",
+    "type": "strength",
+    "bodyParts": [
+      "full_body"
+    ],
+    "equipmentType": "dumbbell",
+    "primaryMuscles": [
+      "biceps_brachii"
+    ],
+    "secondaryMuscles": [
+      "brachialis"
+    ],
+    "forceType": "pull",
+    "mechanicType": "isolation",
+    "difficultyLevel": "beginner",
+    "sets": null,
+    "reps": 12,
+    "duration": null,
+    "calories": 8,
+    "instructions": "Elbow braced on inner thigh. Pure bicep isolation. No cheating.",
+    "tips": [
+      "Elbow braced on inner thigh. Pure bicep isolation. No cheating."
+    ],
+    "variations": [],
+    "muscleGroup": "arms"
+  },
+  {
+    "id": "ex_86",
+    "name": "Spider Curl",
+    "type": "strength",
+    "bodyParts": [
+      "full_body"
+    ],
+    "equipmentType": "dumbbell",
+    "primaryMuscles": [
+      "biceps_brachii_(short_head)"
+    ],
+    "secondaryMuscles": [
+      "brachialis"
+    ],
+    "forceType": "pull",
+    "mechanicType": "isolation",
+    "difficultyLevel": "intermediate",
+    "sets": null,
+    "reps": 12,
+    "duration": null,
+    "calories": 12,
+    "instructions": "Chest on incline bench edge. Arms hang. Maximum short head stretch.",
+    "tips": [
+      "Chest on incline bench edge. Arms hang. Maximum short head stretch."
+    ],
+    "variations": [],
+    "muscleGroup": "arms"
+  },
+  {
+    "id": "ex_87",
+    "name": "Cable Curl",
+    "type": "strength",
+    "bodyParts": [
+      "full_body"
+    ],
+    "equipmentType": "cable",
+    "primaryMuscles": [
+      "biceps_brachii"
+    ],
+    "secondaryMuscles": [
+      "brachialis"
+    ],
+    "forceType": "pull",
+    "mechanicType": "isolation",
+    "difficultyLevel": "beginner",
+    "sets": null,
+    "reps": 12,
+    "duration": null,
+    "calories": 8,
+    "instructions": "Constant cable tension throughout. Use straight bar or EZ bar.",
+    "tips": [
+      "Constant cable tension throughout. Use straight bar or EZ bar."
+    ],
+    "variations": [],
+    "muscleGroup": "arms"
+  },
+  {
+    "id": "ex_88",
+    "name": "EZ-Bar Curl",
+    "type": "strength",
+    "bodyParts": [
+      "full_body"
+    ],
+    "equipmentType": "barbell",
+    "primaryMuscles": [
+      "biceps_brachii"
+    ],
+    "secondaryMuscles": [
+      "brachialis"
+    ],
+    "forceType": "pull",
+    "mechanicType": "isolation",
+    "difficultyLevel": "beginner",
+    "sets": null,
+    "reps": 12,
+    "duration": null,
+    "calories": 8,
+    "instructions": "Angled grip reduces wrist strain. Great for volume work.",
+    "tips": [
+      "Angled grip reduces wrist strain. Great for volume work."
+    ],
+    "variations": [],
+    "muscleGroup": "arms"
+  },
+  {
+    "id": "ex_89",
+    "name": "Preacher Curl",
+    "type": "strength",
+    "bodyParts": [
+      "full_body"
+    ],
+    "equipmentType": "barbell",
+    "primaryMuscles": [
+      "biceps_brachii_(short_head)"
+    ],
+    "secondaryMuscles": [
+      "brachialis"
+    ],
+    "forceType": "pull",
+    "mechanicType": "isolation",
+    "difficultyLevel": "beginner",
+    "sets": null,
+    "reps": 12,
+    "duration": null,
+    "calories": 8,
+    "instructions": "Arm braced on pad. Eliminates momentum. Full extension.",
+    "tips": [
+      "Arm braced on pad. Eliminates momentum. Full extension."
+    ],
+    "variations": [],
+    "muscleGroup": "arms"
+  },
+  {
+    "id": "ex_90",
+    "name": "21s",
+    "type": "strength",
+    "bodyParts": [
+      "full_body"
+    ],
+    "equipmentType": "barbell",
+    "primaryMuscles": [
+      "biceps_brachii"
+    ],
+    "secondaryMuscles": [
+      "brachialis"
+    ],
+    "forceType": "pull",
+    "mechanicType": "isolation",
+    "difficultyLevel": "intermediate",
+    "sets": null,
+    "reps": 12,
+    "duration": null,
+    "calories": 12,
+    "instructions": "7 bottom half, 7 top half, 7 full reps. Time under tension technique.",
+    "tips": [
+      "7 bottom half, 7 top half, 7 full reps. Time under tension technique."
+    ],
+    "variations": [],
+    "muscleGroup": "arms"
+  },
+  {
+    "id": "ex_91",
+    "name": "Tricep Pushdown",
+    "type": "strength",
+    "bodyParts": [
+      "full_body"
+    ],
+    "equipmentType": "cable",
+    "primaryMuscles": [
+      "triceps_brachii"
+    ],
+    "secondaryMuscles": [],
+    "forceType": "push",
+    "mechanicType": "isolation",
+    "difficultyLevel": "beginner",
+    "sets": null,
+    "reps": 12,
+    "duration": null,
+    "calories": 8,
+    "instructions": "Elbows pinned to sides. Full extension. Don't swing.",
+    "tips": [
+      "Elbows pinned to sides. Full extension. Don't swing."
+    ],
+    "variations": [],
+    "muscleGroup": "arms"
+  },
+  {
+    "id": "ex_92",
+    "name": "Rope Pushdown",
+    "type": "strength",
+    "bodyParts": [
+      "full_body"
+    ],
+    "equipmentType": "cable",
+    "primaryMuscles": [
+      "triceps_brachii_(lateral_head)"
+    ],
+    "secondaryMuscles": [],
+    "forceType": "push",
+    "mechanicType": "isolation",
+    "difficultyLevel": "beginner",
+    "sets": null,
+    "reps": 12,
+    "duration": null,
+    "calories": 8,
+    "instructions": "Rope splits at bottom for full contraction. Flare wrists out.",
+    "tips": [
+      "Rope splits at bottom for full contraction. Flare wrists out."
+    ],
+    "variations": [],
+    "muscleGroup": "arms"
+  },
+  {
+    "id": "ex_93",
+    "name": "Skull Crusher",
+    "type": "strength",
+    "bodyParts": [
+      "full_body"
+    ],
+    "equipmentType": "barbell",
+    "primaryMuscles": [
+      "triceps_brachii_(long_head)"
+    ],
+    "secondaryMuscles": [],
+    "forceType": "push",
+    "mechanicType": "isolation",
+    "difficultyLevel": "intermediate",
+    "sets": null,
+    "reps": 12,
+    "duration": null,
+    "calories": 12,
+    "instructions": "Lower bar to forehead slowly. Keep elbows pointing up.",
+    "tips": [
+      "Lower bar to forehead slowly. Keep elbows pointing up."
+    ],
+    "variations": [],
+    "muscleGroup": "arms"
+  },
+  {
+    "id": "ex_94",
+    "name": "Tricep Dip",
+    "type": "strength",
+    "bodyParts": [
+      "full_body"
+    ],
+    "equipmentType": "bodyweight",
+    "primaryMuscles": [
+      "triceps"
+    ],
+    "secondaryMuscles": [
+      "chest",
+      "shoulders"
+    ],
+    "forceType": "push",
+    "mechanicType": "compound",
+    "difficultyLevel": "beginner",
+    "sets": 3,
+    "reps": 12,
+    "duration": null,
+    "calories": 8,
+    "instructions": "Upright torso hits triceps. Slight forward lean hits chest.",
+    "tips": [
+      "Upright torso hits triceps. Slight forward lean hits chest."
+    ],
+    "variations": [],
+    "muscleGroup": "arms"
+  },
+  {
+    "id": "ex_95",
+    "name": "Close-Grip Bench Press",
+    "type": "strength",
+    "bodyParts": [
+      "full_body"
+    ],
+    "equipmentType": "barbell",
+    "primaryMuscles": [
+      "triceps"
+    ],
+    "secondaryMuscles": [
+      "chest"
+    ],
+    "forceType": "push",
+    "mechanicType": "compound",
+    "difficultyLevel": "intermediate",
+    "sets": 3,
+    "reps": 12,
+    "duration": null,
+    "calories": 12,
+    "instructions": "Hands shoulder-width. Elbows travel close to body. Full lockout.",
+    "tips": [
+      "Hands shoulder-width. Elbows travel close to body. Full lockout."
+    ],
+    "variations": [],
+    "muscleGroup": "arms"
+  },
+  {
+    "id": "ex_96",
+    "name": "Overhead Tricep Extension",
+    "type": "strength",
+    "bodyParts": [
+      "full_body"
+    ],
+    "equipmentType": "dumbbell",
+    "primaryMuscles": [
+      "triceps_brachii_(long_head)"
+    ],
+    "secondaryMuscles": [],
+    "forceType": "push",
+    "mechanicType": "isolation",
+    "difficultyLevel": "beginner",
+    "sets": null,
+    "reps": 12,
+    "duration": null,
+    "calories": 8,
+    "instructions": "Arms overhead, lower behind head. Maximum long head stretch.",
+    "tips": [
+      "Arms overhead, lower behind head. Maximum long head stretch."
+    ],
+    "variations": [],
+    "muscleGroup": "arms"
+  },
+  {
+    "id": "ex_97",
+    "name": "Cable Overhead Extension",
+    "type": "strength",
+    "bodyParts": [
+      "full_body"
+    ],
+    "equipmentType": "cable",
+    "primaryMuscles": [
+      "triceps_brachii_(long_head)"
+    ],
+    "secondaryMuscles": [],
+    "forceType": "push",
+    "mechanicType": "isolation",
+    "difficultyLevel": "beginner",
+    "sets": null,
+    "reps": 12,
+    "duration": null,
+    "calories": 8,
+    "instructions": "Face away from stack. Rope overhead. Full stretch and extension.",
+    "tips": [
+      "Face away from stack. Rope overhead. Full stretch and extension."
+    ],
+    "variations": [],
+    "muscleGroup": "arms"
+  },
+  {
+    "id": "ex_98",
+    "name": "Reverse Curl",
+    "type": "strength",
+    "bodyParts": [
+      "full_body"
+    ],
+    "equipmentType": "barbell",
+    "primaryMuscles": [
+      "brachioradialis"
+    ],
+    "secondaryMuscles": [
+      "brachialis"
+    ],
+    "forceType": "pull",
+    "mechanicType": "isolation",
+    "difficultyLevel": "beginner",
+    "sets": null,
+    "reps": 12,
+    "duration": null,
+    "calories": 8,
+    "instructions": "Pronated grip. Targets brachioradialis and forearms.",
+    "tips": [
+      "Pronated grip. Targets brachioradialis and forearms."
+    ],
+    "variations": [],
+    "muscleGroup": "arms"
+  },
+  {
+    "id": "ex_99",
+    "name": "Wrist Curl",
+    "type": "strength",
+    "bodyParts": [
+      "full_body"
+    ],
+    "equipmentType": "dumbbell",
+    "primaryMuscles": [
+      "wrist_flexors"
+    ],
+    "secondaryMuscles": [],
+    "forceType": "pull",
+    "mechanicType": "isolation",
+    "difficultyLevel": "beginner",
+    "sets": null,
+    "reps": 12,
+    "duration": null,
+    "calories": 8,
+    "instructions": "Forearms on bench. Curl wrists up. Slow controlled movement.",
+    "tips": [
+      "Forearms on bench. Curl wrists up. Slow controlled movement."
+    ],
+    "variations": [],
+    "muscleGroup": "arms"
+  },
+  {
+    "id": "ex_100",
+    "name": "Reverse Wrist Curl",
+    "type": "strength",
+    "bodyParts": [
+      "full_body"
+    ],
+    "equipmentType": "dumbbell",
+    "primaryMuscles": [
+      "wrist_extensors"
+    ],
+    "secondaryMuscles": [],
+    "forceType": "pull",
+    "mechanicType": "isolation",
+    "difficultyLevel": "beginner",
+    "sets": null,
+    "reps": 12,
+    "duration": null,
+    "calories": 8,
+    "instructions": "Pronated grip. Extend wrists upward. Targets extensor muscles.",
+    "tips": [
+      "Pronated grip. Extend wrists upward. Targets extensor muscles."
+    ],
+    "variations": [],
+    "muscleGroup": "arms"
+  },
+  {
+    "id": "ex_101",
+    "name": "Plank",
+    "type": "strength",
+    "bodyParts": [
+      "full_body"
+    ],
+    "equipmentType": "bodyweight",
+    "primaryMuscles": [
+      "rectus_abdominis"
+    ],
+    "secondaryMuscles": [
+      "transverse_abdominis",
+      "glutes"
+    ],
+    "forceType": "push",
+    "mechanicType": "isolation",
+    "difficultyLevel": "beginner",
+    "sets": null,
+    "reps": 12,
+    "duration": null,
+    "calories": 8,
+    "instructions": "Neutral spine. Squeeze glutes. Don't let hips sag or pike.",
+    "tips": [
+      "Neutral spine. Squeeze glutes. Don't let hips sag or pike."
+    ],
+    "variations": [],
+    "muscleGroup": "core"
+  },
+  {
+    "id": "ex_102",
+    "name": "Side Plank",
+    "type": "strength",
+    "bodyParts": [
+      "full_body"
+    ],
+    "equipmentType": "bodyweight",
+    "primaryMuscles": [
+      "obliques"
+    ],
+    "secondaryMuscles": [
+      "transverse_abdominis"
+    ],
+    "forceType": "push",
+    "mechanicType": "isolation",
+    "difficultyLevel": "beginner",
+    "sets": null,
+    "reps": 12,
+    "duration": null,
+    "calories": 8,
+    "instructions": "Hips stacked. Don't let them drop. Maintain a straight line.",
+    "tips": [
+      "Hips stacked. Don't let them drop. Maintain a straight line."
+    ],
+    "variations": [],
+    "muscleGroup": "core"
+  },
+  {
+    "id": "ex_103",
+    "name": "Crunch",
+    "type": "strength",
+    "bodyParts": [
+      "full_body"
+    ],
+    "equipmentType": "bodyweight",
+    "primaryMuscles": [
+      "rectus_abdominis"
+    ],
+    "secondaryMuscles": [],
+    "forceType": "pull",
+    "mechanicType": "isolation",
+    "difficultyLevel": "beginner",
+    "sets": null,
+    "reps": 12,
+    "duration": null,
+    "calories": 8,
+    "instructions": "Don't pull on neck. Roll shoulders up. Short range of motion.",
+    "tips": [
+      "Don't pull on neck. Roll shoulders up. Short range of motion."
+    ],
+    "variations": [],
+    "muscleGroup": "core"
+  },
+  {
+    "id": "ex_104",
+    "name": "Bicycle Crunch",
+    "type": "strength",
+    "bodyParts": [
+      "full_body"
+    ],
+    "equipmentType": "bodyweight",
+    "primaryMuscles": [
+      "rectus_abdominis"
+    ],
+    "secondaryMuscles": [
+      "obliques"
+    ],
+    "forceType": "pull",
+    "mechanicType": "isolation",
+    "difficultyLevel": "beginner",
+    "sets": null,
+    "reps": 12,
+    "duration": null,
+    "calories": 8,
+    "instructions": "Opposite elbow to knee. Extend other leg. Controlled rotation.",
+    "tips": [
+      "Opposite elbow to knee. Extend other leg. Controlled rotation."
+    ],
+    "variations": [],
+    "muscleGroup": "core"
+  },
+  {
+    "id": "ex_105",
+    "name": "Russian Twist",
+    "type": "strength",
+    "bodyParts": [
+      "full_body"
+    ],
+    "equipmentType": "bodyweight",
+    "primaryMuscles": [
+      "obliques"
+    ],
+    "secondaryMuscles": [
+      "rectus_abdominis"
+    ],
+    "forceType": "static",
+    "mechanicType": "isolation",
+    "difficultyLevel": "beginner",
+    "sets": null,
+    "reps": 12,
+    "duration": null,
+    "calories": 8,
+    "instructions": "Feet off floor for harder version. Rotate fully each side.",
+    "tips": [
+      "Feet off floor for harder version. Rotate fully each side."
+    ],
+    "variations": [],
+    "muscleGroup": "core"
+  },
+  {
+    "id": "ex_106",
+    "name": "Hanging Leg Raise",
+    "type": "strength",
+    "bodyParts": [
+      "full_body"
+    ],
+    "equipmentType": "bodyweight",
+    "primaryMuscles": [
+      "lower_abs"
+    ],
+    "secondaryMuscles": [
+      "hip_flexors"
+    ],
+    "forceType": "pull",
+    "mechanicType": "isolation",
+    "difficultyLevel": "intermediate",
+    "sets": null,
+    "reps": 12,
+    "duration": null,
+    "calories": 12,
+    "instructions": "Dead hang. Posterior pelvic tilt at top. Control the descent.",
+    "tips": [
+      "Dead hang. Posterior pelvic tilt at top. Control the descent."
+    ],
+    "variations": [],
+    "muscleGroup": "core"
+  },
+  {
+    "id": "ex_107",
+    "name": "Toes-to-Bar",
+    "type": "strength",
+    "bodyParts": [
+      "full_body"
+    ],
+    "equipmentType": "bodyweight",
+    "primaryMuscles": [
+      "rectus_abdominis"
+    ],
+    "secondaryMuscles": [
+      "hip_flexors",
+      "lats"
+    ],
+    "forceType": "pull",
+    "mechanicType": "isolation",
+    "difficultyLevel": "advanced",
+    "sets": null,
+    "reps": 12,
+    "duration": null,
+    "calories": 16,
+    "instructions": "From dead hang, bring toes to bar. Don't swing.",
+    "tips": [
+      "From dead hang, bring toes to bar. Don't swing."
+    ],
+    "variations": [],
+    "muscleGroup": "core"
+  },
+  {
+    "id": "ex_108",
+    "name": "Ab Wheel Rollout",
+    "type": "strength",
+    "bodyParts": [
+      "full_body"
+    ],
+    "equipmentType": "bodyweight",
+    "primaryMuscles": [
+      "rectus_abdominis"
+    ],
+    "secondaryMuscles": [
+      "transverse_abdominis",
+      "lats"
+    ],
+    "forceType": "pull",
+    "mechanicType": "compound",
+    "difficultyLevel": "advanced",
+    "sets": 3,
+    "reps": 12,
+    "duration": null,
+    "calories": 16,
+    "instructions": "Extend fully. Engage abs completely before rolling back. Don't let back sag.",
+    "tips": [
+      "Extend fully. Engage abs completely before rolling back. Don't let back sag."
+    ],
+    "variations": [],
+    "muscleGroup": "core"
+  },
+  {
+    "id": "ex_109",
+    "name": "Cable Crunch",
+    "type": "strength",
+    "bodyParts": [
+      "full_body"
+    ],
+    "equipmentType": "cable",
+    "primaryMuscles": [
+      "rectus_abdominis"
+    ],
+    "secondaryMuscles": [],
+    "forceType": "pull",
+    "mechanicType": "isolation",
+    "difficultyLevel": "beginner",
+    "sets": null,
+    "reps": 12,
+    "duration": null,
+    "calories": 8,
+    "instructions": "Kneel. Pull rope to floor. Round spine completely. Don't use hip flexors.",
+    "tips": [
+      "Kneel. Pull rope to floor. Round spine completely. Don't use hip flexors."
+    ],
+    "variations": [],
+    "muscleGroup": "core"
+  },
+  {
+    "id": "ex_110",
+    "name": "Wood Chop",
+    "type": "strength",
+    "bodyParts": [
+      "full_body"
+    ],
+    "equipmentType": "cable",
+    "primaryMuscles": [
+      "obliques"
+    ],
+    "secondaryMuscles": [
+      "rectus_abdominis",
+      "shoulders"
+    ],
+    "forceType": "static",
+    "mechanicType": "compound",
+    "difficultyLevel": "beginner",
+    "sets": 3,
+    "reps": 12,
+    "duration": null,
+    "calories": 8,
+    "instructions": "Rotational movement. High to low and low to high variations.",
+    "tips": [
+      "Rotational movement. High to low and low to high variations."
+    ],
+    "variations": [],
+    "muscleGroup": "core"
+  },
+  {
+    "id": "ex_111",
+    "name": "Dead Bug",
+    "type": "strength",
+    "bodyParts": [
+      "full_body"
+    ],
+    "equipmentType": "bodyweight",
+    "primaryMuscles": [
+      "transverse_abdominis"
+    ],
+    "secondaryMuscles": [
+      "rectus_abdominis"
+    ],
+    "forceType": "push",
+    "mechanicType": "isolation",
+    "difficultyLevel": "beginner",
+    "sets": null,
+    "reps": 12,
+    "duration": null,
+    "calories": 8,
+    "instructions": "Back flat on floor. Opposite arm and leg extend slowly. Core braced.",
+    "tips": [
+      "Back flat on floor. Opposite arm and leg extend slowly. Core braced."
+    ],
+    "variations": [],
+    "muscleGroup": "core"
+  },
+  {
+    "id": "ex_112",
+    "name": "Bird Dog",
+    "type": "strength",
+    "bodyParts": [
+      "full_body"
+    ],
+    "equipmentType": "bodyweight",
+    "primaryMuscles": [
+      "erector_spinae"
+    ],
+    "secondaryMuscles": [
+      "glutes",
+      "core"
+    ],
+    "forceType": "push",
+    "mechanicType": "isolation",
+    "difficultyLevel": "beginner",
+    "sets": null,
+    "reps": 12,
+    "duration": null,
+    "calories": 8,
+    "instructions": "On all fours. Opposite arm and leg extend. Hips level.",
+    "tips": [
+      "On all fours. Opposite arm and leg extend. Hips level."
+    ],
+    "variations": [],
+    "muscleGroup": "core"
+  },
+  {
+    "id": "ex_113",
+    "name": "Mountain Climber",
+    "type": "strength",
+    "bodyParts": [
+      "full_body"
+    ],
+    "equipmentType": "bodyweight",
+    "primaryMuscles": [
+      "rectus_abdominis"
+    ],
+    "secondaryMuscles": [
+      "hip_flexors",
+      "shoulders"
+    ],
+    "forceType": "push",
+    "mechanicType": "compound",
+    "difficultyLevel": "beginner",
+    "sets": 3,
+    "reps": 12,
+    "duration": null,
+    "calories": 8,
+    "instructions": "Push-up position. Drive knees to chest alternately. Keep hips level.",
+    "tips": [
+      "Push-up position. Drive knees to chest alternately. Keep hips level."
+    ],
+    "variations": [],
+    "muscleGroup": "core"
+  },
+  {
+    "id": "ex_114",
+    "name": "Hollow Hold",
+    "type": "strength",
+    "bodyParts": [
+      "full_body"
+    ],
+    "equipmentType": "bodyweight",
+    "primaryMuscles": [
+      "rectus_abdominis"
+    ],
+    "secondaryMuscles": [
+      "hip_flexors"
+    ],
+    "forceType": "push",
+    "mechanicType": "isolation",
+    "difficultyLevel": "intermediate",
+    "sets": null,
+    "reps": 12,
+    "duration": null,
+    "calories": 12,
+    "instructions": "Shoulders and legs off floor. Press lower back down. Like a boat.",
+    "tips": [
+      "Shoulders and legs off floor. Press lower back down. Like a boat."
+    ],
+    "variations": [],
+    "muscleGroup": "core"
+  },
+  {
+    "id": "ex_115",
+    "name": "Dragon Flag",
+    "type": "strength",
+    "bodyParts": [
+      "full_body"
+    ],
+    "equipmentType": "bodyweight",
+    "primaryMuscles": [
+      "rectus_abdominis"
+    ],
+    "secondaryMuscles": [
+      "obliques"
+    ],
+    "forceType": "push",
+    "mechanicType": "isolation",
+    "difficultyLevel": "advanced",
+    "sets": null,
+    "reps": 12,
+    "duration": null,
+    "calories": 16,
+    "instructions": "Bruce Lee move. Straight body lowers from vertical. Extreme difficulty.",
+    "tips": [
+      "Bruce Lee move. Straight body lowers from vertical. Extreme difficulty."
+    ],
+    "variations": [],
+    "muscleGroup": "core"
+  },
+  {
+    "id": "ex_116",
+    "name": "Pallof Press",
+    "type": "strength",
+    "bodyParts": [
+      "full_body"
+    ],
+    "equipmentType": "cable",
+    "primaryMuscles": [
+      "transverse_abdominis"
+    ],
+    "secondaryMuscles": [
+      "obliques"
+    ],
+    "forceType": "push",
+    "mechanicType": "isolation",
+    "difficultyLevel": "beginner",
+    "sets": null,
+    "reps": 12,
+    "duration": null,
+    "calories": 8,
+    "instructions": "Anti-rotation exercise. Press cable out and bring back. Don't rotate.",
+    "tips": [
+      "Anti-rotation exercise. Press cable out and bring back. Don't rotate."
+    ],
+    "variations": [],
+    "muscleGroup": "core"
+  },
+  {
+    "id": "ex_117",
+    "name": "Windshield Wiper",
+    "type": "strength",
+    "bodyParts": [
+      "full_body"
+    ],
+    "equipmentType": "bodyweight",
+    "primaryMuscles": [
+      "obliques"
+    ],
+    "secondaryMuscles": [
+      "hip_flexors"
+    ],
+    "forceType": "static",
+    "mechanicType": "isolation",
+    "difficultyLevel": "advanced",
+    "sets": null,
+    "reps": 12,
+    "duration": null,
+    "calories": 16,
+    "instructions": "Hanging from bar or lying. Rotate legs side to side. Controlled.",
+    "tips": [
+      "Hanging from bar or lying. Rotate legs side to side. Controlled."
+    ],
+    "variations": [],
+    "muscleGroup": "core"
+  },
+  {
+    "id": "ex_118",
+    "name": "Decline Sit-Up",
+    "type": "strength",
+    "bodyParts": [
+      "full_body"
+    ],
+    "equipmentType": "bodyweight",
+    "primaryMuscles": [
+      "rectus_abdominis"
+    ],
+    "secondaryMuscles": [
+      "hip_flexors"
+    ],
+    "forceType": "pull",
+    "mechanicType": "isolation",
+    "difficultyLevel": "beginner",
+    "sets": null,
+    "reps": 12,
+    "duration": null,
+    "calories": 8,
+    "instructions": "Decline bench. Full ROM. Arms across chest or behind head.",
+    "tips": [
+      "Decline bench. Full ROM. Arms across chest or behind head."
+    ],
+    "variations": [],
+    "muscleGroup": "core"
+  },
+  {
+    "id": "ex_119",
+    "name": "Reverse Crunch",
+    "type": "strength",
+    "bodyParts": [
+      "full_body"
+    ],
+    "equipmentType": "bodyweight",
+    "primaryMuscles": [
+      "lower_abs"
+    ],
+    "secondaryMuscles": [],
+    "forceType": "pull",
+    "mechanicType": "isolation",
+    "difficultyLevel": "beginner",
+    "sets": null,
+    "reps": 12,
+    "duration": null,
+    "calories": 8,
+    "instructions": "Legs up, curl hips off floor. Don't use momentum. Posterior tilt.",
+    "tips": [
+      "Legs up, curl hips off floor. Don't use momentum. Posterior tilt."
+    ],
+    "variations": [],
+    "muscleGroup": "core"
+  },
+  {
+    "id": "ex_120",
+    "name": "Landmine Rotation",
+    "type": "strength",
+    "bodyParts": [
+      "full_body"
+    ],
+    "equipmentType": "barbell",
+    "primaryMuscles": [
+      "obliques"
+    ],
+    "secondaryMuscles": [
+      "shoulders",
+      "core"
+    ],
+    "forceType": "static",
+    "mechanicType": "compound",
+    "difficultyLevel": "intermediate",
+    "sets": 3,
+    "reps": 12,
+    "duration": null,
+    "calories": 12,
+    "instructions": "Both hands on barbell end. Rotate from side to side. Hips still.",
+    "tips": [
+      "Both hands on barbell end. Rotate from side to side. Hips still."
+    ],
+    "variations": [],
+    "muscleGroup": "core"
+  },
+  {
+    "id": "ex_121",
+    "name": "Barbell Hip Thrust",
+    "type": "strength",
+    "bodyParts": [
+      "full_body"
+    ],
+    "equipmentType": "barbell",
+    "primaryMuscles": [
+      "gluteus_maximus"
+    ],
+    "secondaryMuscles": [
+      "hamstrings",
+      "core"
+    ],
+    "forceType": "push",
+    "mechanicType": "compound",
+    "difficultyLevel": "intermediate",
+    "sets": 3,
+    "reps": 12,
+    "duration": null,
+    "calories": 12,
+    "instructions": "Bar padded on hips. Full hip extension. Chin tucked, ribs down.",
+    "tips": [
+      "Bar padded on hips. Full hip extension. Chin tucked, ribs down."
+    ],
+    "variations": [],
+    "muscleGroup": "glutes"
+  },
+  {
+    "id": "ex_122",
+    "name": "Cable Pull-Through",
+    "type": "strength",
+    "bodyParts": [
+      "full_body"
+    ],
+    "equipmentType": "cable",
+    "primaryMuscles": [
+      "gluteus_maximus"
+    ],
+    "secondaryMuscles": [
+      "hamstrings",
+      "erector_spinae"
+    ],
+    "forceType": "pull",
+    "mechanicType": "compound",
+    "difficultyLevel": "beginner",
+    "sets": 3,
+    "reps": 12,
+    "duration": null,
+    "calories": 8,
+    "instructions": "Cable between legs. Hinge at hips. Squeeze glutes at top.",
+    "tips": [
+      "Cable between legs. Hinge at hips. Squeeze glutes at top."
+    ],
+    "variations": [],
+    "muscleGroup": "glutes"
+  },
+  {
+    "id": "ex_123",
+    "name": "Frog Pump",
+    "type": "strength",
+    "bodyParts": [
+      "full_body"
+    ],
+    "equipmentType": "bodyweight",
+    "primaryMuscles": [
+      "gluteus_maximus"
+    ],
+    "secondaryMuscles": [],
+    "forceType": "push",
+    "mechanicType": "isolation",
+    "difficultyLevel": "beginner",
+    "sets": null,
+    "reps": 12,
+    "duration": null,
+    "calories": 8,
+    "instructions": "On back, feet together soles touching. Pulse hips upward.",
+    "tips": [
+      "On back, feet together soles touching. Pulse hips upward."
+    ],
+    "variations": [],
+    "muscleGroup": "glutes"
+  },
+  {
+    "id": "ex_124",
+    "name": "Fire Hydrant",
+    "type": "strength",
+    "bodyParts": [
+      "full_body"
+    ],
+    "equipmentType": "bodyweight",
+    "primaryMuscles": [
+      "gluteus_medius"
+    ],
+    "secondaryMuscles": [],
+    "forceType": "push",
+    "mechanicType": "isolation",
+    "difficultyLevel": "beginner",
+    "sets": null,
+    "reps": 12,
+    "duration": null,
+    "calories": 8,
+    "instructions": "On all fours. Lift leg to side like a dog at a fire hydrant.",
+    "tips": [
+      "On all fours. Lift leg to side like a dog at a fire hydrant."
+    ],
+    "variations": [],
+    "muscleGroup": "glutes"
+  },
+  {
+    "id": "ex_125",
+    "name": "Clamshell",
+    "type": "strength",
+    "bodyParts": [
+      "full_body"
+    ],
+    "equipmentType": "resistance_band",
+    "primaryMuscles": [
+      "gluteus_medius"
+    ],
+    "secondaryMuscles": [],
+    "forceType": "push",
+    "mechanicType": "isolation",
+    "difficultyLevel": "beginner",
+    "sets": null,
+    "reps": 12,
+    "duration": null,
+    "calories": 8,
+    "instructions": "Lie on side, knees bent. Open top knee like a clamshell.",
+    "tips": [
+      "Lie on side, knees bent. Open top knee like a clamshell."
+    ],
+    "variations": [],
+    "muscleGroup": "glutes"
+  },
+  {
+    "id": "ex_126",
+    "name": "Abductor Machine",
+    "type": "strength",
+    "bodyParts": [
+      "full_body"
+    ],
+    "equipmentType": "machine",
+    "primaryMuscles": [
+      "gluteus_medius"
+    ],
+    "secondaryMuscles": [],
+    "forceType": "push",
+    "mechanicType": "isolation",
+    "difficultyLevel": "beginner",
+    "sets": null,
+    "reps": 12,
+    "duration": null,
+    "calories": 8,
+    "instructions": "Push pads outward. Full ROM. Slow controlled movement.",
+    "tips": [
+      "Push pads outward. Full ROM. Slow controlled movement."
+    ],
+    "variations": [],
+    "muscleGroup": "glutes"
+  },
+  {
+    "id": "ex_127",
+    "name": "Adductor Machine",
+    "type": "strength",
+    "bodyParts": [
+      "full_body"
+    ],
+    "equipmentType": "machine",
+    "primaryMuscles": [
+      "adductors"
+    ],
+    "secondaryMuscles": [
+      "gluteus_medius"
+    ],
+    "forceType": "push",
+    "mechanicType": "isolation",
+    "difficultyLevel": "beginner",
+    "sets": null,
+    "reps": 12,
+    "duration": null,
+    "calories": 8,
+    "instructions": "Push pads inward. Targets inner thighs.",
+    "tips": [
+      "Push pads inward. Targets inner thighs."
+    ],
+    "variations": [],
+    "muscleGroup": "glutes"
+  },
+  {
+    "id": "ex_128",
+    "name": "Power Clean",
+    "type": "strength",
+    "bodyParts": [
+      "chest",
+      "back",
+      "shoulders",
+      "legs",
+      "core"
+    ],
+    "equipmentType": "barbell",
+    "primaryMuscles": [
+      "full_body"
+    ],
+    "secondaryMuscles": [
+      "legs",
+      "back",
+      "shoulders"
+    ],
+    "forceType": "push",
+    "mechanicType": "compound",
+    "difficultyLevel": "advanced",
+    "sets": 3,
+    "reps": 12,
+    "duration": null,
+    "calories": 16,
+    "instructions": "Explosive pull from floor to rack position. Catch in partial squat.",
+    "tips": [
+      "Explosive pull from floor to rack position. Catch in partial squat."
+    ],
+    "variations": [],
+    "muscleGroup": "full_body"
+  },
+  {
+    "id": "ex_129",
+    "name": "Hang Clean",
+    "type": "strength",
+    "bodyParts": [
+      "chest",
+      "back",
+      "shoulders",
+      "legs",
+      "core"
+    ],
+    "equipmentType": "barbell",
+    "primaryMuscles": [
+      "full_body"
+    ],
+    "secondaryMuscles": [
+      "legs",
+      "back",
+      "shoulders"
+    ],
+    "forceType": "push",
+    "mechanicType": "compound",
+    "difficultyLevel": "advanced",
+    "sets": 3,
+    "reps": 12,
+    "duration": null,
+    "calories": 16,
+    "instructions": "Clean from hang position (above knee). Explosive hip drive.",
+    "tips": [
+      "Clean from hang position (above knee). Explosive hip drive."
+    ],
+    "variations": [],
+    "muscleGroup": "full_body"
+  },
+  {
+    "id": "ex_130",
+    "name": "Power Snatch",
+    "type": "strength",
+    "bodyParts": [
+      "chest",
+      "back",
+      "shoulders",
+      "legs",
+      "core"
+    ],
+    "equipmentType": "barbell",
+    "primaryMuscles": [
+      "full_body"
+    ],
+    "secondaryMuscles": [
+      "shoulders",
+      "core"
+    ],
+    "forceType": "push",
+    "mechanicType": "compound",
+    "difficultyLevel": "advanced",
+    "sets": 3,
+    "reps": 12,
+    "duration": null,
+    "calories": 16,
+    "instructions": "Wide grip. Explosive pull from floor. Catch overhead with arms locked.",
+    "tips": [
+      "Wide grip. Explosive pull from floor. Catch overhead with arms locked."
+    ],
+    "variations": [],
+    "muscleGroup": "full_body"
+  },
+  {
+    "id": "ex_131",
+    "name": "Kettlebell Swing",
+    "type": "strength",
+    "bodyParts": [
+      "chest",
+      "back",
+      "shoulders",
+      "legs",
+      "core"
+    ],
+    "equipmentType": "kettlebell",
+    "primaryMuscles": [
+      "glutes"
+    ],
+    "secondaryMuscles": [
+      "hamstrings",
+      "core",
+      "shoulders"
+    ],
+    "forceType": "push",
+    "mechanicType": "compound",
+    "difficultyLevel": "intermediate",
+    "sets": 3,
+    "reps": 12,
+    "duration": null,
+    "calories": 12,
+    "instructions": "Hip hinge, not squat. Explosive hip extension. Bell floats to shoulder height.",
+    "tips": [
+      "Hip hinge, not squat. Explosive hip extension. Bell floats to shoulder height."
+    ],
+    "variations": [],
+    "muscleGroup": "full_body"
+  },
+  {
+    "id": "ex_132",
+    "name": "Kettlebell Turkish Get-Up",
+    "type": "strength",
+    "bodyParts": [
+      "chest",
+      "back",
+      "shoulders",
+      "legs",
+      "core"
+    ],
+    "equipmentType": "kettlebell",
+    "primaryMuscles": [
+      "full_body"
+    ],
+    "secondaryMuscles": [
+      "shoulders",
+      "core"
+    ],
+    "forceType": "push",
+    "mechanicType": "compound",
+    "difficultyLevel": "advanced",
+    "sets": 3,
+    "reps": 12,
+    "duration": null,
+    "calories": 16,
+    "instructions": "Complex multi-step movement. Keep bell overhead throughout. Slow and controlled.",
+    "tips": [
+      "Complex multi-step movement. Keep bell overhead throughout. Slow and controlled."
+    ],
+    "variations": [],
+    "muscleGroup": "full_body"
+  },
+  {
+    "id": "ex_133",
+    "name": "Burpee",
+    "type": "strength",
+    "bodyParts": [
+      "chest",
+      "back",
+      "shoulders",
+      "legs",
+      "core"
+    ],
+    "equipmentType": "bodyweight",
+    "primaryMuscles": [
+      "full_body"
+    ],
+    "secondaryMuscles": [
+      "core",
+      "shoulders"
+    ],
+    "forceType": "push",
+    "mechanicType": "compound",
+    "difficultyLevel": "beginner",
+    "sets": 3,
+    "reps": 12,
+    "duration": null,
+    "calories": 8,
+    "instructions": "Squat, jump back to plank, push-up, jump feet to hands, jump up.",
+    "tips": [
+      "Squat, jump back to plank, push-up, jump feet to hands, jump up."
+    ],
+    "variations": [],
+    "muscleGroup": "full_body"
+  },
+  {
+    "id": "ex_134",
+    "name": "Thruster",
+    "type": "strength",
+    "bodyParts": [
+      "chest",
+      "back",
+      "shoulders",
+      "legs",
+      "core"
+    ],
+    "equipmentType": "barbell",
+    "primaryMuscles": [
+      "quadriceps"
+    ],
+    "secondaryMuscles": [
+      "shoulders",
+      "core"
+    ],
+    "forceType": "push",
+    "mechanicType": "compound",
+    "difficultyLevel": "intermediate",
+    "sets": 3,
+    "reps": 12,
+    "duration": null,
+    "calories": 12,
+    "instructions": "Front squat into overhead press in one fluid movement.",
+    "tips": [
+      "Front squat into overhead press in one fluid movement."
+    ],
+    "variations": [],
+    "muscleGroup": "full_body"
+  },
+  {
+    "id": "ex_135",
+    "name": "Deadball Slam",
+    "type": "strength",
+    "bodyParts": [
+      "chest",
+      "back",
+      "shoulders",
+      "legs",
+      "core"
+    ],
+    "equipmentType": "medball",
+    "primaryMuscles": [
+      "core"
+    ],
+    "secondaryMuscles": [
+      "shoulders",
+      "lats"
+    ],
+    "forceType": "push",
+    "mechanicType": "compound",
+    "difficultyLevel": "beginner",
+    "sets": 3,
+    "reps": 12,
+    "duration": null,
+    "calories": 8,
+    "instructions": "Raise ball overhead, slam to ground with full force. Explosive.",
+    "tips": [
+      "Raise ball overhead, slam to ground with full force. Explosive."
+    ],
+    "variations": [],
+    "muscleGroup": "full_body"
+  },
+  {
+    "id": "ex_136",
+    "name": "Battle Rope Waves",
+    "type": "strength",
+    "bodyParts": [
+      "chest",
+      "back",
+      "shoulders",
+      "legs",
+      "core"
+    ],
+    "equipmentType": "cable",
+    "primaryMuscles": [
+      "shoulders"
+    ],
+    "secondaryMuscles": [
+      "core",
+      "arms"
+    ],
+    "forceType": "push",
+    "mechanicType": "compound",
+    "difficultyLevel": "beginner",
+    "sets": 3,
+    "reps": 12,
+    "duration": null,
+    "calories": 8,
+    "instructions": "Simultaneous or alternating waves. Maintain athletic stance.",
+    "tips": [
+      "Simultaneous or alternating waves. Maintain athletic stance."
+    ],
+    "variations": [],
+    "muscleGroup": "full_body"
+  },
+  {
+    "id": "ex_137",
+    "name": "Treadmill Run",
+    "type": "cardio",
+    "bodyParts": [
+      "cardio"
+    ],
+    "equipmentType": "machine",
+    "primaryMuscles": [
+      "cardiovascular"
+    ],
+    "secondaryMuscles": [
+      "legs"
+    ],
+    "forceType": "static",
+    "mechanicType": "isolation",
+    "difficultyLevel": "beginner",
+    "sets": null,
+    "reps": null,
+    "duration": 60,
+    "calories": 12,
+    "instructions": "Maintain conversational pace for aerobic base. Incline adds intensity.",
+    "tips": [
+      "Maintain conversational pace for aerobic base. Incline adds intensity."
+    ],
+    "variations": [],
+    "muscleGroup": "cardio"
+  },
+  {
+    "id": "ex_138",
+    "name": "Rowing Machine",
+    "type": "cardio",
+    "bodyParts": [
+      "cardio"
+    ],
+    "equipmentType": "machine",
+    "primaryMuscles": [
+      "full_body"
+    ],
+    "secondaryMuscles": [
+      "back",
+      "legs",
+      "core"
+    ],
+    "forceType": "static",
+    "mechanicType": "isolation",
+    "difficultyLevel": "beginner",
+    "sets": null,
+    "reps": null,
+    "duration": 60,
+    "calories": 12,
+    "instructions": "Drive with legs first, then lean back, then pull arms. 60% legs, 40% upper.",
+    "tips": [
+      "Drive with legs first, then lean back, then pull arms. 60% legs, 40% upper."
+    ],
+    "variations": [],
+    "muscleGroup": "cardio"
+  },
+  {
+    "id": "ex_139",
+    "name": "Cycling",
+    "type": "cardio",
+    "bodyParts": [
+      "cardio"
+    ],
+    "equipmentType": "machine",
+    "primaryMuscles": [
+      "cardiovascular"
+    ],
+    "secondaryMuscles": [
+      "quadriceps",
+      "glutes"
+    ],
+    "forceType": "static",
+    "mechanicType": "isolation",
+    "difficultyLevel": "beginner",
+    "sets": null,
+    "reps": null,
+    "duration": 60,
+    "calories": 12,
+    "instructions": "Low impact cardio. Adjust resistance for intensity.",
+    "tips": [
+      "Low impact cardio. Adjust resistance for intensity."
+    ],
+    "variations": [],
+    "muscleGroup": "cardio"
+  },
+  {
+    "id": "ex_140",
+    "name": "Stair Climber",
+    "type": "cardio",
+    "bodyParts": [
+      "cardio"
+    ],
+    "equipmentType": "machine",
+    "primaryMuscles": [
+      "cardiovascular"
+    ],
+    "secondaryMuscles": [
+      "glutes",
+      "quadriceps"
+    ],
+    "forceType": "static",
+    "mechanicType": "isolation",
+    "difficultyLevel": "beginner",
+    "sets": null,
+    "reps": null,
+    "duration": 60,
+    "calories": 12,
+    "instructions": "Step fully onto each stair. Don't lean heavily on handrails.",
+    "tips": [
+      "Step fully onto each stair. Don't lean heavily on handrails."
+    ],
+    "variations": [],
+    "muscleGroup": "cardio"
+  },
+  {
+    "id": "ex_141",
+    "name": "Jump Rope",
+    "type": "cardio",
+    "bodyParts": [
+      "cardio"
+    ],
+    "equipmentType": "bodyweight",
+    "primaryMuscles": [
+      "cardiovascular"
+    ],
+    "secondaryMuscles": [
+      "calves",
+      "core"
+    ],
+    "forceType": "static",
+    "mechanicType": "isolation",
+    "difficultyLevel": "beginner",
+    "sets": null,
+    "reps": null,
+    "duration": 60,
+    "calories": 12,
+    "instructions": "Land softly on balls of feet. Keep elbows close to body.",
+    "tips": [
+      "Land softly on balls of feet. Keep elbows close to body."
+    ],
+    "variations": [],
+    "muscleGroup": "cardio"
+  },
+  {
+    "id": "ex_142",
+    "name": "Box Jump",
+    "type": "cardio",
+    "bodyParts": [
+      "cardio"
+    ],
+    "equipmentType": "bodyweight",
+    "primaryMuscles": [
+      "quadriceps"
+    ],
+    "secondaryMuscles": [
+      "glutes",
+      "calves"
+    ],
+    "forceType": "push",
+    "mechanicType": "isolation",
+    "difficultyLevel": "intermediate",
+    "sets": null,
+    "reps": null,
+    "duration": 60,
+    "calories": 18,
+    "instructions": "Land softly with bent knees. Step down (don't jump down).",
+    "tips": [
+      "Land softly with bent knees. Step down (don't jump down)."
+    ],
+    "variations": [],
+    "muscleGroup": "cardio"
+  },
+  {
+    "id": "ex_143",
+    "name": "Broad Jump",
+    "type": "cardio",
+    "bodyParts": [
+      "cardio"
+    ],
+    "equipmentType": "bodyweight",
+    "primaryMuscles": [
+      "quadriceps"
+    ],
+    "secondaryMuscles": [
+      "glutes",
+      "hamstrings"
+    ],
+    "forceType": "push",
+    "mechanicType": "isolation",
+    "difficultyLevel": "intermediate",
+    "sets": null,
+    "reps": null,
+    "duration": 60,
+    "calories": 18,
+    "instructions": "Horizontal jump. Maximum distance. Land and absorb softly.",
+    "tips": [
+      "Horizontal jump. Maximum distance. Land and absorb softly."
+    ],
+    "variations": [],
+    "muscleGroup": "cardio"
+  },
+  {
+    "id": "ex_144",
+    "name": "Sprint Intervals",
+    "type": "cardio",
+    "bodyParts": [
+      "cardio"
+    ],
+    "equipmentType": "bodyweight",
+    "primaryMuscles": [
+      "cardiovascular"
+    ],
+    "secondaryMuscles": [
+      "legs"
+    ],
+    "forceType": "static",
+    "mechanicType": "isolation",
+    "difficultyLevel": "intermediate",
+    "sets": null,
+    "reps": null,
+    "duration": 60,
+    "calories": 18,
+    "instructions": "30s sprint, 60-90s walk. Build aerobic and anaerobic capacity.",
+    "tips": [
+      "30s sprint, 60-90s walk. Build aerobic and anaerobic capacity."
+    ],
+    "variations": [],
+    "muscleGroup": "cardio"
+  },
+  {
+    "id": "ex_145",
+    "name": "Hip Flexor Stretch",
+    "type": "flexibility",
+    "bodyParts": [
+      "core",
+      "flexibility"
+    ],
+    "equipmentType": "bodyweight",
+    "primaryMuscles": [
+      "hip_flexors"
+    ],
+    "secondaryMuscles": [
+      "quadriceps"
+    ],
+    "forceType": "push",
+    "mechanicType": "isolation",
+    "difficultyLevel": "beginner",
+    "sets": null,
+    "reps": null,
+    "duration": 30,
+    "calories": 8,
+    "instructions": "Lunge position. Tuck pelvis under. Lean forward into stretch.",
+    "tips": [
+      "Lunge position. Tuck pelvis under. Lean forward into stretch."
+    ],
+    "variations": [],
+    "muscleGroup": "mobility"
+  },
+  {
+    "id": "ex_146",
+    "name": "Pigeon Pose",
+    "type": "flexibility",
+    "bodyParts": [
+      "core",
+      "flexibility"
+    ],
+    "equipmentType": "bodyweight",
+    "primaryMuscles": [
+      "glutes"
+    ],
+    "secondaryMuscles": [
+      "hip_rotators"
+    ],
+    "forceType": "push",
+    "mechanicType": "isolation",
+    "difficultyLevel": "beginner",
+    "sets": null,
+    "reps": null,
+    "duration": 30,
+    "calories": 8,
+    "instructions": "Hip external rotation stretch. Hips square. Deep stretch.",
+    "tips": [
+      "Hip external rotation stretch. Hips square. Deep stretch."
+    ],
+    "variations": [],
+    "muscleGroup": "mobility"
+  },
+  {
+    "id": "ex_147",
+    "name": "Thoracic Spine Rotation",
+    "type": "flexibility",
+    "bodyParts": [
+      "core",
+      "flexibility"
+    ],
+    "equipmentType": "bodyweight",
+    "primaryMuscles": [
+      "thoracic_spine"
+    ],
+    "secondaryMuscles": [],
+    "forceType": "static",
+    "mechanicType": "isolation",
+    "difficultyLevel": "beginner",
+    "sets": null,
+    "reps": null,
+    "duration": 30,
+    "calories": 8,
+    "instructions": "On all fours or seated. Rotate upper back. Improve T-spine mobility.",
+    "tips": [
+      "On all fours or seated. Rotate upper back. Improve T-spine mobility."
+    ],
+    "variations": [],
+    "muscleGroup": "mobility"
+  },
+  {
+    "id": "ex_148",
+    "name": "World's Greatest Stretch",
+    "type": "flexibility",
+    "bodyParts": [
+      "core",
+      "flexibility"
+    ],
+    "equipmentType": "bodyweight",
+    "primaryMuscles": [
+      "full_body"
+    ],
+    "secondaryMuscles": [
+      "hip_flexors",
+      "thoracic_spine"
+    ],
+    "forceType": "push",
+    "mechanicType": "isolation",
+    "difficultyLevel": "beginner",
+    "sets": null,
+    "reps": null,
+    "duration": 30,
+    "calories": 8,
+    "instructions": "Lunge with twist. Elbow to floor. Reach overhead. Full body mobility.",
+    "tips": [
+      "Lunge with twist. Elbow to floor. Reach overhead. Full body mobility."
+    ],
+    "variations": [],
+    "muscleGroup": "mobility"
+  },
+  {
+    "id": "ex_149",
+    "name": "Cat-Cow",
+    "type": "flexibility",
+    "bodyParts": [
+      "core",
+      "flexibility"
+    ],
+    "equipmentType": "bodyweight",
+    "primaryMuscles": [
+      "spine"
+    ],
+    "secondaryMuscles": [
+      "core"
+    ],
+    "forceType": "static",
+    "mechanicType": "isolation",
+    "difficultyLevel": "beginner",
+    "sets": null,
+    "reps": null,
+    "duration": 30,
+    "calories": 8,
+    "instructions": "On all fours. Arch and round spine slowly. Warm up spinal mobility.",
+    "tips": [
+      "On all fours. Arch and round spine slowly. Warm up spinal mobility."
+    ],
+    "variations": [],
+    "muscleGroup": "mobility"
+  },
+  {
+    "id": "ex_150",
+    "name": "Ankle Circles",
+    "type": "flexibility",
+    "bodyParts": [
+      "core",
+      "flexibility"
+    ],
+    "equipmentType": "bodyweight",
+    "primaryMuscles": [
+      "ankle"
+    ],
+    "secondaryMuscles": [],
+    "forceType": "static",
+    "mechanicType": "isolation",
+    "difficultyLevel": "beginner",
+    "sets": null,
+    "reps": null,
+    "duration": 30,
+    "calories": 8,
+    "instructions": "Rotate ankle through full ROM. Improve ankle mobility for squatting.",
+    "tips": [
+      "Rotate ankle through full ROM. Improve ankle mobility for squatting."
+    ],
+    "variations": [],
+    "muscleGroup": "mobility"
+  }
+]

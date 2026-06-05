@@ -19,6 +19,13 @@ export async function signOut() {
   return supabase.auth.signOut();
 }
 
+/** Reset password for user */
+export async function resetPassword(email: string) {
+  return supabase.auth.resetPasswordForEmail(email, {
+    redirectTo: 'http://localhost:8081', // Your app's URL
+  });
+}
+
 /** Get the current active session (async, reads from storage) */
 export async function getCurrentSession() {
   const { data: { session } } = await supabase.auth.getSession();

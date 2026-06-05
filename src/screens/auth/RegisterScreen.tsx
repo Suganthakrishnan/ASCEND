@@ -4,11 +4,12 @@ import {
   KeyboardAvoidingView, Platform, ScrollView, Alert,
 } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
-import { ChevronLeft } from 'lucide-react-native';
+import { ChevronLeft, Check } from 'lucide-react-native';
 import { theme } from '../../constants/theme';
 import { GlowInput } from '../../components/ui/GlowInput';
 import { Button } from '../../components/ui/Button';
 import { useAuthContext } from '../../context/AuthContext';
+import { sanitizeText, validateEmail } from '../../services/securityService';
 
 export function RegisterScreen({ navigation }: any) {
   const { signUp } = useAuthContext();
@@ -16,23 +17,29 @@ export function RegisterScreen({ navigation }: any) {
   const [password, setPassword] = useState('');
   const [confirm, setConfirm] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  const [errors, setErrors] = useState<{ email?: string; password?: string; confirm?: string; general?: string }>({});
+  const [agreedToTerms, setAgreedToTerms] = useState(false);
+  const [errors, setErrors] = useState<{ email?: string; password?: string; confirm?: string; terms?: string; general?: string }>({});
 
   const validate = () => {
     const e: typeof errors = {};
     if (!email.trim()) e.email = 'Email is required.';
-    else if (!/\S+@\S+\.\S+/.test(email)) e.email = 'Invalid email format.';
+    else if (!validateEmail(email)) e.email = 'Invalid email format.';
     if (!password) e.password = 'Password is required.';
     else if (password.length < 8) e.password = 'Minimum 8 characters.';
     if (password !== confirm) e.confirm = 'Passwords do not match.';
+    if (!agreedToTerms) e.terms = 'You must agree to the Terms & Privacy Policy.';
     setErrors(e);
     return Object.keys(e).length === 0;
   };
 
   const handleSignUp = async () => {
     if (!validate()) return;
+    
+    // Sanitize email before sending
+    const sanitizedEmail = sanitizeText(email);
+    
     setIsLoading(true);
-    const { data, error } = await signUp(email.trim(), password);
+    const { data, error } = await signUp(sanitizedEmail, password);
     setIsLoading(false);
     if (error) { setErrors({ general: error.message || 'Registration failed.' }); return; }
     if (!data.session) {
@@ -54,7 +61,14 @@ export function RegisterScreen({ navigation }: any) {
         <View style={[styles.corner, styles.cBL]} /><View style={[styles.corner, styles.cBR]} />
 
         <ScrollView contentContainerStyle={styles.scroll} keyboardShouldPersistTaps="handled" showsVerticalScrollIndicator={false}>
-          <TouchableOpacity onPress={() => navigation.goBack()} style={styles.backBtn} activeOpacity={0.7}>
+          <TouchableOpacity 
+            onPress={() => navigation.goBack()} 
+            style={styles.backBtn} 
+            activeOpacity={0.7}
+            accessibilityLabel="Go back"
+            accessibilityHint="Return to the previous screen"
+            accessibilityRole="button"
+          >
             <ChevronLeft color={theme.colors.primary} size={20} />
             <Text style={styles.backText}>BACK</Text>
           </TouchableOpacity>
@@ -80,6 +94,8 @@ export function RegisterScreen({ navigation }: any) {
             keyboardType="email-address"
             textContentType="emailAddress"
             error={errors.email}
+            accessibilityLabel="Email address input"
+            accessibilityHint="Enter your email address to create an account"
           />
           <GlowInput
             label="ACCESS CODE"
@@ -89,6 +105,8 @@ export function RegisterScreen({ navigation }: any) {
             secureTextEntry
             textContentType="newPassword"
             error={errors.password}
+            accessibilityLabel="Password input"
+            accessibilityHint="Create a password with at least 8 characters"
           />
           <GlowInput
             label="CONFIRM ACCESS CODE"
@@ -98,11 +116,64 @@ export function RegisterScreen({ navigation }: any) {
             secureTextEntry
             textContentType="newPassword"
             error={errors.confirm}
+            accessibilityLabel="Confirm password input"
+            accessibilityHint="Re-enter your password to confirm"
           />
 
-          <Button title="INITIALIZE ACCOUNT" onPress={handleSignUp} isLoading={isLoading} style={styles.submitBtn} />
+          <TouchableOpacity
+            style={styles.checkboxRow}
+            onPress={() => { setAgreedToTerms(!agreedToTerms); setErrors(e => ({ ...e, terms: undefined })); }}
+            activeOpacity={0.7}
+            accessibilityLabel={agreedToTerms ? 'Terms agreed' : 'Agree to terms'}
+            accessibilityHint="Tap to agree to Terms of Service and Privacy Policy"
+            accessibilityRole="checkbox"
+            accessibilityState={{ checked: agreedToTerms }}
+          >
+            <View style={[styles.checkbox, agreedToTerms && styles.checkboxChecked]}>
+              {agreedToTerms && <Check color={theme.colors.bg.base} size={14} />}
+            </View>
+            <View style={styles.checkboxTextContainer}>
+              <Text style={styles.checkboxLabel}>I agree to the </Text>
+              <TouchableOpacity 
+                onPress={() => navigation.navigate('TermsOfService')} 
+                activeOpacity={0.7}
+                accessibilityLabel="Terms of Service"
+                accessibilityHint="View the Terms of Service"
+                accessibilityRole="link"
+              >
+                <Text style={styles.linkText}>Terms of Service</Text>
+              </TouchableOpacity>
+              <Text style={styles.checkboxLabel}> and </Text>
+              <TouchableOpacity 
+                onPress={() => navigation.navigate('PrivacyPolicy')} 
+                activeOpacity={0.7}
+                accessibilityLabel="Privacy Policy"
+                accessibilityHint="View the Privacy Policy"
+                accessibilityRole="link"
+              >
+                <Text style={styles.linkText}>Privacy Policy</Text>
+              </TouchableOpacity>
+            </View>
+          </TouchableOpacity>
+          {errors.terms ? <Text style={styles.errorTextSmall}>{errors.terms}</Text> : null}
 
-          <TouchableOpacity style={styles.linkRow} onPress={() => navigation.navigate('Login')} activeOpacity={0.7}>
+          <Button 
+            title="INITIALIZE ACCOUNT" 
+            onPress={handleSignUp} 
+            isLoading={isLoading} 
+            style={styles.submitBtn} 
+            accessibilityLabel="Create account"
+            accessibilityHint="Register your new account"
+          />
+
+          <TouchableOpacity 
+            style={styles.linkRow} 
+            onPress={() => navigation.navigate('Login')} 
+            activeOpacity={0.7}
+            accessibilityLabel="Sign in"
+            accessibilityHint="Navigate to login screen"
+            accessibilityRole="button"
+          >
             <Text style={styles.linkPrompt}>ALREADY REGISTERED? </Text>
             <Text style={styles.linkAction}>ENTER SYSTEM</Text>
           </TouchableOpacity>
@@ -113,7 +184,7 @@ export function RegisterScreen({ navigation }: any) {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: theme.colors.background },
+  container: { flex: 1, backgroundColor: theme.colors.bg.base },
   gradientTop: { position: 'absolute', top: 0, left: 0, right: 0, height: 240 },
   corner: { position: 'absolute', width: 22, height: 22, borderColor: theme.colors.primary, opacity: 0.5 },
   cTL: { top: 22, left: 22, borderTopWidth: 2, borderLeftWidth: 2 },
@@ -124,20 +195,41 @@ const styles = StyleSheet.create({
   backBtn: { flexDirection: 'row', alignItems: 'center', gap: 4, marginBottom: theme.spacing.xl },
   backText: { color: theme.colors.primary, fontSize: 13, fontWeight: '700', letterSpacing: 1 },
   header: { marginBottom: theme.spacing.xxl },
-  title: { fontSize: 34, fontWeight: '900', color: theme.colors.text, letterSpacing: 3 },
+  title: { fontSize: 34, fontWeight: '900', color: theme.colors.text.primary, letterSpacing: 3, fontFamily: theme.fonts.heading },
   titleAccent: {
     fontSize: 34, fontWeight: '900', color: theme.colors.primary, letterSpacing: 3,
     textShadowColor: theme.colors.primary, textShadowOffset: { width: 0, height: 0 }, textShadowRadius: 12,
+    fontFamily: theme.fonts.heading,
   },
-  subtitle: { fontSize: 13, color: theme.colors.textDimmed, marginTop: theme.spacing.sm },
+  subtitle: { fontSize: 13, color: theme.colors.text.secondary, marginTop: theme.spacing.sm },
   divider: { width: 40, height: 1.5, backgroundColor: theme.colors.primary, marginTop: theme.spacing.md, opacity: 0.6 },
   errorBox: {
-    backgroundColor: 'rgba(255,51,102,0.1)', borderWidth: 1, borderColor: theme.colors.danger,
+    backgroundColor: theme.colors.danger + '15', borderWidth: 1, borderColor: theme.colors.danger,
     borderRadius: theme.border.radius.md, padding: theme.spacing.md, marginBottom: theme.spacing.md,
   },
   errorText: { color: theme.colors.danger, fontSize: 13, fontWeight: '600' },
+  errorTextSmall: { color: theme.colors.danger, fontSize: 12, marginTop: theme.spacing.xs, marginBottom: theme.spacing.sm },
   submitBtn: { marginTop: theme.spacing.sm, marginBottom: theme.spacing.lg },
   linkRow: { flexDirection: 'row', justifyContent: 'center', alignItems: 'center', paddingVertical: theme.spacing.sm },
-  linkPrompt: { color: theme.colors.textDimmed, fontSize: 13, letterSpacing: 1 },
+  linkPrompt: { color: theme.colors.text.secondary, fontSize: 13, letterSpacing: 1 },
   linkAction: { color: theme.colors.primary, fontSize: 13, fontWeight: '700', letterSpacing: 1 },
+  checkboxRow: { flexDirection: 'row', alignItems: 'flex-start', gap: theme.spacing.sm, marginBottom: theme.spacing.md },
+  checkbox: {
+    width: 20,
+    height: 20,
+    borderRadius: 4,
+    borderWidth: 2,
+    borderColor: theme.colors.bg.glassBorder,
+    backgroundColor: 'transparent',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: 2,
+  },
+  checkboxChecked: {
+    backgroundColor: theme.colors.primary,
+    borderColor: theme.colors.primary,
+  },
+  checkboxTextContainer: { flex: 1, flexDirection: 'row', flexWrap: 'wrap', alignItems: 'center' },
+  checkboxLabel: { color: theme.colors.text.secondary, fontSize: 13 },
+  linkText: { color: theme.colors.primary, fontSize: 13, fontWeight: '600' },
 });

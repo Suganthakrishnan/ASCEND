@@ -4,14 +4,17 @@ import {
   StyleSheet, Animated, TextInputProps,
 } from 'react-native';
 import { Eye, EyeOff } from 'lucide-react-native';
+import { BlurView } from 'expo-blur';
 import { theme } from '../../constants/theme';
 
 interface GlowInputProps extends TextInputProps {
   label?: string;
   error?: string;
+  accessibilityLabel?: string;
+  accessibilityHint?: string;
 }
 
-export function GlowInput({ label, error, secureTextEntry, style, ...props }: GlowInputProps) {
+export function GlowInput({ label, error, secureTextEntry, style, accessibilityLabel, accessibilityHint, ...props }: GlowInputProps) {
   const [showText, setShowText] = useState(false);
   const glowAnim = useRef(new Animated.Value(0)).current;
   const isPassword = !!secureTextEntry;
@@ -22,16 +25,20 @@ export function GlowInput({ label, error, secureTextEntry, style, ...props }: Gl
   const borderColor = glowAnim.interpolate({
     inputRange: [0, 1],
     outputRange: [
-      error ? theme.colors.danger : theme.colors.border,
-      error ? theme.colors.danger : theme.colors.primary,
+      error ? theme.colors.danger : theme.colors.bg.glassBorder,
+      error ? theme.colors.danger : 'rgba(0,229,255,0.6)',
     ],
   });
 
-  const shadowOpacity = glowAnim.interpolate({ inputRange: [0, 1], outputRange: [0, 0.5] });
+  const shadowOpacity = glowAnim.interpolate({ inputRange: [0, 1], outputRange: [0, 0.6] });
+  const labelColor = glowAnim.interpolate({
+    inputRange: [0, 1],
+    outputRange: [theme.colors.text.secondary, theme.colors.primary],
+  });
 
   return (
     <View style={[styles.wrapper, style]}>
-      {label ? <Text style={styles.label}>{label}</Text> : null}
+      {label ? <Animated.Text style={[styles.label, { color: labelColor }]}>{label}</Animated.Text> : null}
       <Animated.View
         style={[
           styles.container,
@@ -44,21 +51,30 @@ export function GlowInput({ label, error, secureTextEntry, style, ...props }: Gl
           },
         ]}
       >
+        <BlurView tint="dark" intensity={20} style={StyleSheet.absoluteFillObject} />
         <TextInput
           style={styles.input}
-          placeholderTextColor={theme.colors.textDimmed + '70'}
+          placeholderTextColor={theme.colors.text.secondary + '80'}
           secureTextEntry={isPassword && !showText}
           onFocus={() => animate(1)}
           onBlur={() => animate(0)}
           autoCapitalize="none"
           autoCorrect={false}
+          accessibilityLabel={accessibilityLabel || label || 'Text input'}
+          accessibilityHint={accessibilityHint || (isPassword ? 'Enter your password' : 'Enter text')}
           {...props}
         />
         {isPassword && (
-          <TouchableOpacity onPress={() => setShowText(!showText)} style={styles.eyeBtn} activeOpacity={0.7}>
+          <TouchableOpacity 
+            onPress={() => setShowText(!showText)} 
+            style={styles.eyeBtn} 
+            activeOpacity={0.7}
+            accessibilityLabel={showText ? 'Hide password' : 'Show password'}
+            accessibilityRole="button"
+          >
             {showText
-              ? <EyeOff color={theme.colors.textDimmed} size={18} />
-              : <Eye color={theme.colors.textDimmed} size={18} />}
+              ? <EyeOff color={theme.colors.text.secondary} size={18} />
+              : <Eye color={theme.colors.text.secondary} size={18} />}
           </TouchableOpacity>
         )}
       </Animated.View>
@@ -72,7 +88,6 @@ const styles = StyleSheet.create({
   label: {
     fontSize: 11,
     fontWeight: '700',
-    color: theme.colors.textDimmed,
     letterSpacing: 1.5,
     marginBottom: theme.spacing.xs,
     textTransform: 'uppercase',
@@ -80,18 +95,19 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: theme.colors.card,
-    borderRadius: theme.border.radius.md,
+    backgroundColor: theme.colors.bg.glass,
     borderWidth: 1,
-    paddingHorizontal: theme.spacing.md,
-    height: 56,
+    borderRadius: theme.border.radius.md,
+    height: theme.touch.inputHeight,
+    overflow: 'hidden',
   },
   input: {
     flex: 1,
-    color: theme.colors.text,
+    color: theme.colors.text.primary,
     fontSize: 15,
-    fontWeight: '500',
+    fontWeight: '400',
+    paddingHorizontal: theme.spacing.md,
   },
-  eyeBtn: { padding: theme.spacing.xs, marginLeft: theme.spacing.xs },
+  eyeBtn: { padding: theme.spacing.md, marginLeft: theme.spacing.sm },
   errorText: { color: theme.colors.danger, fontSize: 12, marginTop: 4, marginLeft: 2 },
 });

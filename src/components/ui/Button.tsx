@@ -1,14 +1,20 @@
+import React from 'react';
 import { theme } from '../../constants/theme';
-import { View, Text, TouchableOpacity, StyleSheet, ActivityIndicator } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, ActivityIndicator, Animated } from 'react-native';
+import { LinearGradient } from 'expo-linear-gradient';
+import { ChevronRight } from 'lucide-react-native';
 
 interface ButtonProps {
   title: string;
   onPress: () => void;
-  variant?: 'primary' | 'secondary' | 'outline' | 'ghost';
+  variant?: 'primary' | 'secondary' | 'outline' | 'ghost' | 'fab';
   isLoading?: boolean;
   disabled?: boolean;
   style?: object;
   textStyle?: object;
+  icon?: React.ReactNode;
+  accessibilityLabel?: string;
+  accessibilityHint?: string;
 }
 
 export function Button({ 
@@ -18,21 +24,47 @@ export function Button({
   isLoading = false, 
   disabled = false,
   style,
-  textStyle
+  textStyle,
+  icon,
+  accessibilityLabel,
+  accessibilityHint
 }: ButtonProps) {
-  
-  const getContainerStyle = () => {
-    switch (variant) {
-      case 'primary':
-        return [styles.container, styles.primaryContainer, theme.glow.cyan];
-      case 'secondary':
-        return [styles.container, styles.secondaryContainer];
-      case 'outline':
-        return [styles.container, styles.outlineContainer];
-      case 'ghost':
-        return [styles.container, styles.ghostContainer];
-    }
+  const scaleAnim = React.useRef(new Animated.Value(1)).current;
+
+  const handlePressIn = () => {
+    Animated.spring(scaleAnim, {
+      toValue: 0.96,
+      useNativeDriver: true,
+      speed: 50,
+      bounciness: 4,
+    }).start();
   };
+
+  const handlePressOut = () => {
+    Animated.spring(scaleAnim, {
+      toValue: 1,
+      useNativeDriver: true,
+      speed: 50,
+      bounciness: 4,
+    }).start();
+  };
+  
+  const renderContent = () => (
+    <>
+      {isLoading ? (
+        <ActivityIndicator color={variant === 'primary' ? '#080B12' : theme.colors.primary} />
+      ) : (
+        <View style={styles.contentRow}>
+          {icon && <View style={styles.iconWrapper}>{icon}</View>}
+          {variant !== 'fab' && (
+            <Text style={[getTextStyle(), textStyle]}>
+              {title}
+            </Text>
+          )}
+        </View>
+      )}
+    </>
+  );
 
   const getTextStyle = () => {
     switch (variant) {
@@ -44,31 +76,104 @@ export function Button({
         return [styles.text, styles.outlineText];
       case 'ghost':
         return [styles.text, styles.ghostText];
+      case 'fab':
+        return styles.text;
+    }
+  };
+
+  const animatedStyle = {
+    transform: [{ scale: scaleAnim }],
+  };
+
+  if (variant === 'fab') {
+    return (
+      <Animated.View style={[animatedStyle, styles.fabWrapper, style]}>
+        <TouchableOpacity 
+          style={[styles.fab, (disabled || isLoading) && styles.disabled]}
+          onPress={onPress}
+          onPressIn={handlePressIn}
+          onPressOut={handlePressOut}
+          disabled={disabled || isLoading}
+          activeOpacity={1}
+          hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
+          accessibilityLabel={accessibilityLabel || title}
+          accessibilityHint={accessibilityHint || (variant === 'fab' ? 'Floating action button' : 'Tap to perform action')}
+          accessibilityRole="button"
+          accessibilityState={{ disabled: disabled || isLoading }}
+        >
+          {renderContent()}
+        </TouchableOpacity>
+      </Animated.View>
+    );
+  }
+
+  if (variant === 'primary') {
+    return (
+      <Animated.View style={[animatedStyle, style]}>
+        <TouchableOpacity 
+          style={[(disabled || isLoading) && styles.disabled]}
+          onPress={onPress}
+          onPressIn={handlePressIn}
+          onPressOut={handlePressOut}
+          disabled={disabled || isLoading}
+          activeOpacity={1}
+          hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
+          accessibilityLabel={accessibilityLabel || title}
+          accessibilityHint={accessibilityHint || 'Tap to perform action'}
+          accessibilityRole="button"
+          accessibilityState={{ disabled: disabled || isLoading }}
+        >
+          <LinearGradient
+            colors={[theme.colors.primary, theme.colors.primaryHover]}
+            start={{ x: 0, y: 0 }}
+            end={{ x: 1, y: 1 }}
+            style={[styles.container, styles.primaryContainer]}
+          >
+            {renderContent()}
+          </LinearGradient>
+        </TouchableOpacity>
+      </Animated.View>
+    );
+  }
+
+  const getContainerStyle = () => {
+    switch (variant) {
+      case 'secondary':
+        return [styles.container, styles.secondaryContainer];
+      case 'outline':
+        return [styles.container, styles.outlineContainer];
+      case 'ghost':
+        return [styles.container, styles.ghostContainer];
     }
   };
 
   return (
-    <TouchableOpacity 
-      style={[
-        getContainerStyle(), 
-        (disabled || isLoading) && styles.disabled,
-        style
-      ]} 
-      onPress={onPress}
-      disabled={disabled || isLoading}
-      activeOpacity={0.8}
-    >
-      {isLoading ? (
-        <ActivityIndicator color={variant === 'primary' ? theme.colors.background : theme.colors.primary} />
-      ) : (
-        <Text style={[getTextStyle(), textStyle]}>{title}</Text>
-      )}
-    </TouchableOpacity>
+    <Animated.View style={[animatedStyle, style]}>
+      <TouchableOpacity 
+        style={[
+          getContainerStyle(), 
+          (disabled || isLoading) && styles.disabled,
+        ]} 
+        onPress={onPress}
+        onPressIn={handlePressIn}
+        onPressOut={handlePressOut}
+        disabled={disabled || isLoading}
+        activeOpacity={1}
+        hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
+        accessibilityLabel={accessibilityLabel || title}
+        accessibilityHint={accessibilityHint || 'Tap to perform action'}
+        accessibilityRole="button"
+        accessibilityState={{ disabled: disabled || isLoading }}
+      >
+        {renderContent()}
+      </TouchableOpacity>
+    </Animated.View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
+    minHeight: theme.touch.buttonMinHeight,
     paddingVertical: theme.spacing.md,
     paddingHorizontal: theme.spacing.xl,
     borderRadius: theme.border.radius.md,
@@ -82,18 +187,26 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 16,
     fontWeight: '700',
-    letterSpacing: 1,
+    letterSpacing: 2,
     textTransform: 'uppercase',
+  },
+  contentRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  iconWrapper: {
+    marginRight: theme.spacing.sm,
   },
   // Variants
   primaryContainer: {
     backgroundColor: theme.colors.primary,
   },
   primaryText: {
-    color: theme.colors.background,
+    color: '#080B12',
   },
   secondaryContainer: {
-    backgroundColor: theme.colors.card,
+    backgroundColor: 'transparent',
     borderWidth: 1,
     borderColor: theme.colors.secondary,
   },
@@ -107,14 +220,26 @@ const styles = StyleSheet.create({
   },
   outlineText: {
     color: theme.colors.primary,
-    textShadowColor: theme.colors.primary,
-    textShadowOffset: { width: 0, height: 0 },
-    textShadowRadius: 8,
   },
   ghostContainer: {
     backgroundColor: 'transparent',
   },
   ghostText: {
-    color: theme.colors.textDimmed,
-  }
+    color: theme.colors.text.secondary,
+  },
+  fabWrapper: {
+    position: 'absolute',
+    bottom: 24,
+    right: 24,
+  },
+  fab: {
+    width: theme.touch.fabSize,
+    height: theme.touch.fabSize,
+    borderRadius: theme.touch.fabSize / 2,
+    backgroundColor: theme.colors.primary,
+    alignItems: 'center',
+    justifyContent: 'center',
+    ...theme.glow.cyan,
+  },
 });
+
