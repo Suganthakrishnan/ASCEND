@@ -34,8 +34,8 @@ export const DailyTasks = React.memo(function DailyTasks() {
   const [isLoading, setIsLoading] = useState(true);
   const [selectedDateChip, setSelectedDateChip] = useState(0);
   const [selectedCategory, setSelectedCategory] = useState<'all' | 'daily' | 'deadline'>('all');
+  const [selectedDate, setSelectedDate] = useState(new Date().toISOString().split('T')[0]);
   const fadeAnim = useRef(new Animated.Value(0)).current;
-  const selectedDate = new Date().toISOString().split('T')[0];
 
   // Screen entry animation
   useEffect(() => {
@@ -61,7 +61,7 @@ export const DailyTasks = React.memo(function DailyTasks() {
 
   useEffect(() => {
     loadTasks();
-  }, [user]);
+  }, [user, selectedDate]);
 
   const loadTasks = async () => {
     if (!user?.id) {
@@ -267,6 +267,9 @@ export const DailyTasks = React.memo(function DailyTasks() {
   const allComplete = (dailyTasks.length > 0 && dailyTasks.every(t => t.completed)) &&
                      (deadlineTasks.length > 0 && deadlineTasks.every(t => t.completed));
 
+  // FIX 2: Only show "All Complete" banner when no modal is open
+  const showAllCompleteBanner = allComplete && !showAddModal && !showEditModal && !selectedTask;
+
   return (
     <ScreenWrapper>
       <Animated.View style={{ flex: 1, opacity: fadeAnim }}>
@@ -285,7 +288,10 @@ export const DailyTasks = React.memo(function DailyTasks() {
                   styles.dateChip,
                   selectedDateChip === index && styles.dateChipActive,
                 ]}
-                onPress={() => setSelectedDateChip(index)}
+                onPress={() => {
+                  setSelectedDateChip(index);
+                  setSelectedDate(chip.date);
+                }}
                 activeOpacity={0.7}
               >
                 <Text style={[
@@ -348,324 +354,324 @@ export const DailyTasks = React.memo(function DailyTasks() {
             />
           </HudContainer>
 
-        {/* All Complete State */}
-        {allComplete && (
-          <HudContainer style={styles.completeCard} accentColor={theme.colors.success}>
-            <Trophy color={theme.colors.success} size={32} />
-            <Text style={styles.completeTitle}>ALL TASKS COMPLETE</Text>
-            <Text style={styles.completeSubtitle}>BONUS XP EARNED: +{Math.round(totalXPEarned * 0.2)}</Text>
-          </HudContainer>
-        )}
+          {/* FIX 2: All Complete State — hidden when any modal is open */}
+          {showAllCompleteBanner && (
+            <HudContainer style={styles.completeCard} accentColor={theme.colors.success}>
+              <Trophy color={theme.colors.success} size={32} />
+              <Text style={styles.completeTitle}>ALL TASKS COMPLETE</Text>
+              <Text style={styles.completeSubtitle}>BONUS XP EARNED: +{Math.round(totalXPEarned * 0.2)}</Text>
+            </HudContainer>
+          )}
 
-        {/* Daily Tasks Section */}
-        {(selectedCategory === 'all' || selectedCategory === 'daily') && (
-          <>
-            <SectionHeader
-              title="Daily Tasks"
-              icon={<Calendar color={theme.colors.primary} size={14} />}
-            />
-            <FlatList
-              data={dailyTasks}
-              keyExtractor={(item) => item.id}
-              renderItem={({ item, index }) => (
-                <Animated.View
-                  style={{
-                    opacity: fadeAnim,
-                    transform: [{
-                      translateY: fadeAnim.interpolate({
-                        inputRange: [0, 1],
-                        outputRange: [16 * (index % 5), 0],
-                      }),
-                    }],
-                  }}
-                >
-                  <TaskCard
-                    task={item}
-                    onPress={() => openTaskCompletion(item)}
-                    onDelete={() => deleteTask(item.id)}
-                    onEdit={() => openEditModal(item)}
-                    getDifficultyColor={getDifficultyColor}
-                  />
-                </Animated.View>
-              )}
-              ListEmptyComponent={
-                <View style={styles.emptyState}>
-                  <Text style={styles.emptyText}>NO DAILY TASKS</Text>
-                </View>
-              }
-              scrollEnabled={false}
-            />
-          </>
-        )}
+          {/* Daily Tasks Section */}
+          {(selectedCategory === 'all' || selectedCategory === 'daily') && (
+            <>
+              <SectionHeader
+                title="Daily Tasks"
+                icon={<Calendar color={theme.colors.primary} size={14} />}
+              />
+              <FlatList
+                data={dailyTasks}
+                keyExtractor={(item) => item.id}
+                renderItem={({ item, index }) => (
+                  <Animated.View
+                    style={{
+                      opacity: fadeAnim,
+                      transform: [{
+                        translateY: fadeAnim.interpolate({
+                          inputRange: [0, 1],
+                          outputRange: [16 * (index % 5), 0],
+                        }),
+                      }],
+                    }}
+                  >
+                    <TaskCard
+                      task={item}
+                      onPress={() => openTaskCompletion(item)}
+                      onDelete={() => deleteTask(item.id)}
+                      onEdit={() => openEditModal(item)}
+                      getDifficultyColor={getDifficultyColor}
+                    />
+                  </Animated.View>
+                )}
+                ListEmptyComponent={
+                  <View style={styles.emptyState}>
+                    <Text style={styles.emptyText}>NO DAILY TASKS</Text>
+                  </View>
+                }
+                scrollEnabled={false}
+              />
+            </>
+          )}
 
-        {/* Deadline Tasks Section */}
-        {(selectedCategory === 'all' || selectedCategory === 'deadline') && (
-          <>
-            <SectionHeader
-              title="Deadline Tasks"
-              icon={<Calendar color={theme.colors.warning} size={14} />}
-            />
-            <FlatList
-              data={deadlineTasks}
-              keyExtractor={(item) => item.id}
-              renderItem={({ item, index }) => (
-                <Animated.View
-                  style={{
-                    opacity: fadeAnim,
-                    transform: [{
-                      translateY: fadeAnim.interpolate({
-                        inputRange: [0, 1],
-                        outputRange: [16 * (index % 5), 0],
-                      }),
-                    }],
-                  }}
-                >
-                  <TaskCard
-                    task={item}
-                    onPress={() => openTaskCompletion(item)}
-                    onDelete={() => deleteTask(item.id)}
-                    onEdit={() => openEditModal(item)}
-                    getDifficultyColor={getDifficultyColor}
-                    showDeadline
-                  />
-                </Animated.View>
-              )}
-              ListEmptyComponent={
-                <View style={styles.emptyState}>
-                  <Text style={styles.emptyText}>NO DEADLINE TASKS</Text>
-                </View>
-              }
-              scrollEnabled={false}
-            />
-          </>
-        )}
+          {/* Deadline Tasks Section */}
+          {(selectedCategory === 'all' || selectedCategory === 'deadline') && (
+            <>
+              <SectionHeader
+                title="Deadline Tasks"
+                icon={<Calendar color={theme.colors.warning} size={14} />}
+              />
+              <FlatList
+                data={deadlineTasks}
+                keyExtractor={(item) => item.id}
+                renderItem={({ item, index }) => (
+                  <Animated.View
+                    style={{
+                      opacity: fadeAnim,
+                      transform: [{
+                        translateY: fadeAnim.interpolate({
+                          inputRange: [0, 1],
+                          outputRange: [16 * (index % 5), 0],
+                        }),
+                      }],
+                    }}
+                  >
+                    <TaskCard
+                      task={item}
+                      onPress={() => openTaskCompletion(item)}
+                      onDelete={() => deleteTask(item.id)}
+                      onEdit={() => openEditModal(item)}
+                      getDifficultyColor={getDifficultyColor}
+                      showDeadline
+                    />
+                  </Animated.View>
+                )}
+                ListEmptyComponent={
+                  <View style={styles.emptyState}>
+                    <Text style={styles.emptyText}>NO DEADLINE TASKS</Text>
+                  </View>
+                }
+                scrollEnabled={false}
+              />
+            </>
+          )}
 
-        <View style={{ height: 80 }} />
-      </ScrollView>
+          <View style={{ height: 80 }} />
+        </ScrollView>
 
-      {/* Add Task FAB */}
-      <Button
-        variant="fab"
-        title=""
-        icon={<Plus color="#080B12" size={28} />}
-        onPress={() => setShowAddModal(true)}
-      />
+        {/* Add Task FAB */}
+        <Button
+          variant="fab"
+          title=""
+          icon={<Plus color="#080B12" size={28} />}
+          onPress={() => setShowAddModal(true)}
+        />
 
-      {/* Add Task Modal */}
-      <Modal
-        visible={showAddModal}
-        transparent
-        animationType="slide"
-        onRequestClose={() => setShowAddModal(false)}
-      >
-        <BlurView tint="dark" intensity={80} style={styles.modalOverlay}>
-          <View style={styles.modalContent}>
-            {/* Drag Handle */}
-            <View style={styles.dragHandle} />
-            
-            <View style={styles.modalHeader}>
-              <Text style={styles.modalTitle}>NEW TASK</Text>
-              <TouchableOpacity onPress={() => setShowAddModal(false)}>
-                <X color={theme.colors.text.secondary} size={24} />
-              </TouchableOpacity>
-            </View>
+        {/* Add Task Modal */}
+        <Modal
+          visible={showAddModal}
+          transparent
+          animationType="slide"
+          onRequestClose={() => setShowAddModal(false)}
+        >
+          <BlurView tint="dark" intensity={80} style={styles.modalOverlay}>
+            <View style={styles.modalContent}>
+              {/* Drag Handle */}
+              <View style={styles.dragHandle} />
 
-            <GlowInput
-              label="TITLE *"
-              placeholder="Enter task title"
-              value={newTaskTitle}
-              onChangeText={setNewTaskTitle}
-              autoFocus
-            />
-
-            <GlowInput
-              label="DESCRIPTION"
-              placeholder="Optional description"
-              value={newTaskDescription}
-              onChangeText={setNewTaskDescription}
-              multiline
-              numberOfLines={3}
-              style={styles.textAreaInput}
-            />
-
-            <Text style={styles.inputLabel}>TASK TYPE</Text>
-            <View style={styles.optionRow}>
-              {(['daily', 'deadline'] as TaskType[]).map(type => (
-                <TouchableOpacity
-                  key={type}
-                  style={[
-                    styles.optionBtn,
-                    newTaskType === type && styles.optionBtnActive,
-                  ]}
-                  onPress={() => setNewTaskType(type)}
-                  activeOpacity={0.7}
-                >
-                  <Text style={[
-                    styles.optionText,
-                    newTaskType === type && styles.optionTextActive,
-                  ]}>
-                    {type.toUpperCase()}
-                  </Text>
+              <View style={styles.modalHeader}>
+                <Text style={styles.modalTitle}>NEW TASK</Text>
+                <TouchableOpacity onPress={() => setShowAddModal(false)}>
+                  <X color={theme.colors.text.secondary} size={24} />
                 </TouchableOpacity>
-              ))}
-            </View>
+              </View>
 
-            {newTaskType === 'deadline' && (
               <GlowInput
-                label="DEADLINE DATE"
-                placeholder="YYYY-MM-DD"
-                value={newTaskDeadline}
-                onChangeText={setNewTaskDeadline}
+                label="TITLE *"
+                placeholder="Enter task title"
+                value={newTaskTitle}
+                onChangeText={setNewTaskTitle}
+                autoFocus
               />
-            )}
 
-            <Text style={styles.inputLabel}>DIFFICULTY</Text>
-            <View style={styles.optionRow}>
-              {(['easy', 'medium', 'hard'] as TaskDifficulty[]).map(diff => (
-                <TouchableOpacity
-                  key={diff}
-                  style={[
-                    styles.optionBtn,
-                    newTaskDifficulty === diff && styles.optionBtnActive,
-                    { borderColor: getDifficultyColor(diff) },
-                    newTaskDifficulty === diff && { backgroundColor: getDifficultyColor(diff) + '20' },
-                  ]}
-                  onPress={() => setNewTaskDifficulty(diff)}
-                  activeOpacity={0.7}
-                >
-                  <Text style={[
-                    styles.optionText,
-                    newTaskDifficulty === diff && styles.optionTextActive,
-                    { color: newTaskDifficulty === diff ? getDifficultyColor(diff) : theme.colors.text.secondary },
-                  ]}>
-                    {DIFFICULTY_LABELS[diff]}
-                  </Text>
-                  <Text style={styles.xpPreview}>+{XP_REWARDS[diff]} XP</Text>
-                </TouchableOpacity>
-              ))}
-            </View>
-
-            <Button
-              title="CREATE TASK"
-              onPress={handleAddTask}
-              style={styles.createButton}
-            />
-          </View>
-        </BlurView>
-      </Modal>
-
-      {/* Task Completion Modal */}
-      <Modal
-        visible={!!selectedTask}
-        transparent
-        animationType="fade"
-        onRequestClose={() => setSelectedTask(null)}
-      >
-        <View style={styles.modalOverlay}>
-          <View style={styles.finishModalContent}>
-            <Text style={styles.finishModalTitle}>FINISH QUEST?</Text>
-            <Text style={styles.finishTaskTitle}>{selectedTask?.title}</Text>
-            {!!selectedTask?.description && (
-              <Text style={styles.finishTaskDescription}>{selectedTask.description}</Text>
-            )}
-            <Text style={styles.finishXpText}>Reward: +{selectedTask?.xp_reward ?? 0} XP</Text>
-
-            <View style={styles.finishActions}>
-              <Button
-                title="CANCEL"
-                variant="secondary"
-                onPress={() => setSelectedTask(null)}
-                style={styles.finishActionButton}
-              />
-              <Button
-                title="FINISHED"
-                onPress={markSelectedTaskAsFinished}
-                style={styles.finishActionButton}
-              />
-            </View>
-          </View>
-        </View>
-      </Modal>
-
-      {/* Edit Task Modal */}
-      <Modal
-        visible={showEditModal}
-        transparent
-        animationType="slide"
-        onRequestClose={() => setShowEditModal(false)}
-      >
-        <BlurView tint="dark" intensity={80} style={styles.modalOverlay}>
-          <View style={styles.modalContent}>
-            {/* Drag Handle */}
-            <View style={styles.dragHandle} />
-            
-            <View style={styles.modalHeader}>
-              <Text style={styles.modalTitle}>EDIT TASK</Text>
-              <TouchableOpacity onPress={() => setShowEditModal(false)}>
-                <X color={theme.colors.text.secondary} size={24} />
-              </TouchableOpacity>
-            </View>
-
-            <GlowInput
-              label="TITLE *"
-              placeholder="Enter task title"
-              value={editTaskTitle}
-              onChangeText={setEditTaskTitle}
-            />
-
-            <GlowInput
-              label="DESCRIPTION"
-              placeholder="Optional description"
-              value={editTaskDescription}
-              onChangeText={setEditTaskDescription}
-              multiline
-              numberOfLines={3}
-              style={styles.textAreaInput}
-            />
-
-            {editingTask?.task_type === 'deadline' && (
               <GlowInput
-                label="DEADLINE DATE"
-                placeholder="YYYY-MM-DD"
-                value={editTaskDeadline}
-                onChangeText={setEditTaskDeadline}
+                label="DESCRIPTION"
+                placeholder="Optional description"
+                value={newTaskDescription}
+                onChangeText={setNewTaskDescription}
+                multiline
+                numberOfLines={3}
+                style={styles.textAreaInput}
               />
-            )}
 
-            <Text style={styles.inputLabel}>DIFFICULTY</Text>
-            <View style={styles.optionRow}>
-              {(['easy', 'medium', 'hard'] as TaskDifficulty[]).map(diff => (
-                <TouchableOpacity
-                  key={diff}
-                  style={[
-                    styles.optionBtn,
-                    editTaskDifficulty === diff && styles.optionBtnActive,
-                    { borderColor: getDifficultyColor(diff) },
-                    editTaskDifficulty === diff && { backgroundColor: getDifficultyColor(diff) + '20' },
-                  ]}
-                  onPress={() => setEditTaskDifficulty(diff)}
-                  activeOpacity={0.7}
-                >
-                  <Text style={[
-                    styles.optionText,
-                    editTaskDifficulty === diff && styles.optionTextActive,
-                    { color: editTaskDifficulty === diff ? getDifficultyColor(diff) : theme.colors.text.secondary },
-                  ]}>
-                    {DIFFICULTY_LABELS[diff]}
-                  </Text>
-                  <Text style={styles.xpPreview}>+{XP_REWARDS[diff]} XP</Text>
-                </TouchableOpacity>
-              ))}
+              <Text style={styles.inputLabel}>TASK TYPE</Text>
+              <View style={styles.optionRow}>
+                {(['daily', 'deadline'] as TaskType[]).map(type => (
+                  <TouchableOpacity
+                    key={type}
+                    style={[
+                      styles.optionBtn,
+                      newTaskType === type && styles.optionBtnActive,
+                    ]}
+                    onPress={() => setNewTaskType(type)}
+                    activeOpacity={0.7}
+                  >
+                    <Text style={[
+                      styles.optionText,
+                      newTaskType === type && styles.optionTextActive,
+                    ]}>
+                      {type.toUpperCase()}
+                    </Text>
+                  </TouchableOpacity>
+                ))}
+              </View>
+
+              {newTaskType === 'deadline' && (
+                <GlowInput
+                  label="DEADLINE DATE"
+                  placeholder="YYYY-MM-DD"
+                  value={newTaskDeadline}
+                  onChangeText={setNewTaskDeadline}
+                />
+              )}
+
+              <Text style={styles.inputLabel}>DIFFICULTY</Text>
+              <View style={styles.optionRow}>
+                {(['easy', 'medium', 'hard'] as TaskDifficulty[]).map(diff => (
+                  <TouchableOpacity
+                    key={diff}
+                    style={[
+                      styles.optionBtn,
+                      newTaskDifficulty === diff && styles.optionBtnActive,
+                      { borderColor: getDifficultyColor(diff) },
+                      newTaskDifficulty === diff && { backgroundColor: getDifficultyColor(diff) + '20' },
+                    ]}
+                    onPress={() => setNewTaskDifficulty(diff)}
+                    activeOpacity={0.7}
+                  >
+                    <Text style={[
+                      styles.optionText,
+                      newTaskDifficulty === diff && styles.optionTextActive,
+                      { color: newTaskDifficulty === diff ? getDifficultyColor(diff) : theme.colors.text.secondary },
+                    ]}>
+                      {DIFFICULTY_LABELS[diff]}
+                    </Text>
+                    <Text style={styles.xpPreview}>+{XP_REWARDS[diff]} XP</Text>
+                  </TouchableOpacity>
+                ))}
+              </View>
+
+              <Button
+                title="CREATE TASK"
+                onPress={handleAddTask}
+                style={styles.createButton}
+              />
             </View>
+          </BlurView>
+        </Modal>
 
-            <Button
-              title="UPDATE TASK"
-              onPress={handleEditTask}
-              style={styles.createButton}
-            />
+        {/* FIX 4: Task Completion Modal — centered, not bottom-sheet */}
+        <Modal
+          visible={!!selectedTask}
+          transparent
+          animationType="fade"
+          onRequestClose={() => setSelectedTask(null)}
+        >
+          <View style={[styles.modalOverlay, { justifyContent: 'center' }]}>
+            <View style={styles.finishModalContent}>
+              <Text style={styles.finishModalTitle}>FINISH QUEST?</Text>
+              <Text style={styles.finishTaskTitle}>{selectedTask?.title}</Text>
+              {!!selectedTask?.description && (
+                <Text style={styles.finishTaskDescription}>{selectedTask.description}</Text>
+              )}
+              <Text style={styles.finishXpText}>Reward: +{selectedTask?.xp_reward ?? 0} XP</Text>
+
+              <View style={styles.finishActions}>
+                <Button
+                  title="CANCEL"
+                  variant="secondary"
+                  onPress={() => setSelectedTask(null)}
+                  style={styles.finishActionButton}
+                />
+                <Button
+                  title="FINISHED"
+                  onPress={markSelectedTaskAsFinished}
+                  style={styles.finishActionButton}
+                />
+              </View>
+            </View>
           </View>
-        </BlurView>
-      </Modal>
+        </Modal>
+
+        {/* Edit Task Modal */}
+        <Modal
+          visible={showEditModal}
+          transparent
+          animationType="slide"
+          onRequestClose={() => setShowEditModal(false)}
+        >
+          <BlurView tint="dark" intensity={80} style={styles.modalOverlay}>
+            <View style={styles.modalContent}>
+              {/* Drag Handle */}
+              <View style={styles.dragHandle} />
+
+              <View style={styles.modalHeader}>
+                <Text style={styles.modalTitle}>EDIT TASK</Text>
+                <TouchableOpacity onPress={() => setShowEditModal(false)}>
+                  <X color={theme.colors.text.secondary} size={24} />
+                </TouchableOpacity>
+              </View>
+
+              <GlowInput
+                label="TITLE *"
+                placeholder="Enter task title"
+                value={editTaskTitle}
+                onChangeText={setEditTaskTitle}
+              />
+
+              <GlowInput
+                label="DESCRIPTION"
+                placeholder="Optional description"
+                value={editTaskDescription}
+                onChangeText={setEditTaskDescription}
+                multiline
+                numberOfLines={3}
+                style={styles.textAreaInput}
+              />
+
+              {editingTask?.task_type === 'deadline' && (
+                <GlowInput
+                  label="DEADLINE DATE"
+                  placeholder="YYYY-MM-DD"
+                  value={editTaskDeadline}
+                  onChangeText={setEditTaskDeadline}
+                />
+              )}
+
+              <Text style={styles.inputLabel}>DIFFICULTY</Text>
+              <View style={styles.optionRow}>
+                {(['easy', 'medium', 'hard'] as TaskDifficulty[]).map(diff => (
+                  <TouchableOpacity
+                    key={diff}
+                    style={[
+                      styles.optionBtn,
+                      editTaskDifficulty === diff && styles.optionBtnActive,
+                      { borderColor: getDifficultyColor(diff) },
+                      editTaskDifficulty === diff && { backgroundColor: getDifficultyColor(diff) + '20' },
+                    ]}
+                    onPress={() => setEditTaskDifficulty(diff)}
+                    activeOpacity={0.7}
+                  >
+                    <Text style={[
+                      styles.optionText,
+                      editTaskDifficulty === diff && styles.optionTextActive,
+                      { color: editTaskDifficulty === diff ? getDifficultyColor(diff) : theme.colors.text.secondary },
+                    ]}>
+                      {DIFFICULTY_LABELS[diff]}
+                    </Text>
+                    <Text style={styles.xpPreview}>+{XP_REWARDS[diff]} XP</Text>
+                  </TouchableOpacity>
+                ))}
+              </View>
+
+              <Button
+                title="UPDATE TASK"
+                onPress={handleEditTask}
+                style={styles.createButton}
+              />
+            </View>
+          </BlurView>
+        </Modal>
       </Animated.View>
     </ScreenWrapper>
   );
@@ -692,6 +698,8 @@ function TaskCard({
   return (
     <TouchableOpacity activeOpacity={0.85} onPress={onPress}>
       <HudContainer
+        // FIX 1: Removed padding: 0 override — HudContainer now uses its default
+        // internal padding so all text/icons inside the card are properly visible
         style={[styles.taskCard, { borderLeftWidth: 3, borderLeftColor: difficultyColor }]}
         accentColor={difficultyColor}
       >
@@ -705,10 +713,13 @@ function TaskCard({
 
         <View style={styles.taskBody}>
           <View style={styles.taskTitleRow}>
-            <Text style={[
-              styles.taskTitle,
-              task.completed && styles.taskTitleDone,
-            ]}>
+            <Text
+              style={[
+                styles.taskTitle,
+                task.completed && styles.taskTitleDone,
+              ]}
+              numberOfLines={2}
+            >
               {task.title}
             </Text>
             <View style={[styles.taskDifficultyBadge, { backgroundColor: difficultyColor + '20' }]}>
@@ -717,14 +728,14 @@ function TaskCard({
               </Text>
             </View>
           </View>
-          {task.description && (
+          {task.description ? (
             <Text style={styles.taskDesc} numberOfLines={2}>{task.description}</Text>
-          )}
-          {showDeadline && task.deadline_date && (
+          ) : null}
+          {showDeadline && task.deadline_date ? (
             <Text style={styles.deadlineText}>
               Due: {new Date(task.deadline_date).toLocaleDateString()}
             </Text>
-          )}
+          ) : null}
         </View>
 
         <View style={styles.taskRight}>
@@ -760,7 +771,13 @@ const styles = StyleSheet.create({
 
   // Loading
   loadingContainer: { flex: 1, justifyContent: 'center', alignItems: 'center' },
-  loadingText: { color: theme.colors.text.secondary, fontSize: 14, fontWeight: '600', letterSpacing: 2, marginTop: theme.spacing.md },
+  loadingText: {
+    color: theme.colors.text.secondary,
+    fontSize: 14,
+    fontWeight: '600',
+    letterSpacing: 2,
+    marginTop: theme.spacing.md,
+  },
 
   // Date Chips
   dateChipsRow: {
@@ -818,24 +835,67 @@ const styles = StyleSheet.create({
   // Summary HUD
   summaryHud: { marginBottom: theme.spacing.lg },
   summaryRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' },
-  summaryLabel: { fontSize: 10, fontWeight: '700', color: theme.colors.text.secondary, letterSpacing: 1.5 },
-  summaryValue: { fontSize: 28, fontWeight: '900', color: theme.colors.text.primary, marginTop: 2, fontFamily: theme.fonts.heading },
+  summaryLabel: {
+    fontSize: 10,
+    fontWeight: '700',
+    color: theme.colors.text.secondary,
+    letterSpacing: 1.5,
+  },
+  summaryValue: {
+    fontSize: 28,
+    fontWeight: '900',
+    color: theme.colors.text.primary,
+    marginTop: 2,
+    fontFamily: theme.fonts.heading,
+  },
   summaryMax: { color: theme.colors.text.secondary, fontWeight: '400' },
-  xpEarned: { alignItems: 'center', borderWidth: 1, borderColor: theme.colors.bg.glassBorder, padding: theme.spacing.sm, paddingHorizontal: theme.spacing.md, borderRadius: theme.border.radius.md },
-  xpEarnedValue: { fontSize: 18, fontWeight: '900', color: theme.colors.primary, fontFamily: theme.fonts.heading },
-  xpEarnedLabel: { fontSize: 8, fontWeight: '700', color: theme.colors.text.secondary, letterSpacing: 2 },
+  xpEarned: {
+    alignItems: 'center',
+    borderWidth: 1,
+    borderColor: theme.colors.bg.glassBorder,
+    padding: theme.spacing.sm,
+    paddingHorizontal: theme.spacing.md,
+    borderRadius: theme.border.radius.md,
+  },
+  xpEarnedValue: {
+    fontSize: 18,
+    fontWeight: '900',
+    color: theme.colors.primary,
+    fontFamily: theme.fonts.heading,
+  },
+  xpEarnedLabel: {
+    fontSize: 8,
+    fontWeight: '700',
+    color: theme.colors.text.secondary,
+    letterSpacing: 2,
+  },
 
   // Complete state
-  completeCard: { alignItems: 'center', paddingVertical: theme.spacing.xl, marginBottom: theme.spacing.lg },
-  completeTitle: { fontSize: 16, fontWeight: '900', color: theme.colors.success, letterSpacing: 2, marginTop: theme.spacing.md },
-  completeSubtitle: { fontSize: 11, fontWeight: '600', color: theme.colors.primary, letterSpacing: 1, marginTop: theme.spacing.xs },
+  completeCard: {
+    alignItems: 'center',
+    paddingVertical: theme.spacing.xl,
+    marginBottom: theme.spacing.lg,
+  },
+  completeTitle: {
+    fontSize: 16,
+    fontWeight: '900',
+    color: theme.colors.success,
+    letterSpacing: 2,
+    marginTop: theme.spacing.md,
+  },
+  completeSubtitle: {
+    fontSize: 11,
+    fontWeight: '600',
+    color: theme.colors.primary,
+    letterSpacing: 1,
+    marginTop: theme.spacing.xs,
+  },
 
-  // Task Card
+  // FIX 1: Task Card — padding: 0 removed so HudContainer renders content correctly
   taskCard: {
     flexDirection: 'row',
     alignItems: 'center',
     marginBottom: theme.spacing.sm,
-    padding: 0,
   },
   taskCheckArea: { marginRight: theme.spacing.md },
   taskBody: { flex: 1 },
@@ -844,12 +904,26 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
     marginBottom: 4,
+    gap: theme.spacing.xs,
   },
-  taskTitle: { fontSize: 14, fontWeight: '600', color: theme.colors.text.primary, letterSpacing: 0.5 },
+  taskTitle: {
+    fontSize: 14,
+    fontWeight: '600',
+    color: theme.colors.text.primary,
+    letterSpacing: 0.5,
+    flex: 1,
+  },
   taskTitleDone: { textDecorationLine: 'line-through', color: theme.colors.text.secondary },
   taskDesc: { fontSize: 11, color: theme.colors.text.secondary, marginTop: 2 },
   taskRight: { alignItems: 'flex-end', marginLeft: theme.spacing.sm },
-  taskXpBadge: { backgroundColor: theme.colors.gold + '15', paddingHorizontal: 6, paddingVertical: 2, borderWidth: 1, borderColor: theme.colors.gold + '40', borderRadius: 4 },
+  taskXpBadge: {
+    backgroundColor: theme.colors.gold + '15',
+    paddingHorizontal: 6,
+    paddingVertical: 2,
+    borderWidth: 1,
+    borderColor: theme.colors.gold + '40',
+    borderRadius: 4,
+  },
   taskXpText: { fontSize: 10, fontWeight: '700', color: theme.colors.gold, letterSpacing: 1 },
   taskDifficultyBadge: {
     paddingHorizontal: 4,
@@ -874,12 +948,20 @@ const styles = StyleSheet.create({
 
   // Empty
   emptyState: { alignItems: 'center', paddingVertical: theme.spacing.xxl },
-  emptyText: { color: theme.colors.text.secondary, fontSize: 14, fontWeight: '700', letterSpacing: 2 },
+  emptyText: {
+    color: theme.colors.text.secondary,
+    fontSize: 14,
+    fontWeight: '700',
+    letterSpacing: 2,
+  },
 
-  // Modal
+  // FIX 3: Modal overlay with zIndex so it always renders above background content
   modalOverlay: {
     flex: 1,
     justifyContent: 'flex-end',
+    backgroundColor: 'rgba(0, 0, 0, 0.7)',
+    zIndex: 999,
+    elevation: 999,
   },
   dragHandle: {
     width: 40,
@@ -931,10 +1013,17 @@ const styles = StyleSheet.create({
   optionBtnActive: {
     borderWidth: 2,
   },
-  optionText: { fontSize: 12, fontWeight: '700', color: theme.colors.text.secondary, letterSpacing: 1 },
+  optionText: {
+    fontSize: 12,
+    fontWeight: '700',
+    color: theme.colors.text.secondary,
+    letterSpacing: 1,
+  },
   optionTextActive: { fontWeight: '900' },
   xpPreview: { fontSize: 10, fontWeight: '600', color: theme.colors.text.secondary, marginTop: 2 },
   createButton: { marginTop: theme.spacing.lg },
+
+  // FIX 4: Finish modal — centered in screen with proper margin
   finishModalContent: {
     backgroundColor: theme.colors.bg.glass,
     borderWidth: 1,

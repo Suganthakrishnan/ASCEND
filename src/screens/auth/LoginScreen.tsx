@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import {
   View, Text, StyleSheet, Animated, TouchableOpacity,
-  KeyboardAvoidingView, Platform, ScrollView, Alert,
+  KeyboardAvoidingView, Platform, ScrollView, Alert, Keyboard,
 } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { theme } from '../../constants/theme';
@@ -133,6 +133,7 @@ export function LoginScreen({ navigation }: any) {
             onChangeText={(t) => { setEmail(t); setError(null); }}
             keyboardType="email-address"
             textContentType="emailAddress"
+            onSubmitEditing={() => Keyboard.dismiss()}
             accessibilityLabel="Email address input"
             accessibilityHint="Enter your email address to sign in"
           />
@@ -143,6 +144,7 @@ export function LoginScreen({ navigation }: any) {
             onChangeText={(t) => { setPassword(t); setError(null); }}
             secureTextEntry
             textContentType="password"
+            onSubmitEditing={handleSignIn}
             accessibilityLabel="Password input"
             accessibilityHint="Enter your password to sign in"
           />

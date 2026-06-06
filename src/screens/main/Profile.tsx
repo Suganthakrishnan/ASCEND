@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import {
   View, Text, StyleSheet, ScrollView, TouchableOpacity, Alert,
-  Modal, TextInput, Switch, Animated,
+  Modal, TextInput, Switch, Animated, Keyboard,
 } from 'react-native';
 import { BlurView } from 'expo-blur';
 import { useNavigation } from '@react-navigation/native';
@@ -724,14 +724,15 @@ export const Profile = React.memo(function Profile() {
             </View>
             
             <GlowInput
-              label="CHARACTER NAME"
-              placeholder="Enter character name"
+              label="USERNAME"
+              placeholder="Enter your username"
               value={editForm.character_name}
               onChangeText={(text) => setEditForm(prev => ({ ...prev, character_name: text }))}
-              autoCapitalize="characters"
+              autoCapitalize="words"
               blurOnSubmit={false}
+              onSubmitEditing={() => Keyboard.dismiss()}
             />
-            
+
             <GlowInput
               label="AGE"
               placeholder="Enter age"
@@ -739,8 +740,9 @@ export const Profile = React.memo(function Profile() {
               onChangeText={(text) => setEditForm(prev => ({ ...prev, age: text }))}
               keyboardType="numeric"
               blurOnSubmit={false}
+              onSubmitEditing={() => Keyboard.dismiss()}
             />
-            
+
             <GlowInput
               label={`WEIGHT (${userPreferences?.weight_unit || 'kg'})`}
               placeholder="Enter weight"
@@ -748,8 +750,9 @@ export const Profile = React.memo(function Profile() {
               onChangeText={(text) => setEditForm(prev => ({ ...prev, weight: text }))}
               keyboardType="numeric"
               blurOnSubmit={false}
+              onSubmitEditing={() => Keyboard.dismiss()}
             />
-            
+
             <GlowInput
               label={`HEIGHT (${userPreferences?.height_unit || 'cm'})`}
               placeholder="Enter height"
@@ -757,14 +760,16 @@ export const Profile = React.memo(function Profile() {
               onChangeText={(text) => setEditForm(prev => ({ ...prev, height: text }))}
               keyboardType="numeric"
               blurOnSubmit={false}
+              onSubmitEditing={() => Keyboard.dismiss()}
             />
-            
+
             <GlowInput
               label="GENDER"
               placeholder="Enter gender (optional)"
               value={editForm.gender}
               onChangeText={(text) => setEditForm(prev => ({ ...prev, gender: text }))}
               blurOnSubmit={false}
+              onSubmitEditing={() => Keyboard.dismiss()}
             />
             
             <Button
@@ -822,7 +827,7 @@ export const Profile = React.memo(function Profile() {
       {/* Attributes Allocation Modal */}
       <Modal visible={showAttributesModal} transparent animationType="slide">
         <BlurView tint="dark" intensity={80} style={styles.modalOverlay}>
-          <View style={styles.modalContent}>
+          <View style={styles.modalContentCompact}>
             <View style={styles.dragHandle} />
             <View style={styles.modalHeader}>
               <Text style={styles.modalTitle}>ALLOCATE POINTS</Text>
@@ -1406,6 +1411,15 @@ const styles = StyleSheet.create({
     padding: theme.spacing.lg,
     paddingBottom: theme.spacing.xxl,
     maxHeight: '90%',
+    zIndex: 1001,
+  },
+  modalContentCompact: {
+    backgroundColor: '#1a1a1a',
+    borderTopWidth: 1,
+    borderTopColor: theme.colors.bg.glassBorder,
+    padding: theme.spacing.md,
+    paddingBottom: theme.spacing.xl,
+    maxHeight: '70%',
     zIndex: 1001,
   },
   modalHeader: {

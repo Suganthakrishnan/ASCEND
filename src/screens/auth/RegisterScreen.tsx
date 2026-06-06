@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import {
   View, Text, StyleSheet, TouchableOpacity,
-  KeyboardAvoidingView, Platform, ScrollView, Alert,
+  KeyboardAvoidingView, Platform, ScrollView, Alert, Keyboard,
 } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { ChevronLeft, Check } from 'lucide-react-native';
@@ -94,6 +94,7 @@ export function RegisterScreen({ navigation }: any) {
             keyboardType="email-address"
             textContentType="emailAddress"
             error={errors.email}
+            onSubmitEditing={() => Keyboard.dismiss()}
             accessibilityLabel="Email address input"
             accessibilityHint="Enter your email address to create an account"
           />
@@ -105,6 +106,7 @@ export function RegisterScreen({ navigation }: any) {
             secureTextEntry
             textContentType="newPassword"
             error={errors.password}
+            onSubmitEditing={() => Keyboard.dismiss()}
             accessibilityLabel="Password input"
             accessibilityHint="Create a password with at least 8 characters"
           />
@@ -116,6 +118,7 @@ export function RegisterScreen({ navigation }: any) {
             secureTextEntry
             textContentType="newPassword"
             error={errors.confirm}
+            onSubmitEditing={() => Keyboard.dismiss()}
             accessibilityLabel="Confirm password input"
             accessibilityHint="Re-enter your password to confirm"
           />

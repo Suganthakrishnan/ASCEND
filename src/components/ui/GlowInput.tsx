@@ -60,6 +60,8 @@ export function GlowInput({ label, error, secureTextEntry, style, accessibilityL
           onBlur={() => animate(0)}
           autoCapitalize="none"
           autoCorrect={false}
+          returnKeyType="done"
+          onSubmitEditing={props.onSubmitEditing}
           accessibilityLabel={accessibilityLabel || label || 'Text input'}
           accessibilityHint={accessibilityHint || (isPassword ? 'Enter your password' : 'Enter text')}
           {...props}
