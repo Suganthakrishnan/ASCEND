@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import {
   View, Text, StyleSheet, ScrollView, TouchableOpacity,
-  TextInput, Modal, Alert, ActivityIndicator, Animated, FlatList,
+  TextInput, Modal, Alert, ActivityIndicator, Animated,
 } from 'react-native';
 import { BlurView } from 'expo-blur';
 import { ScreenWrapper } from '../../components/layout/ScreenWrapper';
@@ -370,11 +370,10 @@ export const DailyTasks = React.memo(function DailyTasks() {
                 title="Daily Tasks"
                 icon={<Calendar color={theme.colors.primary} size={14} />}
               />
-              <FlatList
-                data={dailyTasks}
-                keyExtractor={(item) => item.id}
-                renderItem={({ item, index }) => (
+              {dailyTasks.length > 0 ? (
+                dailyTasks.map((item, index) => (
                   <Animated.View
+                    key={item.id}
                     style={{
                       opacity: fadeAnim,
                       transform: [{
@@ -393,14 +392,12 @@ export const DailyTasks = React.memo(function DailyTasks() {
                       getDifficultyColor={getDifficultyColor}
                     />
                   </Animated.View>
-                )}
-                ListEmptyComponent={
-                  <View style={styles.emptyState}>
-                    <Text style={styles.emptyText}>NO DAILY TASKS</Text>
-                  </View>
-                }
-                scrollEnabled={false}
-              />
+                ))
+              ) : (
+                <View style={styles.emptyState}>
+                  <Text style={styles.emptyText}>NO DAILY TASKS</Text>
+                </View>
+              )}
             </>
           )}
 
@@ -411,11 +408,10 @@ export const DailyTasks = React.memo(function DailyTasks() {
                 title="Deadline Tasks"
                 icon={<Calendar color={theme.colors.warning} size={14} />}
               />
-              <FlatList
-                data={deadlineTasks}
-                keyExtractor={(item) => item.id}
-                renderItem={({ item, index }) => (
+              {deadlineTasks.length > 0 ? (
+                deadlineTasks.map((item, index) => (
                   <Animated.View
+                    key={item.id}
                     style={{
                       opacity: fadeAnim,
                       transform: [{
@@ -435,14 +431,12 @@ export const DailyTasks = React.memo(function DailyTasks() {
                       showDeadline
                     />
                   </Animated.View>
-                )}
-                ListEmptyComponent={
-                  <View style={styles.emptyState}>
-                    <Text style={styles.emptyText}>NO DEADLINE TASKS</Text>
-                  </View>
-                }
-                scrollEnabled={false}
-              />
+                ))
+              ) : (
+                <View style={styles.emptyState}>
+                  <Text style={styles.emptyText}>NO DEADLINE TASKS</Text>
+                </View>
+              )}
             </>
           )}
 
@@ -464,7 +458,7 @@ export const DailyTasks = React.memo(function DailyTasks() {
           animationType="slide"
           onRequestClose={() => setShowAddModal(false)}
         >
-          <BlurView tint="dark" intensity={80} style={styles.modalOverlay}>
+          <View style={styles.modalOverlay}>
             <View style={styles.modalContent}>
               {/* Drag Handle */}
               <View style={styles.dragHandle} />
@@ -504,7 +498,7 @@ export const DailyTasks = React.memo(function DailyTasks() {
                       newTaskType === type && styles.optionBtnActive,
                     ]}
                     onPress={() => setNewTaskType(type)}
-                    activeOpacity={0.7}
+                    activeOpacity={1}
                   >
                     <Text style={[
                       styles.optionText,
@@ -537,7 +531,7 @@ export const DailyTasks = React.memo(function DailyTasks() {
                       newTaskDifficulty === diff && { backgroundColor: getDifficultyColor(diff) + '20' },
                     ]}
                     onPress={() => setNewTaskDifficulty(diff)}
-                    activeOpacity={0.7}
+                    activeOpacity={1}
                   >
                     <Text style={[
                       styles.optionText,
@@ -600,7 +594,7 @@ export const DailyTasks = React.memo(function DailyTasks() {
           animationType="slide"
           onRequestClose={() => setShowEditModal(false)}
         >
-          <BlurView tint="dark" intensity={80} style={styles.modalOverlay}>
+          <View style={styles.modalOverlay}>
             <View style={styles.modalContent}>
               {/* Drag Handle */}
               <View style={styles.dragHandle} />
@@ -698,8 +692,7 @@ function TaskCard({
   return (
     <TouchableOpacity activeOpacity={0.85} onPress={onPress}>
       <HudContainer
-        // FIX 1: Removed padding: 0 override — HudContainer now uses its default
-        // internal padding so all text/icons inside the card are properly visible
+        blurEnabled={false}
         style={[styles.taskCard, { borderLeftWidth: 3, borderLeftColor: difficultyColor }]}
         accentColor={difficultyColor}
       >
@@ -712,30 +705,32 @@ function TaskCard({
         </View>
 
         <View style={styles.taskBody}>
-          <View style={styles.taskTitleRow}>
-            <Text
-              style={[
-                styles.taskTitle,
-                task.completed && styles.taskTitleDone,
-              ]}
-              numberOfLines={2}
-            >
-              {task.title}
-            </Text>
-            <View style={[styles.taskDifficultyBadge, { backgroundColor: difficultyColor + '20' }]}>
-              <Text style={[styles.taskDifficultyText, { color: difficultyColor }]}>
-                {DIFFICULTY_LABELS[task.difficulty]}
+          <View style={[styles.taskTextBackground, { backgroundColor: 'rgba(0,0,0,0.3)' }]}>
+            <View style={styles.taskTitleRow}>
+              <Text
+                style={[
+                  styles.taskTitle,
+                  task.completed && styles.taskTitleDone,
+                ]}
+                numberOfLines={2}
+              >
+                {task.title}
               </Text>
+              <View style={[styles.taskDifficultyBadge, { backgroundColor: difficultyColor + '20' }]}>
+                <Text style={[styles.taskDifficultyText, { color: difficultyColor }]}>
+                  {DIFFICULTY_LABELS[task.difficulty]}
+                </Text>
+              </View>
             </View>
+            {task.description ? (
+              <Text style={styles.taskDesc} numberOfLines={2}>{task.description}</Text>
+            ) : null}
+            {showDeadline && task.deadline_date ? (
+              <Text style={styles.deadlineText}>
+                Due: {new Date(task.deadline_date).toLocaleDateString()}
+              </Text>
+            ) : null}
           </View>
-          {task.description ? (
-            <Text style={styles.taskDesc} numberOfLines={2}>{task.description}</Text>
-          ) : null}
-          {showDeadline && task.deadline_date ? (
-            <Text style={styles.deadlineText}>
-              Due: {new Date(task.deadline_date).toLocaleDateString()}
-            </Text>
-          ) : null}
         </View>
 
         <View style={styles.taskRight}>
@@ -899,6 +894,10 @@ const styles = StyleSheet.create({
   },
   taskCheckArea: { marginRight: theme.spacing.md },
   taskBody: { flex: 1 },
+  taskTextBackground: {
+    padding: theme.spacing.sm,
+    borderRadius: theme.border.radius.sm,
+  },
   taskTitleRow: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -972,7 +971,7 @@ const styles = StyleSheet.create({
     marginBottom: theme.spacing.lg,
   },
   modalContent: {
-    backgroundColor: theme.colors.bg.glass,
+    backgroundColor: theme.colors.bg.base,
     borderTopWidth: 1,
     borderTopColor: theme.colors.bg.glassBorder,
     padding: theme.spacing.lg,
@@ -1025,7 +1024,7 @@ const styles = StyleSheet.create({
 
   // FIX 4: Finish modal — centered in screen with proper margin
   finishModalContent: {
-    backgroundColor: theme.colors.bg.glass,
+    backgroundColor: theme.colors.bg.base,
     borderWidth: 1,
     borderColor: theme.colors.primary,
     margin: theme.spacing.lg,

@@ -113,7 +113,7 @@ export function LoginScreen({ navigation }: any) {
             <View style={styles.badge}>
               <Text style={styles.badgeIcon}>⚡</Text>
             </View>
-            <Animated.Text style={[styles.logoText, { opacity: pulseAnim }]}>SYSTEM FIT</Animated.Text>
+            <Animated.Text style={[styles.logoText, { opacity: pulseAnim }]}>ASCEND</Animated.Text>
             <Text style={styles.logoSub}>AUTHENTICATION PROTOCOL v2.0</Text>
             <View style={styles.divider} />
           </View>

@@ -49,7 +49,7 @@ export class DataExportService {
         .select('*')
         .eq('user_id', userId)
         .gte('date', new Date(Date.now() - 365 * 24 * 60 * 60 * 1000).toISOString().split('T')[0])
-        .order('date', { ascending: false });
+        .order('date', { Ascending: false });
 
       // Fetch quest history
       const { data: quests } = await QuestService.getCompletedQuests(userId, 1000);

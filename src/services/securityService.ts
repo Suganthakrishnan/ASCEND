@@ -1,7 +1,7 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 /**
- * Security utilities for SystemFit app
+ * Security utilities for Ascend app
  * Provides input sanitization, rate limiting, secure storage, session management, and debug detection
  */
 

@@ -35,7 +35,7 @@ export class NotificationService {
         .from('notifications')
         .select('*')
         .eq('user_id', userId)
-        .order('created_at', { ascending: false })
+        .order('created_at', { Ascending: false })
         .limit(limit);
 
       return { data: data || [], error };

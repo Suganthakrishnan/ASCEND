@@ -52,8 +52,8 @@ export class ScheduleService {
         .eq('user_id', userId)
         .gte('scheduled_date', startDate)
         .lte('scheduled_date', endDate)
-        .order('scheduled_date', { ascending: true })
-        .order('scheduled_time', { ascending: true });
+        .order('scheduled_date', { Ascending: true })
+        .order('scheduled_time', { Ascending: true });
 
       return { data: data || [], error };
     } catch (error) {
@@ -137,7 +137,7 @@ export class ScheduleService {
         .from('reminders')
         .select('*')
         .eq('user_id', userId)
-        .order('scheduled_time', { ascending: true });
+        .order('scheduled_time', { Ascending: true });
 
       return { data: data || [], error };
     } catch (error) {
@@ -294,8 +294,8 @@ export class ScheduleService {
         .gte('scheduled_date', today)
         .lte('scheduled_date', nextWeekStr)
         .eq('completed', false)
-        .order('scheduled_date', { ascending: true })
-        .order('scheduled_time', { ascending: true })
+        .order('scheduled_date', { Ascending: true })
+        .order('scheduled_time', { Ascending: true })
         .limit(10);
 
       return { data: data || [], error };

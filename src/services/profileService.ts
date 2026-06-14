@@ -39,7 +39,7 @@ export async function saveOnboardingData(
   userId: string,
   data: OnboardingData,
 ): Promise<{ error: Error | null }> {
-  console.log('[SystemFit] saveOnboardingData called for user:', userId, 'with data:', data);
+  console.log('[Ascend] saveOnboardingData called for user:', userId, 'with data:', data);
   const { character_name, age, weight, height, gender, goals, weight_kg, height_cm, notifications_enabled, reminder_time, quest_reminders_enabled, ...prefs } = data;
 
   const prefPayload: Partial<UserPreferences> & { id: string } = {
@@ -63,7 +63,7 @@ export async function saveOnboardingData(
   if (height != null) prefPayload.height = height;
   if (gender) prefPayload.gender = gender;
 
-  console.log('[SystemFit] Calling PreferencesService.upsertUserPreferences with payload:', prefPayload);
+  console.log('[Ascend] Calling PreferencesService.upsertUserPreferences with payload:', prefPayload);
   const { error: prefError } = await PreferencesService.upsertUserPreferences(userId, prefPayload);
   if (prefError) {
     console.log('Preferences error:', prefError);
@@ -71,10 +71,10 @@ export async function saveOnboardingData(
     // Pass the error through directly - it's already an Error object from persistedMutate
     return { error: prefError };
   }
-  console.log('[SystemFit] Preferences saved successfully');
+  console.log('[Ascend] Preferences saved successfully');
 
   const name = character_name?.trim() || 'Agent';
-  console.log('[SystemFit] Calling StatsService.ensureUserStats with name:', name);
+  console.log('[Ascend] Calling StatsService.ensureUserStats with name:', name);
   const { error: statsError } = await StatsService.ensureUserStats(userId, name);
   if (statsError) {
     console.log('Stats error:', statsError);
@@ -82,7 +82,7 @@ export async function saveOnboardingData(
     // Pass the error through directly - it's already an Error object from persistedMutate
     return { error: statsError };
   }
-  console.log('[SystemFit] Stats saved successfully');
+  console.log('[Ascend] Stats saved successfully');
 
   return { error: null };
 }

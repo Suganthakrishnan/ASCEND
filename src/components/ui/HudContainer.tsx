@@ -8,12 +8,13 @@ interface HudContainerProps extends ViewProps {
   intensity?: number;
   active?: boolean;
   accentColor?: string;
+  blurEnabled?: boolean;
 }
 
-export function HudContainer({ children, intensity = 20, active = false, accentColor = theme.colors.primary, style, ...props }: HudContainerProps) {
+export function HudContainer({ children, intensity = 20, active = false, accentColor = theme.colors.primary, blurEnabled = true, style, ...props }: HudContainerProps) {
   return (
     <View style={[styles.wrapper, style]} {...props}>
-      <BlurView tint="dark" intensity={intensity} style={StyleSheet.absoluteFillObject} />
+      {blurEnabled && <BlurView tint="dark" intensity={intensity} style={StyleSheet.absoluteFillObject} />}
       {/* Top accent line */}
       <View style={[styles.accentLine, { backgroundColor: accentColor }]} />
       <View style={[styles.content, active && styles.contentActive]}>
@@ -25,7 +26,7 @@ export function HudContainer({ children, intensity = 20, active = false, accentC
 
 const styles = StyleSheet.create({
   wrapper: {
-    backgroundColor: theme.colors.bg.glass,
+    backgroundColor: 'rgba(255,255,255,0.08)',
     overflow: 'hidden',
     borderWidth: 1,
     borderColor: theme.colors.bg.glassBorder,

@@ -43,7 +43,7 @@ export class QuestService {
         .select('*')
         .eq('is_active', true)
         .lte('required_level', userLevel)
-        .order('difficulty', { ascending: true });
+        .order('difficulty', { Ascending: true });
 
       // Filter out seasonal quests that are not currently active
       const filteredQuests = (data || []).filter(quest => {
@@ -76,7 +76,7 @@ export class QuestService {
         `)
         .eq('user_id', userId)
         .in('status', ['assigned', 'in_progress'])
-        .order('assigned_at', { ascending: false });
+        .order('assigned_at', { Ascending: false });
 
       return { data: data || [], error };
     } catch (error) {
@@ -95,7 +95,7 @@ export class QuestService {
         `)
         .eq('user_id', userId)
         .eq('status', 'completed')
-        .order('completed_at', { ascending: false })
+        .order('completed_at', { Ascending: false })
         .limit(limit);
 
       return { data: data || [], error };

@@ -38,7 +38,7 @@ export function useAuth() {
 
   const fetchOnboardingStatus = async (userId: string): Promise<boolean> => {
     try {
-      console.log('[SystemFit] Fetching onboarding status for user:', userId);
+      console.log('[Ascend] Fetching onboarding status for user:', userId);
       
       // Check if user has biometric data in user_preferences table
       const queryPromise = supabase
@@ -53,25 +53,25 @@ export function useAuth() {
       
       const { data, error } = await Promise.race([queryPromise, timeoutPromise]) as any;
       
-      console.log('[SystemFit] Query result - data:', data, 'error:', error);
+      console.log('[Ascend] Query result - data:', data, 'error:', error);
       
       if (error) {
-        console.error('[SystemFit] Error fetching onboarding status:', error);
-        console.error('[SystemFit] Error details:', JSON.stringify(error));
+        console.error('[Ascend] Error fetching onboarding status:', error);
+        console.error('[Ascend] Error details:', JSON.stringify(error));
         return false;
       }
       
       if (!data) {
-        console.warn('[SystemFit] No user preferences found for user:', userId);
+        console.warn('[Ascend] No user preferences found for user:', userId);
         return false;
       }
       
       // Check if user has biometric data (age, weight, height)
       const hasBiometricData = !!(data.age && data.weight && data.height);
-      console.log('[SystemFit] Onboarding status for user', userId, ':', hasBiometricData, '(has biometric data)');
+      console.log('[Ascend] Onboarding status for user', userId, ':', hasBiometricData, '(has biometric data)');
       return hasBiometricData;
     } catch (err) {
-      console.error('[SystemFit] Exception fetching onboarding status:', err);
+      console.error('[Ascend] Exception fetching onboarding status:', err);
       return false;
     }
   };
@@ -81,7 +81,7 @@ export function useAuth() {
 
     const initAuth = async () => {
       try {
-        console.log('[SystemFit] Initializing auth...');
+        console.log('[Ascend] Initializing auth...');
         const sessionResult = await withTimeout(
           supabase.auth.getSession(),
           2000, // 2s timeout — faster fallback
@@ -89,20 +89,20 @@ export function useAuth() {
         );
 
         const currentSession = sessionResult.data?.session ?? null;
-        console.log('[SystemFit] Session retrieved:', currentSession ? 'exists' : 'null');
+        console.log('[Ascend] Session retrieved:', currentSession ? 'exists' : 'null');
         if (!mounted) return;
 
         setSession(currentSession);
         setUser(currentSession?.user ?? null);
 
         if (currentSession?.user) {
-          console.log('[SystemFit] User authenticated, fetching onboarding status...');
+          console.log('[Ascend] User authenticated, fetching onboarding status...');
           const onboarded = await fetchOnboardingStatus(currentSession.user.id);
-          console.log('[SystemFit] Setting onboarding complete to:', onboarded);
+          console.log('[Ascend] Setting onboarding complete to:', onboarded);
           if (mounted) setIsOnboardingComplete(onboarded);
         }
       } catch (e) {
-        console.warn('[SystemFit] Auth init error:', e);
+        console.warn('[Ascend] Auth init error:', e);
       } finally {
         if (mounted) setIsLoading(false);
       }
@@ -111,17 +111,17 @@ export function useAuth() {
     initAuth();
 
     const { data: { subscription } } = supabase.auth.onAuthStateChange(async (event, session) => {
-      console.log('[SystemFit] Auth state changed. Event:', event, 'Session:', session ? 'exists' : 'null');
+      console.log('[Ascend] Auth state changed. Event:', event, 'Session:', session ? 'exists' : 'null');
       if (!mounted) return;
       setSession(session);
       setUser(session?.user ?? null);
       if (session?.user) {
-        console.log('[SystemFit] User authenticated after state change, fetching onboarding status...');
+        console.log('[Ascend] User authenticated after state change, fetching onboarding status...');
         const onboarded = await fetchOnboardingStatus(session.user.id);
-        console.log('[SystemFit] Setting onboarding complete to:', onboarded);
+        console.log('[Ascend] Setting onboarding complete to:', onboarded);
         if (mounted) setIsOnboardingComplete(onboarded);
       } else {
-        console.log('[SystemFit] No user session, setting onboarding complete to false');
+        console.log('[Ascend] No user session, setting onboarding complete to false');
         setIsOnboardingComplete(false);
       }
     });
@@ -189,7 +189,7 @@ export function useAuth() {
   const completeOnboarding = async (): Promise<{ error: any }> => {
     if (!user) return { error: new Error('No authenticated user') };
     
-    console.log('[SystemFit] Completing onboarding for user:', user.id);
+    console.log('[Ascend] Completing onboarding for user:', user.id);
     
     // Use UPSERT to prevent duplicate inserts
     const { error, data } = await supabase
@@ -205,12 +205,12 @@ export function useAuth() {
       .select();
     
     if (error) {
-      console.error('[SystemFit] Error completing onboarding:', error);
-      console.error('[SystemFit] Error details:', JSON.stringify(error));
+      console.error('[Ascend] Error completing onboarding:', error);
+      console.error('[Ascend] Error details:', JSON.stringify(error));
       return { error };
     }
     
-    console.log('[SystemFit] Onboarding update successful. Data:', data);
+    console.log('[Ascend] Onboarding update successful. Data:', data);
     setIsOnboardingComplete(true);
     
     // Verify the update was successful
@@ -221,9 +221,9 @@ export function useAuth() {
       .single();
     
     if (verifyError) {
-      console.error('[SystemFit] Verification error:', verifyError);
+      console.error('[Ascend] Verification error:', verifyError);
     } else {
-      console.log('[SystemFit] Verification - onboarding_complete status:', verifyData?.onboarding_complete);
+      console.log('[Ascend] Verification - onboarding_complete status:', verifyData?.onboarding_complete);
     }
     
     return { error: null };

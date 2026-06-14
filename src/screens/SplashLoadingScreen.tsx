@@ -6,7 +6,7 @@ export function SplashLoadingScreen() {
   const pulseAnim = useRef(new Animated.Value(0.5)).current;
   const scanAnim = useRef(new Animated.Value(0)).current;
   const [displayText, setDisplayText] = useState('');
-  const fullText = 'SYSTEM FIT';
+  const fullText = 'Ascend';
 
   useEffect(() => {
     // Pulse animation

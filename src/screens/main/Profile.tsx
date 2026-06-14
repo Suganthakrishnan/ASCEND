@@ -42,7 +42,7 @@ const SETTINGS_ITEMS = [
   { key: 'units',         label: 'Units & Measurements',     icon: Ruler },
   { key: 'privacy',       label: 'Privacy & Data',           icon: ShieldCheck },
   { key: 'legal',         label: 'Legal Information',       icon: FileText },
-  { key: 'about',         label: 'About SystemFit',          icon: Info },
+  { key: 'about',         label: 'About Ascend',          icon: Info },
 ];
 
 // ─── Component ───────────────────────────────────────────────
@@ -959,12 +959,12 @@ export const Profile = React.memo(function Profile() {
           <View style={styles.modalContent}>
             <View style={styles.dragHandle} />
             <View style={styles.modalHeader}>
-              <Text style={styles.modalTitle}>ABOUT SYSTEMFIT</Text>
+              <Text style={styles.modalTitle}>ABOUT ASCEND</Text>
               <TouchableOpacity onPress={() => setShowAboutModal(false)}>
                 <X color={theme.colors.text.secondary} size={22} />
               </TouchableOpacity>
             </View>
-            <Text style={styles.aboutText}>SystemFit v0.1.0 (Alpha)</Text>
+            <Text style={styles.aboutText}>Ascend v0.1.0 (Alpha)</Text>
             <Text style={styles.aboutDesc}>
               Gamified health and fitness coaching. Track workouts, complete daily quests, and level up your real-life stats.
             </Text>

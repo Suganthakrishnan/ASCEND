@@ -24,7 +24,7 @@ export function TermsOfServiceScreen({ navigation }: any) {
         <ScrollView contentContainerStyle={styles.scroll} showsVerticalScrollIndicator={false}>
           <Text style={styles.sectionTitle}>1. ACCEPTANCE OF TERMS</Text>
           <Text style={styles.content}>
-            By accessing and using SystemFit, you accept and agree to be bound by the terms and provisions of this agreement. If you do not agree to abide by these terms, please do not use this service.
+            By accessing and using Ascend, you accept and agree to be bound by the terms and provisions of this agreement. If you do not agree to abide by these terms, please do not use this service.
           </Text>
 
           <Text style={styles.sectionTitle}>2. USER ACCOUNT</Text>
@@ -34,7 +34,7 @@ export function TermsOfServiceScreen({ navigation }: any) {
 
           <Text style={styles.sectionTitle}>3. HEALTH & FITNESS DISCLAIMER</Text>
           <Text style={styles.content}>
-            SystemFit is designed for general fitness and wellness information purposes only. It is not intended to be a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of your physician or other qualified health provider with any questions you may have regarding a medical condition or fitness program.
+            Ascend is designed for general fitness and wellness information purposes only. It is not intended to be a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of your physician or other qualified health provider with any questions you may have regarding a medical condition or fitness program.
           </Text>
 
           <Text style={styles.sectionTitle}>4. USER CONDUCT</Text>
@@ -44,17 +44,17 @@ export function TermsOfServiceScreen({ navigation }: any) {
 
           <Text style={styles.sectionTitle}>5. INTELLECTUAL PROPERTY</Text>
           <Text style={styles.content}>
-            All content, features, and functionality of SystemFit are owned by SystemFit and are protected by international copyright, trademark, and other intellectual property laws. You may not reproduce, distribute, or create derivative works without our express written permission.
+            All content, features, and functionality of Ascend are owned by Ascend and are protected by international copyright, trademark, and other intellectual property laws. You may not reproduce, distribute, or create derivative works without our express written permission.
           </Text>
 
           <Text style={styles.sectionTitle}>6. PRIVACY</Text>
           <Text style={styles.content}>
-            Your use of SystemFit is also subject to our Privacy Policy. Please review our Privacy Policy, which also governs the service and informs users of our data collection practices.
+            Your use of Ascend is also subject to our Privacy Policy. Please review our Privacy Policy, which also governs the service and informs users of our data collection practices.
           </Text>
 
           <Text style={styles.sectionTitle}>7. LIMITATION OF LIABILITY</Text>
           <Text style={styles.content}>
-            To the fullest extent permitted by law, SystemFit shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including without limitation, loss of profits, data, use, or other intangible losses, resulting from your access to or use of or inability to access or use the service.
+            To the fullest extent permitted by law, Ascend shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including without limitation, loss of profits, data, use, or other intangible losses, resulting from your access to or use of or inability to access or use the service.
           </Text>
 
           <Text style={styles.sectionTitle}>8. TERMINATION</Text>
@@ -64,7 +64,7 @@ export function TermsOfServiceScreen({ navigation }: any) {
 
           <Text style={styles.sectionTitle}>9. GOVERNING LAW</Text>
           <Text style={styles.content}>
-            These Terms shall be governed by and construed in accordance with the laws of the jurisdiction in which SystemFit operates, without regard to its conflict of law provisions.
+            These Terms shall be governed by and construed in accordance with the laws of the jurisdiction in which Ascend operates, without regard to its conflict of law provisions.
           </Text>
 
           <Text style={styles.sectionTitle}>10. CHANGES TO TERMS</Text>

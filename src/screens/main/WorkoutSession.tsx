@@ -87,7 +87,7 @@ const REST_MESSAGES = [
 // ─── Component ───────────────────────────────────────────────
 export function WorkoutSession({ route, navigation }: any) {
   const { user } = useAuthContext();
-  const { workoutId } = route.params;
+  const { workoutId } = route?.params ?? {};
   
   // Workout state
   const [workout, setWorkout] = useState<CustomWorkoutPlan | null>(null);
@@ -113,13 +113,29 @@ export function WorkoutSession({ route, navigation }: any) {
 
   // Load workout
   useEffect(() => {
-    const loadedWorkout = WorkoutPlannerService.getWorkoutById(workoutId);
-    if (loadedWorkout) {
+    const loadWorkout = async () => {
+      if (!workoutId) {
+        Alert.alert('SESSION ERROR', 'Unable to start workout session.', [
+          { text: 'OK', onPress: () => navigation.goBack() },
+        ]);
+        return;
+      }
+
+      await WorkoutPlannerService.initialize(user?.id);
+      const loadedWorkout = WorkoutPlannerService.getWorkoutById(workoutId);
+      if (!loadedWorkout) {
+        Alert.alert('WORKOUT NOT FOUND', 'This workout could not be loaded.', [
+          { text: 'OK', onPress: () => navigation.goBack() },
+        ]);
+        return;
+      }
+
       setWorkout(loadedWorkout);
       setTotalCalories(loadedWorkout.estimatedCalories || 0);
       setTotalDuration(loadedWorkout.duration || 0);
-    }
-  }, [workoutId]);
+    };
+    loadWorkout();
+  }, [workoutId, navigation, user?.id]);
 
   // Main timer
   useEffect(() => {
@@ -308,14 +324,35 @@ export function WorkoutSession({ route, navigation }: any) {
     return `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
   };
 
-  const currentExercise = workout?.exercises[currentExerciseIndex];
-  const progress = workout ? ((currentExerciseIndex + 1) / workout.exercises.length) * 100 : 0;
+  const currentExercise = workout?.exercises?.[currentExerciseIndex] ?? workout?.exercises?.[0] ?? null;
+  const exerciseCount = workout?.exercises?.length ?? 1;
+  const progress = workout && exerciseCount > 0 ? ((currentExerciseIndex + 1) / exerciseCount) * 100 : 0;
 
   if (!workout) {
     return (
       <ScreenWrapper>
         <View style={styles.loadingContainer}>
           <Text style={styles.loadingText}>LOADING WORKOUT...</Text>
+        </View>
+      </ScreenWrapper>
+    );
+  }
+
+  if (!workout.exercises?.length) {
+    return (
+      <ScreenWrapper>
+        <View style={styles.loadingContainer}>
+          <Text style={styles.loadingText}>This workout has no exercises.</Text>
+        </View>
+      </ScreenWrapper>
+    );
+  }
+
+  if (!currentExercise) {
+    return (
+      <ScreenWrapper>
+        <View style={styles.loadingContainer}>
+          <Text style={styles.loadingText}>Preparing your workout...</Text>
         </View>
       </ScreenWrapper>
     );

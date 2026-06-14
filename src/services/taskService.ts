@@ -65,7 +65,7 @@ export class TaskService {
             .select('*')
             .eq('user_id', userId)
             .eq('task_date', date)
-            .order('created_at', { ascending: false });
+            .order('created_at', { Ascending: false });
           if (error) throw error;
           return { data: data || [], error: null };
         },
@@ -89,7 +89,7 @@ export class TaskService {
             .select('*')
             .eq('user_id', userId)
             .eq('task_type', 'deadline')
-            .order('deadline_date', { ascending: true });
+            .order('deadline_date', { Ascending: true });
           if (error) throw error;
           return { data: data || [], error: null };
         },
@@ -134,7 +134,7 @@ export class TaskService {
 
       const { data, error: createError } = await this.createTask(userId, {
         title: 'Logging in',
-        description: 'Open SystemFit today to keep your streak alive.',
+        description: 'Open Ascend today to keep your streak alive.',
         difficulty: 'easy',
         xp_reward: XP_REWARDS.easy,
         task_date: date,

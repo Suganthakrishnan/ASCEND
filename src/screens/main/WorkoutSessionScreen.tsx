@@ -34,29 +34,34 @@ export function WorkoutSessionScreen({ route, navigation }: { route: { params: R
   const startTimeRef = useRef(Date.now());
 
   useEffect(() => {
-    const plan = WorkoutPlannerService.getWorkoutById(workoutId);
-    if (!plan) {
-      Alert.alert('ERROR', 'Workout not found', [{ text: 'OK', onPress: () => navigation.goBack() }]);
-      return;
-    }
-    setWorkout(plan);
-    const s = WorkoutPlannerService.startSession(workoutId);
-    setSession(s);
-    setCompletedExercises(
-      plan.exercises.map(ex => ({ ...ex, completed: false })),
-    );
+    const initSession = async () => {
+      await WorkoutPlannerService.initialize(user?.id);
+      const plan = WorkoutPlannerService.getWorkoutById(workoutId);
+      if (!plan) {
+        Alert.alert('ERROR', 'Workout not found', [{ text: 'OK', onPress: () => navigation.goBack() }]);
+        return;
+      }
+      setWorkout(plan);
+      const s = WorkoutPlannerService.startSession(workoutId);
+      setSession(s);
+      setCompletedExercises(
+        plan.exercises.map(ex => ({ ...ex, completed: false })),
+      );
 
-    timerRef.current = setInterval(() => {
-      setElapsedSec(Math.floor((Date.now() - startTimeRef.current) / 1000));
-    }, 1000);
+      timerRef.current = setInterval(() => {
+        setElapsedSec(Math.floor((Date.now() - startTimeRef.current) / 1000));
+      }, 1000);
+    };
+
+    initSession();
 
     return () => {
       if (timerRef.current) clearInterval(timerRef.current);
       if (restRef.current) clearInterval(restRef.current);
     };
-  }, [workoutId, navigation]);
+  }, [workoutId, navigation, user?.id]);
 
-  const currentExercise = workout?.exercises[exerciseIndex];
+  const currentExercise = workout?.exercises?.[exerciseIndex];
   const totalSets = currentExercise?.sets ?? 1;
   const restDuration = currentExercise?.restTime ?? workout?.restTime ?? 60;
 
@@ -168,7 +173,10 @@ export function WorkoutSessionScreen({ route, navigation }: { route: { params: R
     );
   }
 
-  const progress = (exerciseIndex + (setIndex + 1) / totalSets) / workout.exercises.length;
+  const exerciseCount = workout?.exercises?.length ?? 1;
+  const progress = exerciseCount > 0
+    ? (exerciseIndex + (setIndex + 1) / totalSets) / exerciseCount
+    : 0;
 
   return (
     <ScreenWrapper>

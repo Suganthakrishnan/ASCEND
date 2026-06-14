@@ -57,7 +57,7 @@ export async function fetchCloudSessions(userId: string): Promise<WorkoutSession
           .from('workout_session_logs')
           .select('session')
           .eq('user_id', userId)
-          .order('created_at', { ascending: false })
+          .order('created_at', { Ascending: false })
           .limit(50);
         if (error) throw error;
         const sessions = (data ?? []).map(row => row.session as WorkoutSession);

@@ -24,7 +24,7 @@ export function PrivacyPolicyScreen({ navigation }: any) {
         <ScrollView contentContainerStyle={styles.scroll} showsVerticalScrollIndicator={false}>
           <Text style={styles.sectionTitle}>1. INFORMATION WE COLLECT</Text>
           <Text style={styles.content}>
-            SystemFit collects information you provide directly to us, including your name, email address, and fitness data such as workout logs, progress tracking, and personal preferences. We also collect automatically generated information about your use of the app, including device information and usage statistics.
+            Ascend collects information you provide directly to us, including your name, email address, and fitness data such as workout logs, progress tracking, and personal preferences. We also collect automatically generated information about your use of the app, including device information and usage statistics.
           </Text>
 
           <Text style={styles.sectionTitle}>2. HOW WE USE YOUR INFORMATION</Text>
@@ -54,7 +54,7 @@ export function PrivacyPolicyScreen({ navigation }: any) {
 
           <Text style={styles.sectionTitle}>7. CHILDREN'S PRIVACY</Text>
           <Text style={styles.content}>
-            SystemFit is not intended for children under the age of 13. We do not knowingly collect personal information from children under 13. If you are a parent or guardian and believe your child has provided us with personal information, please contact us, and we will delete such information.
+            Ascend is not intended for children under the age of 13. We do not knowingly collect personal information from children under 13. If you are a parent or guardian and believe your child has provided us with personal information, please contact us, and we will delete such information.
           </Text>
 
           <Text style={styles.sectionTitle}>8. INTERNATIONAL DATA TRANSFERS</Text>

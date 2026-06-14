@@ -158,7 +158,7 @@ export class ScreenTimeService {
             .select('*')
             .eq('user_id', userId)
             .gte('log_date', startStr)
-            .order('log_date', { ascending: false });
+            .order('log_date', { Ascending: false });
           if (error) throw error;
           return { data: data ?? [], error: null };
         },

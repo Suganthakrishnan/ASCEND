@@ -1,8 +1,8 @@
-# SystemFit - Health & Fitness Coaching App
+# ascend - Health & Fitness Coaching App
 
 ## 📋 Project Overview
 
-SystemFit is a comprehensive health and fitness coaching mobile application built with React Native and Expo. The app features a gamified approach to health tracking with RPG-style elements, user authentication, and a modern dark-themed UI inspired by cyberpunk aesthetics with glass morphism effects.
+ascend is a comprehensive health and fitness coaching mobile application built with React Native and Expo. The app features a gamified approach to health tracking with RPG-style elements, user authentication, and a modern dark-themed UI inspired by cyberpunk aesthetics with glass morphism effects.
 
 ## 🎯 Vision
 
@@ -331,7 +331,7 @@ Transform health and fitness tracking into an engaging game-like experience wher
   - Appearance & theme settings
   - Units & measurements
   - Privacy & data settings
-  - About SystemFit
+  - About ascend
 - **Profile Editing**: 
   - Edit user name
   - Update profile information
@@ -1534,7 +1534,7 @@ Transform health and fitness tracking into an engaging game-like experience wher
 1. **Clone the repository**
    ```bash
    git clone <repository-url>
-   cd SystemFit
+   cd ascend
    ```
 
 2. **Install dependencies**
@@ -1575,7 +1575,7 @@ Transform health and fitness tracking into an engaging game-like experience wher
 ## 📁 Project Structure
 
 ```
-SystemFit/
+ascend/
 ├── src/
 │   ├── components/
 │   │   ├── layout/

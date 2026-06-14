@@ -10,14 +10,14 @@ const supabaseAnonKey = process.env.EXPO_PUBLIC_SUPABASE_ANON_KEY;
 
 if (!supabaseUrl || !supabaseAnonKey) {
   throw new Error(
-    '[SystemFit] Missing Supabase credentials.\n' +
+    '[Ascend] Missing Supabase credentials.\n' +
     'Ensure EXPO_PUBLIC_SUPABASE_URL and EXPO_PUBLIC_SUPABASE_ANON_KEY ' +
     'are set in your .env file, then STOP and RESTART expo (npx expo start -c).'
   );
 }
 
 // Security check: warn if using localhost in production build
-if (__DEV__ === false && (supabaseUrl.includes('localhost') || supabaseUrl.includes('127.0.0.1'))) {
+if (__DEV__ === false && (supabaseUrl && (supabaseUrl.includes('localhost') || supabaseUrl.includes('127.0.0.1')))) {
   console.warn(
     '[Security] WARNING: Using localhost Supabase URL in production build. ' +
     'This may cause connectivity issues in production.'
@@ -26,8 +26,8 @@ if (__DEV__ === false && (supabaseUrl.includes('localhost') || supabaseUrl.inclu
 
 // Log environment for debugging (development only)
 if (__DEV__) {
-  console.log('[SystemFit] Environment:', __DEV__ ? 'development' : 'production');
-  console.log('[SystemFit] Supabase URL:', supabaseUrl.replace(/https?:\/\/[^@]+@/, 'https://***@'));
+  console.log('[Ascend] Environment:', __DEV__ ? 'development' : 'production');
+  console.log('[Ascend] Supabase URL:', supabaseUrl.replace(/https?:\/\/[^@]+@/, 'https://***@'));
 }
 
 export const supabase = createClient(supabaseUrl, supabaseAnonKey, {

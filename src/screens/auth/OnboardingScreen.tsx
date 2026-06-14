@@ -40,7 +40,7 @@ const TOTAL_STEPS = 5;
 
 export function OnboardingScreen() {
   const { user, completeOnboarding } = useAuthContext();
-  console.log('[SystemFit] OnboardingScreen rendered. User:', user?.id, 'Email:', user?.email);
+  console.log('[Ascend] OnboardingScreen rendered. User:', user?.id, 'Email:', user?.email);
   const [isLoading, setIsLoading] = useState(false);
   const [currentStep, setCurrentStep] = useState(0);
   const [fadeAnim] = useState(new Animated.Value(1));
@@ -207,7 +207,7 @@ export function OnboardingScreen() {
       case 0:
         return (
           <Animated.View style={[styles.stepContent, { opacity: fadeAnim }]}>
-            <Text style={styles.stepTitle}>WELCOME TO SYSTEMFIT</Text>
+            <Text style={styles.stepTitle}>WELCOME TO Ascend</Text>
             <Text style={styles.stepSubtitle}>Transform your fitness journey into an epic adventure</Text>
             <View style={styles.divider} />
             <View style={styles.featureList}>

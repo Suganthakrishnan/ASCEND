@@ -116,7 +116,7 @@ export class AnalyticsService {
         .select('date, workouts_completed, workout_minutes_current')
         .eq('user_id', userId)
         .gte('date', startDateStr)
-        .order('date', { ascending: true });
+        .order('date', { Ascending: true });
       if (error) return { data: [], error };
       const formattedData: WorkoutFrequencyData[] = (data || []).map(item => ({
         date: item.date,
@@ -140,7 +140,7 @@ export class AnalyticsService {
         .eq('user_id', userId)
         .eq('status', 'completed')
         .gte('completed_at', startDateStr)
-        .order('completed_at', { ascending: true });
+        .order('completed_at', { Ascending: true });
       if (questError) return { data: [], error: questError };
       const xpByDate = new Map<string, number>();
       (questData || []).forEach(quest => {
@@ -175,7 +175,7 @@ export class AnalyticsService {
         .select('date, completion_percentage, daily_goals_completed')
         .eq('user_id', userId)
         .gte('date', startDateStr)
-        .order('date', { ascending: true });
+        .order('date', { Ascending: true });
       if (error) return { data: [], error };
       const formattedData: GoalCompletionData[] = (data || []).map(item => ({
         date: item.date,
@@ -194,7 +194,7 @@ export class AnalyticsService {
         .from('daily_progress')
         .select('date, workout_minutes_current, workouts_completed')
         .eq('user_id', userId)
-        .order('date', { ascending: false })
+        .order('date', { Ascending: false })
         .limit(30);
       if (error) return { data: [], error };
       const records: PersonalRecord[] = (data || [])

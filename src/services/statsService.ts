@@ -516,7 +516,7 @@ export class DailyProgressService {
         .select('*')
         .eq('user_id', userId)
         .gte('date', startDateStr)
-        .order('date', { ascending: true });
+        .order('date', { Ascending: true });
 
       return { data: data || [], error };
     } catch (error) {
