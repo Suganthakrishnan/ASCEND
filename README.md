@@ -223,25 +223,7 @@ src/
 
 ---
 
-## 🏗️ Architecture Notes
-
-**Responsive Scaling** — All dimensions use a custom `responsive.ts` utility that scales proportionally to the device's screen size relative to a 375×812 baseline (iPhone 12). Theme values are computed as getters so they always read fresh dimensions rather than caching stale values at module load time.
-
-**Navigation** — The root `AppNavigator` uses a `key` prop tied to the authenticated user's ID. When accounts switch, React fully unmounts and remounts the navigator tree, preventing stale style caches from carrying over between sessions.
-
-**Offline Persistence** — A `PersistenceContext` wraps all data services with a local queue that syncs to Supabase when connectivity is restored.
-
----
-
-## 🤝 Contributing
-
 This is a personal project in active development. Contributions are not open at this time, but feedback and bug reports via Issues are welcome.
-
----
-
-## 📄 License
-
-MIT License — see [LICENSE](LICENSE) for details.
 
 ---
 
@@ -249,7 +231,7 @@ MIT License — see [LICENSE](LICENSE) for details.
 
 **Sugantha Krishnan T**
 Electronics & Communication Engineering, VIT Chennai
-Engineering Intern @ Pinnavox
+
 
 ---
 
